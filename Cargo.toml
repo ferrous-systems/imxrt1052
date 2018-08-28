@@ -7,10 +7,14 @@ repository = "https://github.com/yrashk/imxrt1052"
 
 [dependencies]
 bare-metal = "0.1"
-cortex-m = "0.4"
 vcell = "0.1"
-cortex-m-rt = { version = "0.4", optional = true }
+cortex-m = "0.5.4"
+
+[dependencies.cortex-m-rt]
+version = "0.5.3"
+optional = true
+
 
 [features]
-default = ["rt"]
-rt = ["cortex-m-rt"]
+default = []
+rt = ["cortex-m-rt/device"]
