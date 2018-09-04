@@ -204,7 +204,7 @@ impl R {
         };
         LFIFO_FULLR { bits }
     }
-    #[doc = "Bit 30 - Reflects the current state of the DMA Request line for the eLCDIF"]
+    #[doc = "Bit 30 - Reflects the current state of the DMA Request line for the LCDIF"]
     #[inline]
     pub fn dma_req(&self) -> DMA_REQR {
         let bits = {
@@ -214,7 +214,7 @@ impl R {
         };
         DMA_REQR { bits }
     }
-    #[doc = "Bit 31 - 0: eLCDIF not present on this product 1: eLCDIF is present."]
+    #[doc = "Bit 31 - 0: LCDIF not present on this product 1: LCDIF is present."]
     #[inline]
     pub fn present(&self) -> PRESENTR {
         let bits = {

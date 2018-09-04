@@ -57,8 +57,6 @@ pub enum MUX_MODER {
     ALT4,
     #[doc = "Select mux mode: ALT5 mux port: GPIO3_IO11 of instance: gpio3"]
     ALT5,
-    #[doc = "Select mux mode: ALT6 mux port: SRC_EARLY_RESET of instance: src"]
-    ALT6,
     #[doc = r" Reserved"]
     _Reserved(u8),
 }
@@ -73,7 +71,6 @@ impl MUX_MODER {
             MUX_MODER::ALT3 => 3,
             MUX_MODER::ALT4 => 4,
             MUX_MODER::ALT5 => 5,
-            MUX_MODER::ALT6 => 6,
             MUX_MODER::_Reserved(bits) => bits,
         }
     }
@@ -88,7 +85,6 @@ impl MUX_MODER {
             3 => MUX_MODER::ALT3,
             4 => MUX_MODER::ALT4,
             5 => MUX_MODER::ALT5,
-            6 => MUX_MODER::ALT6,
             i => MUX_MODER::_Reserved(i),
         }
     }
@@ -121,11 +117,6 @@ impl MUX_MODER {
     #[inline]
     pub fn is_alt5(&self) -> bool {
         *self == MUX_MODER::ALT5
-    }
-    #[doc = "Checks if the value of the field is `ALT6`"]
-    #[inline]
-    pub fn is_alt6(&self) -> bool {
-        *self == MUX_MODER::ALT6
     }
 }
 #[doc = "Possible values of the field `SION`"]
@@ -189,8 +180,6 @@ pub enum MUX_MODEW {
     ALT4,
     #[doc = "Select mux mode: ALT5 mux port: GPIO3_IO11 of instance: gpio3"]
     ALT5,
-    #[doc = "Select mux mode: ALT6 mux port: SRC_EARLY_RESET of instance: src"]
-    ALT6,
 }
 impl MUX_MODEW {
     #[allow(missing_docs)]
@@ -204,7 +193,6 @@ impl MUX_MODEW {
             MUX_MODEW::ALT3 => 3,
             MUX_MODEW::ALT4 => 4,
             MUX_MODEW::ALT5 => 5,
-            MUX_MODEW::ALT6 => 6,
         }
     }
 }
@@ -247,11 +235,6 @@ impl<'a> _MUX_MODEW<'a> {
     #[inline]
     pub fn alt5(self) -> &'a mut W {
         self.variant(MUX_MODEW::ALT5)
-    }
-    #[doc = "Select mux mode: ALT6 mux port: SRC_EARLY_RESET of instance: src"]
-    #[inline]
-    pub fn alt6(self) -> &'a mut W {
-        self.variant(MUX_MODEW::ALT6)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]

@@ -554,7 +554,7 @@ impl R {
         };
         CG8R { bits }
     }
-    #[doc = "Bits 18:19 - Reserved"]
+    #[doc = "Bits 18:19 - semc_exsc clock (semc_exsc_clk_enable)"]
     #[inline]
     pub fn cg9(&self) -> CG9R {
         let bits = {
@@ -564,7 +564,7 @@ impl R {
         };
         CG9R { bits }
     }
-    #[doc = "Bits 20:21 - gpt bus clock (gpt_clk_enable)"]
+    #[doc = "Bits 20:21 - gpt1 bus clock (gpt_clk_enable)"]
     #[inline]
     pub fn cg10(&self) -> CG10R {
         let bits = {
@@ -574,7 +574,7 @@ impl R {
         };
         CG10R { bits }
     }
-    #[doc = "Bits 22:23 - gpt serial clock (gpt_serial_clk_enable)"]
+    #[doc = "Bits 22:23 - gpt1 serial clock (gpt_serial_clk_enable)"]
     #[inline]
     pub fn cg11(&self) -> CG11R {
         let bits = {
@@ -614,7 +614,7 @@ impl R {
         };
         CG14R { bits }
     }
-    #[doc = "Bits 30:31 - gpio5 clock (gpio5_clk_enable)"]
+    #[doc = "Bits 30:31 - Reserved"]
     #[inline]
     pub fn cg15(&self) -> CG15R {
         let bits = {
@@ -682,17 +682,17 @@ impl W {
     pub fn cg8(&mut self) -> _CG8W {
         _CG8W { w: self }
     }
-    #[doc = "Bits 18:19 - Reserved"]
+    #[doc = "Bits 18:19 - semc_exsc clock (semc_exsc_clk_enable)"]
     #[inline]
     pub fn cg9(&mut self) -> _CG9W {
         _CG9W { w: self }
     }
-    #[doc = "Bits 20:21 - gpt bus clock (gpt_clk_enable)"]
+    #[doc = "Bits 20:21 - gpt1 bus clock (gpt_clk_enable)"]
     #[inline]
     pub fn cg10(&mut self) -> _CG10W {
         _CG10W { w: self }
     }
-    #[doc = "Bits 22:23 - gpt serial clock (gpt_serial_clk_enable)"]
+    #[doc = "Bits 22:23 - gpt1 serial clock (gpt_serial_clk_enable)"]
     #[inline]
     pub fn cg11(&mut self) -> _CG11W {
         _CG11W { w: self }
@@ -712,7 +712,7 @@ impl W {
     pub fn cg14(&mut self) -> _CG14W {
         _CG14W { w: self }
     }
-    #[doc = "Bits 30:31 - gpio5 clock (gpio5_clk_enable)"]
+    #[doc = "Bits 30:31 - Reserved"]
     #[inline]
     pub fn cg15(&mut self) -> _CG15W {
         _CG15W { w: self }

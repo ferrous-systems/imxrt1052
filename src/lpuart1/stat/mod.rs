@@ -235,7 +235,7 @@ impl FER {
 pub enum NFR {
     #[doc = "No noise detected."]
     NF_0,
-    #[doc = "Noise detected in the received character in LPUART_DATA."]
+    #[doc = "Noise detected in the received character in the DATA register."]
     NF_1,
 }
 impl NFR {
@@ -1124,7 +1124,7 @@ impl<'a> _FEW<'a> {
 pub enum NFW {
     #[doc = "No noise detected."]
     NF_0,
-    #[doc = "Noise detected in the received character in LPUART_DATA."]
+    #[doc = "Noise detected in the received character in the DATA register."]
     NF_1,
 }
 impl NFW {
@@ -1155,7 +1155,7 @@ impl<'a> _NFW<'a> {
     pub fn nf_0(self) -> &'a mut W {
         self.variant(NFW::NF_0)
     }
-    #[doc = "Noise detected in the received character in LPUART_DATA."]
+    #[doc = "Noise detected in the received character in the DATA register."]
     #[inline]
     pub fn nf_1(self) -> &'a mut W {
         self.variant(NFW::NF_1)

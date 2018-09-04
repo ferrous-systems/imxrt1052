@@ -129,6 +129,27 @@ impl PRE_DIVIDERR {
     }
 }
 #[doc = r" Value of the field"]
+pub struct DMA_MODE_SELR {
+    bits: bool,
+}
+impl DMA_MODE_SELR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
 pub struct TSC_BYPASSR {
     bits: bool,
 }
@@ -277,6 +298,29 @@ impl<'a> _PRE_DIVIDERW<'a> {
     }
 }
 #[doc = r" Proxy"]
+pub struct _DMA_MODE_SELW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _DMA_MODE_SELW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 29;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
 pub struct _TSC_BYPASSW<'a> {
     w: &'a mut W,
 }
@@ -388,7 +432,17 @@ impl R {
         };
         PRE_DIVIDERR { bits }
     }
-    #[doc = "Bit 30 - 1'b1: TSC is bypassed; 1'b0: TSC not bypassed;"]
+    #[doc = "Bit 29 - 1'b0: Trig DMA_REQ with latched signal, REQ will be cleared when ACK and source request cleared"]
+    #[inline]
+    pub fn dma_mode_sel(&self) -> DMA_MODE_SELR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 29;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        DMA_MODE_SELR { bits }
+    }
+    #[doc = "Bit 30 - 1'b1: TSC is bypassed to ADC2. 1'b0: TSC not bypassed. To use ADC2, this bit should be cleared."]
     #[inline]
     pub fn tsc_bypass(&self) -> TSC_BYPASSR {
         let bits = {
@@ -451,7 +505,12 @@ impl W {
     pub fn pre_divider(&mut self) -> _PRE_DIVIDERW {
         _PRE_DIVIDERW { w: self }
     }
-    #[doc = "Bit 30 - 1'b1: TSC is bypassed; 1'b0: TSC not bypassed;"]
+    #[doc = "Bit 29 - 1'b0: Trig DMA_REQ with latched signal, REQ will be cleared when ACK and source request cleared"]
+    #[inline]
+    pub fn dma_mode_sel(&mut self) -> _DMA_MODE_SELW {
+        _DMA_MODE_SELW { w: self }
+    }
+    #[doc = "Bit 30 - 1'b1: TSC is bypassed to ADC2. 1'b0: TSC not bypassed. To use ADC2, this bit should be cleared."]
     #[inline]
     pub fn tsc_bypass(&mut self) -> _TSC_BYPASSW {
         _TSC_BYPASSW { w: self }

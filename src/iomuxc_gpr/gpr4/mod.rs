@@ -797,9 +797,9 @@ impl CAN2_STOP_ACKR {
 #[doc = "Possible values of the field `TRNG_STOP_ACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRNG_STOP_ACKR {
-    #[doc = "ENET1 stop acknowledge is not asserted"]
+    #[doc = "TRNG stop acknowledge is not asserted"]
     TRNG_STOP_ACK_0,
-    #[doc = "ENET1 stop acknowledge is asserted"]
+    #[doc = "TRNG stop acknowledge is asserted"]
     TRNG_STOP_ACK_1,
 }
 impl TRNG_STOP_ACKR {
@@ -844,9 +844,9 @@ impl TRNG_STOP_ACKR {
 #[doc = "Possible values of the field `ENET_STOP_ACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENET_STOP_ACKR {
-    #[doc = "ENET2 stop acknowledge is not asserted"]
+    #[doc = "ENET stop acknowledge is not asserted"]
     ENET_STOP_ACK_0,
-    #[doc = "ENET2 stop acknowledge is asserted"]
+    #[doc = "ENET stop acknowledge is asserted"]
     ENET_STOP_ACK_1,
 }
 impl ENET_STOP_ACKR {

@@ -1229,7 +1229,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - When this bit is set by software, the eLCDIF will begin transferring data between the SoC and the display"]
+    #[doc = "Bit 0 - When this bit is set by software, the LCDIF will begin transferring data between the SoC and the display"]
     #[inline]
     pub fn run(&self) -> RUNR {
         let bits = {
@@ -1267,7 +1267,7 @@ impl R {
         };
         DATA_FORMAT_16_BITR { bits }
     }
-    #[doc = "Bit 5 - Set this bit to make the eLCDIF act as a bus master"]
+    #[doc = "Bit 5 - Set this bit to make the LCDIF act as a bus master"]
     #[inline]
     pub fn master(&self) -> MASTERR {
         let bits = {
@@ -1277,7 +1277,7 @@ impl R {
         };
         MASTERR { bits }
     }
-    #[doc = "Bit 6 - If this bit is set and LCDIF_MASTER bit is set, the eLCDIF will act as bus master and the handshake mechanism between eLCDIF and PXP will be turned on"]
+    #[doc = "Bit 6 - If this bit is set and LCDIF_MASTER bit is set, the LCDIF will act as bus master and the handshake mechanism between LCDIF and PXP will be turned on"]
     #[inline]
     pub fn enable_pxp_handshake(&self) -> ENABLE_PXP_HANDSHAKER {
         let bits = {
@@ -1333,7 +1333,7 @@ impl R {
         };
         DOTCLK_MODER { bits }
     }
-    #[doc = "Bit 19 - When this bit is 0, it means that eLCDIF will stop the block operation and turn off the RUN bit after the amount of data indicated by the LCDIF_TRANSFER_COUNT register has been transferred out"]
+    #[doc = "Bit 19 - When this bit is 0, it means that LCDIF will stop the block operation and turn off the RUN bit after the amount of data indicated by the LCDIF_TRANSFER_COUNT register has been transferred out"]
     #[inline]
     pub fn bypass_count(&self) -> BYPASS_COUNTR {
         let bits = {
@@ -1372,7 +1372,7 @@ impl R {
         };
         CLKGATER { bits }
     }
-    #[doc = "Bit 31 - This bit must be set to zero to enable normal operation of the eLCDIF"]
+    #[doc = "Bit 31 - This bit must be set to zero to enable normal operation of the LCDIF"]
     #[inline]
     pub fn sftrst(&self) -> SFTRSTR {
         let bits = {
@@ -1395,7 +1395,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - When this bit is set by software, the eLCDIF will begin transferring data between the SoC and the display"]
+    #[doc = "Bit 0 - When this bit is set by software, the LCDIF will begin transferring data between the SoC and the display"]
     #[inline]
     pub fn run(&mut self) -> _RUNW {
         _RUNW { w: self }
@@ -1415,12 +1415,12 @@ impl W {
     pub fn data_format_16_bit(&mut self) -> _DATA_FORMAT_16_BITW {
         _DATA_FORMAT_16_BITW { w: self }
     }
-    #[doc = "Bit 5 - Set this bit to make the eLCDIF act as a bus master"]
+    #[doc = "Bit 5 - Set this bit to make the LCDIF act as a bus master"]
     #[inline]
     pub fn master(&mut self) -> _MASTERW {
         _MASTERW { w: self }
     }
-    #[doc = "Bit 6 - If this bit is set and LCDIF_MASTER bit is set, the eLCDIF will act as bus master and the handshake mechanism between eLCDIF and PXP will be turned on"]
+    #[doc = "Bit 6 - If this bit is set and LCDIF_MASTER bit is set, the LCDIF will act as bus master and the handshake mechanism between LCDIF and PXP will be turned on"]
     #[inline]
     pub fn enable_pxp_handshake(&mut self) -> _ENABLE_PXP_HANDSHAKEW {
         _ENABLE_PXP_HANDSHAKEW { w: self }
@@ -1450,7 +1450,7 @@ impl W {
     pub fn dotclk_mode(&mut self) -> _DOTCLK_MODEW {
         _DOTCLK_MODEW { w: self }
     }
-    #[doc = "Bit 19 - When this bit is 0, it means that eLCDIF will stop the block operation and turn off the RUN bit after the amount of data indicated by the LCDIF_TRANSFER_COUNT register has been transferred out"]
+    #[doc = "Bit 19 - When this bit is 0, it means that LCDIF will stop the block operation and turn off the RUN bit after the amount of data indicated by the LCDIF_TRANSFER_COUNT register has been transferred out"]
     #[inline]
     pub fn bypass_count(&mut self) -> _BYPASS_COUNTW {
         _BYPASS_COUNTW { w: self }
@@ -1470,7 +1470,7 @@ impl W {
     pub fn clkgate(&mut self) -> _CLKGATEW {
         _CLKGATEW { w: self }
     }
-    #[doc = "Bit 31 - This bit must be set to zero to enable normal operation of the eLCDIF"]
+    #[doc = "Bit 31 - This bit must be set to zero to enable normal operation of the LCDIF"]
     #[inline]
     pub fn sftrst(&mut self) -> _SFTRSTW {
         _SFTRSTW { w: self }

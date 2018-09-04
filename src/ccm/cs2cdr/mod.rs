@@ -350,7 +350,7 @@ impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 210625 }
+        W { bits: 7550657 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]

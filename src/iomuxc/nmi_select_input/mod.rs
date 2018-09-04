@@ -46,9 +46,9 @@ impl super::NMI_SELECT_INPUT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DAISYR {
     #[doc = "Selecting Pad: GPIO_AD_B0_12 for Mode: ALT7"]
-    SELECT_GPIO_AD_B0_12_ALT7,
+    GPIO_AD_B0_12_ALT7,
     #[doc = "Selecting Pad: WAKEUP for Mode: ALT7"]
-    SELECT_WAKEUP_ALT7,
+    WAKEUP_ALT7,
 }
 impl DAISYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -65,8 +65,8 @@ impl DAISYR {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            DAISYR::SELECT_GPIO_AD_B0_12_ALT7 => false,
-            DAISYR::SELECT_WAKEUP_ALT7 => true,
+            DAISYR::GPIO_AD_B0_12_ALT7 => false,
+            DAISYR::WAKEUP_ALT7 => true,
         }
     }
     #[allow(missing_docs)]
@@ -74,27 +74,27 @@ impl DAISYR {
     #[inline]
     pub fn _from(value: bool) -> DAISYR {
         match value {
-            false => DAISYR::SELECT_GPIO_AD_B0_12_ALT7,
-            true => DAISYR::SELECT_WAKEUP_ALT7,
+            false => DAISYR::GPIO_AD_B0_12_ALT7,
+            true => DAISYR::WAKEUP_ALT7,
         }
     }
-    #[doc = "Checks if the value of the field is `SELECT_GPIO_AD_B0_12_ALT7`"]
+    #[doc = "Checks if the value of the field is `GPIO_AD_B0_12_ALT7`"]
     #[inline]
-    pub fn is_select_gpio_ad_b0_12_alt7(&self) -> bool {
-        *self == DAISYR::SELECT_GPIO_AD_B0_12_ALT7
+    pub fn is_gpio_ad_b0_12_alt7(&self) -> bool {
+        *self == DAISYR::GPIO_AD_B0_12_ALT7
     }
-    #[doc = "Checks if the value of the field is `SELECT_WAKEUP_ALT7`"]
+    #[doc = "Checks if the value of the field is `WAKEUP_ALT7`"]
     #[inline]
-    pub fn is_select_wakeup_alt7(&self) -> bool {
-        *self == DAISYR::SELECT_WAKEUP_ALT7
+    pub fn is_wakeup_alt7(&self) -> bool {
+        *self == DAISYR::WAKEUP_ALT7
     }
 }
 #[doc = "Values that can be written to the field `DAISY`"]
 pub enum DAISYW {
     #[doc = "Selecting Pad: GPIO_AD_B0_12 for Mode: ALT7"]
-    SELECT_GPIO_AD_B0_12_ALT7,
+    GPIO_AD_B0_12_ALT7,
     #[doc = "Selecting Pad: WAKEUP for Mode: ALT7"]
-    SELECT_WAKEUP_ALT7,
+    WAKEUP_ALT7,
 }
 impl DAISYW {
     #[allow(missing_docs)]
@@ -102,8 +102,8 @@ impl DAISYW {
     #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
-            DAISYW::SELECT_GPIO_AD_B0_12_ALT7 => false,
-            DAISYW::SELECT_WAKEUP_ALT7 => true,
+            DAISYW::GPIO_AD_B0_12_ALT7 => false,
+            DAISYW::WAKEUP_ALT7 => true,
         }
     }
 }
@@ -121,13 +121,13 @@ impl<'a> _DAISYW<'a> {
     }
     #[doc = "Selecting Pad: GPIO_AD_B0_12 for Mode: ALT7"]
     #[inline]
-    pub fn select_gpio_ad_b0_12_alt7(self) -> &'a mut W {
-        self.variant(DAISYW::SELECT_GPIO_AD_B0_12_ALT7)
+    pub fn gpio_ad_b0_12_alt7(self) -> &'a mut W {
+        self.variant(DAISYW::GPIO_AD_B0_12_ALT7)
     }
     #[doc = "Selecting Pad: WAKEUP for Mode: ALT7"]
     #[inline]
-    pub fn select_wakeup_alt7(self) -> &'a mut W {
-        self.variant(DAISYW::SELECT_WAKEUP_ALT7)
+    pub fn wakeup_alt7(self) -> &'a mut W {
+        self.variant(DAISYW::WAKEUP_ALT7)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {

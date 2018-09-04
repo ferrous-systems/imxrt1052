@@ -206,7 +206,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:11 - The target count used to tune the RC OSC frequency"]
+    #[doc = "Bits 0:11 - The target count used to tune the 1MHz clock frequency"]
     #[inline]
     pub fn count_1m_trg(&self) -> COUNT_1M_TRGR {
         let bits = {
@@ -226,7 +226,7 @@ impl R {
         };
         ENABLE_1MR { bits }
     }
-    #[doc = "Bit 17 - Mux the corrected or uncorrected 1MHz clock to the output."]
+    #[doc = "Bit 17 - Mux the corrected or uncorrected 1MHz clock to the output"]
     #[inline]
     pub fn mux_1m(&self) -> MUX_1MR {
         let bits = {
@@ -236,7 +236,7 @@ impl R {
         };
         MUX_1MR { bits }
     }
-    #[doc = "Bit 31 - Flag indicates that the count_1m count wasn't reached within 1 32KHz period"]
+    #[doc = "Bit 31 - Flag indicates that the count_1m count wasn't reached within 1 32kHz period"]
     #[inline]
     pub fn clk_1m_err_fl(&self) -> CLK_1M_ERR_FLR {
         let bits = {
@@ -259,7 +259,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:11 - The target count used to tune the RC OSC frequency"]
+    #[doc = "Bits 0:11 - The target count used to tune the 1MHz clock frequency"]
     #[inline]
     pub fn count_1m_trg(&mut self) -> _COUNT_1M_TRGW {
         _COUNT_1M_TRGW { w: self }
@@ -269,12 +269,12 @@ impl W {
     pub fn enable_1m(&mut self) -> _ENABLE_1MW {
         _ENABLE_1MW { w: self }
     }
-    #[doc = "Bit 17 - Mux the corrected or uncorrected 1MHz clock to the output."]
+    #[doc = "Bit 17 - Mux the corrected or uncorrected 1MHz clock to the output"]
     #[inline]
     pub fn mux_1m(&mut self) -> _MUX_1MW {
         _MUX_1MW { w: self }
     }
-    #[doc = "Bit 31 - Flag indicates that the count_1m count wasn't reached within 1 32KHz period"]
+    #[doc = "Bit 31 - Flag indicates that the count_1m count wasn't reached within 1 32kHz period"]
     #[inline]
     pub fn clk_1m_err_fl(&mut self) -> _CLK_1M_ERR_FLW {
         _CLK_1M_ERR_FLW { w: self }

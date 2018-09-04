@@ -514,7 +514,7 @@ impl R {
         };
         CG4R { bits }
     }
-    #[doc = "Bits 10:11 - flexspi clocks (flexspi_clk_enable)"]
+    #[doc = "Bits 10:11 - flexspi clocks (flexspi_clk_enable) sim_ems_clk_enable must also be cleared, when flexspi_clk_enable is cleared"]
     #[inline]
     pub fn cg5(&self) -> CG5R {
         let bits = {
@@ -604,7 +604,7 @@ impl R {
         };
         CG13R { bits }
     }
-    #[doc = "Bits 28:29 - timer2 clocks (timer4_clk_enable)"]
+    #[doc = "Bits 28:29 - timer2 clocks (timer2_clk_enable)"]
     #[inline]
     pub fn cg14(&self) -> CG14R {
         let bits = {
@@ -614,7 +614,7 @@ impl R {
         };
         CG14R { bits }
     }
-    #[doc = "Bits 30:31 - timer3 clocks (timer4_clk_enable)"]
+    #[doc = "Bits 30:31 - timer3 clocks (timer3_clk_enable)"]
     #[inline]
     pub fn cg15(&self) -> CG15R {
         let bits = {
@@ -662,7 +662,7 @@ impl W {
     pub fn cg4(&mut self) -> _CG4W {
         _CG4W { w: self }
     }
-    #[doc = "Bits 10:11 - flexspi clocks (flexspi_clk_enable)"]
+    #[doc = "Bits 10:11 - flexspi clocks (flexspi_clk_enable) sim_ems_clk_enable must also be cleared, when flexspi_clk_enable is cleared"]
     #[inline]
     pub fn cg5(&mut self) -> _CG5W {
         _CG5W { w: self }
@@ -707,12 +707,12 @@ impl W {
     pub fn cg13(&mut self) -> _CG13W {
         _CG13W { w: self }
     }
-    #[doc = "Bits 28:29 - timer2 clocks (timer4_clk_enable)"]
+    #[doc = "Bits 28:29 - timer2 clocks (timer2_clk_enable)"]
     #[inline]
     pub fn cg14(&mut self) -> _CG14W {
         _CG14W { w: self }
     }
-    #[doc = "Bits 30:31 - timer3 clocks (timer4_clk_enable)"]
+    #[doc = "Bits 30:31 - timer3 clocks (timer3_clk_enable)"]
     #[inline]
     pub fn cg15(&mut self) -> _CG15W {
         _CG15W { w: self }

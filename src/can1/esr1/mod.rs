@@ -1187,7 +1187,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - When FLEXCAN is Stop Mode and a recessive to dominant transition is detected on the CAN bus and if the WAK_MSK bit in the MCR Register is set, an interrupt is generated to the ARM"]
+    #[doc = "Bit 0 - When FLEXCAN is Stop Mode and a recessive to dominant transition is detected on the CAN bus and if the WAK_MSK bit in the MCR Register is set, an interrupt is generated to the Arm"]
     #[inline]
     pub fn wakint(&self) -> WAKINTR {
         WAKINTR::_from({
@@ -1362,7 +1362,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - When FLEXCAN is Stop Mode and a recessive to dominant transition is detected on the CAN bus and if the WAK_MSK bit in the MCR Register is set, an interrupt is generated to the ARM"]
+    #[doc = "Bit 0 - When FLEXCAN is Stop Mode and a recessive to dominant transition is detected on the CAN bus and if the WAK_MSK bit in the MCR Register is set, an interrupt is generated to the Arm"]
     #[inline]
     pub fn wakint(&mut self) -> _WAKINTW {
         _WAKINTW { w: self }

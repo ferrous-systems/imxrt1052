@@ -18,16 +18,22 @@ pub struct RegisterBlock {
     #[doc = "0x1c - LUT Control Register"]
     pub lutcr: LUTCR,
     #[doc = "0x20 - AHB RX Buffer 0 Control Register 0"]
-    pub ahbrxbufcr0: [AHBRXBUFCR0; 4],
+    pub ahbrxbuf0cr0: AHBRXBUF0CR0,
+    #[doc = "0x24 - AHB RX Buffer 1 Control Register 0"]
+    pub ahbrxbuf1cr0: AHBRXBUF1CR0,
+    #[doc = "0x28 - AHB RX Buffer 2 Control Register 0"]
+    pub ahbrxbuf2cr0: AHBRXBUF2CR0,
+    #[doc = "0x2c - AHB RX Buffer 3 Control Register 0"]
+    pub ahbrxbuf3cr0: AHBRXBUF3CR0,
     _reserved0: [u8; 48usize],
     #[doc = "0x60 - Flash A1 Control Register 0"]
-    pub flshcr0a1: FLSHCR0,
-    #[doc = "0x64 - Flash A1 Control Register 0"]
-    pub flshcr0a2: FLSHCR0,
-    #[doc = "0x68 - Flash A1 Control Register 0"]
-    pub flshcr0b1: FLSHCR0,
-    #[doc = "0x6c - Flash A1 Control Register 0"]
-    pub flshcr0b2: FLSHCR0,
+    pub flsha1cr0: FLSHA1CR0,
+    #[doc = "0x64 - Flash A2 Control Register 0"]
+    pub flsha2cr0: FLSHA2CR0,
+    #[doc = "0x68 - Flash B1 Control Register 0"]
+    pub flshb1cr0: FLSHB1CR0,
+    #[doc = "0x6c - Flash B2 Control Register 0"]
+    pub flshb2cr0: FLSHB2CR0,
     #[doc = "0x70 - Flash A1 Control Register 1"]
     pub flshcr1a1: FLSHCR1,
     #[doc = "0x74 - Flash A1 Control Register 1"]
@@ -134,17 +140,53 @@ pub struct LUTCR {
 #[doc = "LUT Control Register"]
 pub mod lutcr;
 #[doc = "AHB RX Buffer 0 Control Register 0"]
-pub struct AHBRXBUFCR0 {
+pub struct AHBRXBUF0CR0 {
     register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "AHB RX Buffer 0 Control Register 0"]
-pub mod ahbrxbufcr0;
+pub mod ahbrxbuf0cr0;
+#[doc = "AHB RX Buffer 1 Control Register 0"]
+pub struct AHBRXBUF1CR0 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "AHB RX Buffer 1 Control Register 0"]
+pub mod ahbrxbuf1cr0;
+#[doc = "AHB RX Buffer 2 Control Register 0"]
+pub struct AHBRXBUF2CR0 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "AHB RX Buffer 2 Control Register 0"]
+pub mod ahbrxbuf2cr0;
+#[doc = "AHB RX Buffer 3 Control Register 0"]
+pub struct AHBRXBUF3CR0 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "AHB RX Buffer 3 Control Register 0"]
+pub mod ahbrxbuf3cr0;
 #[doc = "Flash A1 Control Register 0"]
-pub struct FLSHCR0 {
+pub struct FLSHA1CR0 {
     register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Flash A1 Control Register 0"]
-pub mod flshcr0;
+pub mod flsha1cr0;
+#[doc = "Flash A2 Control Register 0"]
+pub struct FLSHA2CR0 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "Flash A2 Control Register 0"]
+pub mod flsha2cr0;
+#[doc = "Flash B1 Control Register 0"]
+pub struct FLSHB1CR0 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "Flash B1 Control Register 0"]
+pub mod flshb1cr0;
+#[doc = "Flash B2 Control Register 0"]
+pub struct FLSHB2CR0 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "Flash B2 Control Register 0"]
+pub mod flshb2cr0;
 #[doc = "Flash A1 Control Register 1"]
 pub struct FLSHCR1 {
     register: ::vcell::VolatileCell<u32>,

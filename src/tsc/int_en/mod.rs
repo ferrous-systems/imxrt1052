@@ -45,10 +45,10 @@ impl super::INT_EN {
 #[doc = "Possible values of the field `MEASURE_INT_EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MEASURE_INT_ENR {
-    #[doc = "Disable measure"]
+    #[doc = "Disable measure interrupt"]
     MEASURE_INT_EN_0,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
+    #[doc = "Enable measure interrupt"]
+    MEASURE_INT_EN_1,
 }
 impl MEASURE_INT_ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -66,7 +66,7 @@ impl MEASURE_INT_ENR {
     pub fn bit(&self) -> bool {
         match *self {
             MEASURE_INT_ENR::MEASURE_INT_EN_0 => false,
-            MEASURE_INT_ENR::_Reserved(bits) => bits,
+            MEASURE_INT_ENR::MEASURE_INT_EN_1 => true,
         }
     }
     #[allow(missing_docs)]
@@ -75,13 +75,18 @@ impl MEASURE_INT_ENR {
     pub fn _from(value: bool) -> MEASURE_INT_ENR {
         match value {
             false => MEASURE_INT_ENR::MEASURE_INT_EN_0,
-            i => MEASURE_INT_ENR::_Reserved(i),
+            true => MEASURE_INT_ENR::MEASURE_INT_EN_1,
         }
     }
     #[doc = "Checks if the value of the field is `MEASURE_INT_EN_0`"]
     #[inline]
     pub fn is_measure_int_en_0(&self) -> bool {
         *self == MEASURE_INT_ENR::MEASURE_INT_EN_0
+    }
+    #[doc = "Checks if the value of the field is `MEASURE_INT_EN_1`"]
+    #[inline]
+    pub fn is_measure_int_en_1(&self) -> bool {
+        *self == MEASURE_INT_ENR::MEASURE_INT_EN_1
     }
 }
 #[doc = "Possible values of the field `DETECT_INT_EN`"]
@@ -180,8 +185,10 @@ impl IDLE_SW_INT_ENR {
 }
 #[doc = "Values that can be written to the field `MEASURE_INT_EN`"]
 pub enum MEASURE_INT_ENW {
-    #[doc = "Disable measure"]
+    #[doc = "Disable measure interrupt"]
     MEASURE_INT_EN_0,
+    #[doc = "Enable measure interrupt"]
+    MEASURE_INT_EN_1,
 }
 impl MEASURE_INT_ENW {
     #[allow(missing_docs)]
@@ -190,6 +197,7 @@ impl MEASURE_INT_ENW {
     pub fn _bits(&self) -> bool {
         match *self {
             MEASURE_INT_ENW::MEASURE_INT_EN_0 => false,
+            MEASURE_INT_ENW::MEASURE_INT_EN_1 => true,
         }
     }
 }
@@ -205,10 +213,15 @@ impl<'a> _MEASURE_INT_ENW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Disable measure"]
+    #[doc = "Disable measure interrupt"]
     #[inline]
     pub fn measure_int_en_0(self) -> &'a mut W {
         self.variant(MEASURE_INT_ENW::MEASURE_INT_EN_0)
+    }
+    #[doc = "Enable measure interrupt"]
+    #[inline]
+    pub fn measure_int_en_1(self) -> &'a mut W {
+        self.variant(MEASURE_INT_ENW::MEASURE_INT_EN_1)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {

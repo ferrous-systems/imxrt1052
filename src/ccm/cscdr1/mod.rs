@@ -325,14 +325,6 @@ pub enum TRACE_PODFR {
     TRACE_PODF_2,
     #[doc = "divide by 4"]
     TRACE_PODF_3,
-    #[doc = "divide by 5"]
-    TRACE_PODF_4,
-    #[doc = "divide by 6"]
-    TRACE_PODF_5,
-    #[doc = "divide by 7"]
-    TRACE_PODF_6,
-    #[doc = "divide by 8"]
-    TRACE_PODF_7,
 }
 impl TRACE_PODFR {
     #[doc = r" Value of the field as raw bits"]
@@ -343,10 +335,6 @@ impl TRACE_PODFR {
             TRACE_PODFR::TRACE_PODF_1 => 1,
             TRACE_PODFR::TRACE_PODF_2 => 2,
             TRACE_PODFR::TRACE_PODF_3 => 3,
-            TRACE_PODFR::TRACE_PODF_4 => 4,
-            TRACE_PODFR::TRACE_PODF_5 => 5,
-            TRACE_PODFR::TRACE_PODF_6 => 6,
-            TRACE_PODFR::TRACE_PODF_7 => 7,
         }
     }
     #[allow(missing_docs)]
@@ -358,10 +346,6 @@ impl TRACE_PODFR {
             1 => TRACE_PODFR::TRACE_PODF_1,
             2 => TRACE_PODFR::TRACE_PODF_2,
             3 => TRACE_PODFR::TRACE_PODF_3,
-            4 => TRACE_PODFR::TRACE_PODF_4,
-            5 => TRACE_PODFR::TRACE_PODF_5,
-            6 => TRACE_PODFR::TRACE_PODF_6,
-            7 => TRACE_PODFR::TRACE_PODF_7,
             _ => unreachable!(),
         }
     }
@@ -384,26 +368,6 @@ impl TRACE_PODFR {
     #[inline]
     pub fn is_trace_podf_3(&self) -> bool {
         *self == TRACE_PODFR::TRACE_PODF_3
-    }
-    #[doc = "Checks if the value of the field is `TRACE_PODF_4`"]
-    #[inline]
-    pub fn is_trace_podf_4(&self) -> bool {
-        *self == TRACE_PODFR::TRACE_PODF_4
-    }
-    #[doc = "Checks if the value of the field is `TRACE_PODF_5`"]
-    #[inline]
-    pub fn is_trace_podf_5(&self) -> bool {
-        *self == TRACE_PODFR::TRACE_PODF_5
-    }
-    #[doc = "Checks if the value of the field is `TRACE_PODF_6`"]
-    #[inline]
-    pub fn is_trace_podf_6(&self) -> bool {
-        *self == TRACE_PODFR::TRACE_PODF_6
-    }
-    #[doc = "Checks if the value of the field is `TRACE_PODF_7`"]
-    #[inline]
-    pub fn is_trace_podf_7(&self) -> bool {
-        *self == TRACE_PODFR::TRACE_PODF_7
     }
 }
 #[doc = "Values that can be written to the field `UART_CLK_PODF`"]
@@ -718,14 +682,6 @@ pub enum TRACE_PODFW {
     TRACE_PODF_2,
     #[doc = "divide by 4"]
     TRACE_PODF_3,
-    #[doc = "divide by 5"]
-    TRACE_PODF_4,
-    #[doc = "divide by 6"]
-    TRACE_PODF_5,
-    #[doc = "divide by 7"]
-    TRACE_PODF_6,
-    #[doc = "divide by 8"]
-    TRACE_PODF_7,
 }
 impl TRACE_PODFW {
     #[allow(missing_docs)]
@@ -737,10 +693,6 @@ impl TRACE_PODFW {
             TRACE_PODFW::TRACE_PODF_1 => 1,
             TRACE_PODFW::TRACE_PODF_2 => 2,
             TRACE_PODFW::TRACE_PODF_3 => 3,
-            TRACE_PODFW::TRACE_PODF_4 => 4,
-            TRACE_PODFW::TRACE_PODF_5 => 5,
-            TRACE_PODFW::TRACE_PODF_6 => 6,
-            TRACE_PODFW::TRACE_PODF_7 => 7,
         }
     }
 }
@@ -776,30 +728,10 @@ impl<'a> _TRACE_PODFW<'a> {
     pub fn trace_podf_3(self) -> &'a mut W {
         self.variant(TRACE_PODFW::TRACE_PODF_3)
     }
-    #[doc = "divide by 5"]
-    #[inline]
-    pub fn trace_podf_4(self) -> &'a mut W {
-        self.variant(TRACE_PODFW::TRACE_PODF_4)
-    }
-    #[doc = "divide by 6"]
-    #[inline]
-    pub fn trace_podf_5(self) -> &'a mut W {
-        self.variant(TRACE_PODFW::TRACE_PODF_5)
-    }
-    #[doc = "divide by 7"]
-    #[inline]
-    pub fn trace_podf_6(self) -> &'a mut W {
-        self.variant(TRACE_PODFW::TRACE_PODF_6)
-    }
-    #[doc = "divide by 8"]
-    #[inline]
-    pub fn trace_podf_7(self) -> &'a mut W {
-        self.variant(TRACE_PODFW::TRACE_PODF_7)
-    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
+        const MASK: u8 = 3;
         const OFFSET: u8 = 25;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -848,11 +780,11 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 25:27 - Divider for trace clock. Divider should be updated when output clock is gated."]
+    #[doc = "Bits 25:26 - Divider for trace clock. Divider should be updated when output clock is gated."]
     #[inline]
     pub fn trace_podf(&self) -> TRACE_PODFR {
         TRACE_PODFR::_from({
-            const MASK: u8 = 7;
+            const MASK: u8 = 3;
             const OFFSET: u8 = 25;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
@@ -862,7 +794,7 @@ impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 4786944 }
+        W { bits: 105450240 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
@@ -890,7 +822,7 @@ impl W {
     pub fn usdhc2_podf(&mut self) -> _USDHC2_PODFW {
         _USDHC2_PODFW { w: self }
     }
-    #[doc = "Bits 25:27 - Divider for trace clock. Divider should be updated when output clock is gated."]
+    #[doc = "Bits 25:26 - Divider for trace clock. Divider should be updated when output clock is gated."]
     #[inline]
     pub fn trace_podf(&mut self) -> _TRACE_PODFW {
         _TRACE_PODFW { w: self }

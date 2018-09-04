@@ -94,8 +94,8 @@ impl SRER {
 pub enum DSER {
     #[doc = "output driver disabled;"]
     DSE_0_OUTPUT_DRIVER_DISABLED,
-    #[doc = "R0(260 Ohm @ 3.3V, 150 Ohm@1.8V, 240 Ohm for DDR)"]
-    DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR,
+    #[doc = "R0(150 Ohm @ 3.3V, 260 Ohm@1.8V)"]
+    DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V,
     #[doc = "R0/2"]
     DSE_2_R0_2,
     #[doc = "R0/3"]
@@ -115,7 +115,7 @@ impl DSER {
     pub fn bits(&self) -> u8 {
         match *self {
             DSER::DSE_0_OUTPUT_DRIVER_DISABLED => 0,
-            DSER::DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR => 1,
+            DSER::DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V => 1,
             DSER::DSE_2_R0_2 => 2,
             DSER::DSE_3_R0_3 => 3,
             DSER::DSE_4_R0_4 => 4,
@@ -130,7 +130,7 @@ impl DSER {
     pub fn _from(value: u8) -> DSER {
         match value {
             0 => DSER::DSE_0_OUTPUT_DRIVER_DISABLED,
-            1 => DSER::DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR,
+            1 => DSER::DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V,
             2 => DSER::DSE_2_R0_2,
             3 => DSER::DSE_3_R0_3,
             4 => DSER::DSE_4_R0_4,
@@ -145,10 +145,10 @@ impl DSER {
     pub fn is_dse_0_output_driver_disabled(&self) -> bool {
         *self == DSER::DSE_0_OUTPUT_DRIVER_DISABLED
     }
-    #[doc = "Checks if the value of the field is `DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR`"]
+    #[doc = "Checks if the value of the field is `DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V`"]
     #[inline]
-    pub fn is_dse_1_r0_260_ohm_3_3v_150_ohm_1_8v_240_ohm_for_ddr(&self) -> bool {
-        *self == DSER::DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR
+    pub fn is_dse_1_r0_150_ohm_3_3v_260_ohm_1_8v(&self) -> bool {
+        *self == DSER::DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V
     }
     #[doc = "Checks if the value of the field is `DSE_2_R0_2`"]
     #[inline]
@@ -543,8 +543,8 @@ impl<'a> _SREW<'a> {
 pub enum DSEW {
     #[doc = "output driver disabled;"]
     DSE_0_OUTPUT_DRIVER_DISABLED,
-    #[doc = "R0(260 Ohm @ 3.3V, 150 Ohm@1.8V, 240 Ohm for DDR)"]
-    DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR,
+    #[doc = "R0(150 Ohm @ 3.3V, 260 Ohm@1.8V)"]
+    DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V,
     #[doc = "R0/2"]
     DSE_2_R0_2,
     #[doc = "R0/3"]
@@ -565,7 +565,7 @@ impl DSEW {
     pub fn _bits(&self) -> u8 {
         match *self {
             DSEW::DSE_0_OUTPUT_DRIVER_DISABLED => 0,
-            DSEW::DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR => 1,
+            DSEW::DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V => 1,
             DSEW::DSE_2_R0_2 => 2,
             DSEW::DSE_3_R0_3 => 3,
             DSEW::DSE_4_R0_4 => 4,
@@ -592,10 +592,10 @@ impl<'a> _DSEW<'a> {
     pub fn dse_0_output_driver_disabled(self) -> &'a mut W {
         self.variant(DSEW::DSE_0_OUTPUT_DRIVER_DISABLED)
     }
-    #[doc = "R0(260 Ohm @ 3.3V, 150 Ohm@1.8V, 240 Ohm for DDR)"]
+    #[doc = "R0(150 Ohm @ 3.3V, 260 Ohm@1.8V)"]
     #[inline]
-    pub fn dse_1_r0_260_ohm_3_3v_150_ohm_1_8v_240_ohm_for_ddr(self) -> &'a mut W {
-        self.variant(DSEW::DSE_1_R0_260_OHM_3_3V_150_OHM_1_8V_240_OHM_FOR_DDR)
+    pub fn dse_1_r0_150_ohm_3_3v_260_ohm_1_8v(self) -> &'a mut W {
+        self.variant(DSEW::DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V)
     }
     #[doc = "R0/2"]
     #[inline]

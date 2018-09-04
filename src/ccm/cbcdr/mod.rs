@@ -1073,7 +1073,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 8:9 - Divider for ipg podf"]
+    #[doc = "Bits 8:9 - Divider for ipg podf."]
     #[inline]
     pub fn ipg_podf(&self) -> IPG_PODFR {
         IPG_PODFR::_from({
@@ -1123,7 +1123,7 @@ impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 755200 }
+        W { bits: 688896 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
@@ -1141,7 +1141,7 @@ impl W {
     pub fn semc_alt_clk_sel(&mut self) -> _SEMC_ALT_CLK_SELW {
         _SEMC_ALT_CLK_SELW { w: self }
     }
-    #[doc = "Bits 8:9 - Divider for ipg podf"]
+    #[doc = "Bits 8:9 - Divider for ipg podf."]
     #[inline]
     pub fn ipg_podf(&mut self) -> _IPG_PODFW {
         _IPG_PODFW { w: self }

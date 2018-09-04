@@ -226,10 +226,31 @@ impl ACMD23_ARGU2_ENR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct AHB_RSTR {
+pub struct PART_DLL_DEBUGR {
     bits: bool,
 }
-impl AHB_RSTR {
+impl PART_DLL_DEBUGR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct BUS_RSTR {
+    bits: bool,
+}
+impl BUS_RSTR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -467,10 +488,33 @@ impl<'a> _ACMD23_ARGU2_ENW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _AHB_RSTW<'a> {
+pub struct _PART_DLL_DEBUGW<'a> {
     w: &'a mut W,
 }
-impl<'a> _AHB_RSTW<'a> {
+impl<'a> _PART_DLL_DEBUGW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 13;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
+pub struct _BUS_RSTW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _BUS_RSTW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -542,15 +586,25 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 14 - AHB BUS reset"]
+    #[doc = "Bit 13 - debug for part dll"]
     #[inline]
-    pub fn ahb_rst(&self) -> AHB_RSTR {
+    pub fn part_dll_debug(&self) -> PART_DLL_DEBUGR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 13;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        PART_DLL_DEBUGR { bits }
+    }
+    #[doc = "Bit 14 - BUS reset"]
+    #[inline]
+    pub fn bus_rst(&self) -> BUS_RSTR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 14;
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
-        AHB_RSTR { bits }
+        BUS_RSTR { bits }
     }
 }
 impl W {
@@ -590,9 +644,14 @@ impl W {
     pub fn acmd23_argu2_en(&mut self) -> _ACMD23_ARGU2_ENW {
         _ACMD23_ARGU2_ENW { w: self }
     }
-    #[doc = "Bit 14 - AHB BUS reset"]
+    #[doc = "Bit 13 - debug for part dll"]
     #[inline]
-    pub fn ahb_rst(&mut self) -> _AHB_RSTW {
-        _AHB_RSTW { w: self }
+    pub fn part_dll_debug(&mut self) -> _PART_DLL_DEBUGW {
+        _PART_DLL_DEBUGW { w: self }
+    }
+    #[doc = "Bit 14 - BUS reset"]
+    #[inline]
+    pub fn bus_rst(&mut self) -> _BUS_RSTW {
+        _BUS_RSTW { w: self }
     }
 }

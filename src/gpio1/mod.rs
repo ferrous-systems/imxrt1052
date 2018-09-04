@@ -17,6 +17,13 @@ pub struct RegisterBlock {
     pub isr: ISR,
     #[doc = "0x1c - GPIO edge select register"]
     pub edge_sel: EDGE_SEL,
+    _reserved0: [u8; 100usize],
+    #[doc = "0x84 - GPIO data register SET"]
+    pub dr_set: DR_SET,
+    #[doc = "0x88 - GPIO data register CLEAR"]
+    pub dr_clear: DR_CLEAR,
+    #[doc = "0x8c - GPIO data register TOGGLE"]
+    pub dr_toggle: DR_TOGGLE,
 }
 #[doc = "GPIO data register"]
 pub struct DR {
@@ -66,3 +73,21 @@ pub struct EDGE_SEL {
 }
 #[doc = "GPIO edge select register"]
 pub mod edge_sel;
+#[doc = "GPIO data register SET"]
+pub struct DR_SET {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "GPIO data register SET"]
+pub mod dr_set;
+#[doc = "GPIO data register CLEAR"]
+pub struct DR_CLEAR {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "GPIO data register CLEAR"]
+pub mod dr_clear;
+#[doc = "GPIO data register TOGGLE"]
+pub struct DR_TOGGLE {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "GPIO data register TOGGLE"]
+pub mod dr_toggle;

@@ -49,7 +49,7 @@ impl R {
         };
         MON_COUNTERR { bits }
     }
-    #[doc = "Bits 16:31 - Monotonic Counter Era Bits These bits are inputs to the module and typically connect to fuses."]
+    #[doc = "Bits 16:31 - Monotonic Counter Era Bits These bits are inputs to the module and typically connect to fuses"]
     #[inline]
     pub fn mc_era_bits(&self) -> MC_ERA_BITSR {
         let bits = {

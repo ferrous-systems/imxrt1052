@@ -494,7 +494,7 @@ impl R {
         };
         CG2R { bits }
     }
-    #[doc = "Bits 6:7 - Reserved"]
+    #[doc = "Bits 6:7 - flexspi_exsc clock (flexspi_exsc_clk_enable)"]
     #[inline]
     pub fn cg3(&self) -> CG3R {
         let bits = {
@@ -504,7 +504,7 @@ impl R {
         };
         CG3R { bits }
     }
-    #[doc = "Bits 8:9 - Reserved"]
+    #[doc = "Bits 8:9 - sim_m or sim_main register access clock (sim_m_mainclk_r_enable)"]
     #[inline]
     pub fn cg4(&self) -> CG4R {
         let bits = {
@@ -652,12 +652,12 @@ impl W {
     pub fn cg2(&mut self) -> _CG2W {
         _CG2W { w: self }
     }
-    #[doc = "Bits 6:7 - Reserved"]
+    #[doc = "Bits 6:7 - flexspi_exsc clock (flexspi_exsc_clk_enable)"]
     #[inline]
     pub fn cg3(&mut self) -> _CG3W {
         _CG3W { w: self }
     }
-    #[doc = "Bits 8:9 - Reserved"]
+    #[doc = "Bits 8:9 - sim_m or sim_main register access clock (sim_m_mainclk_r_enable)"]
     #[inline]
     pub fn cg4(&mut self) -> _CG4W {
         _CG4W { w: self }

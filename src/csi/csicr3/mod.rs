@@ -233,21 +233,21 @@ impl TWO_8BIT_SENSORR {
 #[doc = "Possible values of the field `RxFF_LEVEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFF_LEVELR {
-    #[doc = "4 Words"]
+    #[doc = "4 Double words"]
     RXFF_LEVEL_0,
-    #[doc = "8 Words"]
+    #[doc = "8 Double words"]
     RXFF_LEVEL_1,
-    #[doc = "16 Words"]
+    #[doc = "16 Double words"]
     RXFF_LEVEL_2,
-    #[doc = "24 Words"]
+    #[doc = "24 Double words"]
     RXFF_LEVEL_3,
-    #[doc = "32 Words"]
+    #[doc = "32 Double words"]
     RXFF_LEVEL_4,
-    #[doc = "48 Words"]
+    #[doc = "48 Double words"]
     RXFF_LEVEL_5,
-    #[doc = "64 Words"]
+    #[doc = "64 Double words"]
     RXFF_LEVEL_6,
-    #[doc = "96 Words"]
+    #[doc = "96 Double words"]
     RXFF_LEVEL_7,
 }
 impl RXFF_LEVELR {
@@ -372,21 +372,21 @@ impl HRESP_ERR_ENR {
 #[doc = "Possible values of the field `STATFF_LEVEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATFF_LEVELR {
-    #[doc = "4 Words"]
+    #[doc = "4 Double words"]
     STATFF_LEVEL_0,
-    #[doc = "8 Words"]
+    #[doc = "8 Double words"]
     STATFF_LEVEL_1,
-    #[doc = "12 Words"]
+    #[doc = "12 Double words"]
     STATFF_LEVEL_2,
-    #[doc = "16 Words"]
+    #[doc = "16 Double words"]
     STATFF_LEVEL_3,
-    #[doc = "24 Words"]
+    #[doc = "24 Double words"]
     STATFF_LEVEL_4,
-    #[doc = "32 Words"]
+    #[doc = "32 Double words"]
     STATFF_LEVEL_5,
-    #[doc = "48 Words"]
+    #[doc = "48 Double words"]
     STATFF_LEVEL_6,
-    #[doc = "64 Words"]
+    #[doc = "64 Double words"]
     STATFF_LEVEL_7,
 }
 impl STATFF_LEVELR {
@@ -941,21 +941,21 @@ impl<'a> _TWO_8BIT_SENSORW<'a> {
 }
 #[doc = "Values that can be written to the field `RxFF_LEVEL`"]
 pub enum RXFF_LEVELW {
-    #[doc = "4 Words"]
+    #[doc = "4 Double words"]
     RXFF_LEVEL_0,
-    #[doc = "8 Words"]
+    #[doc = "8 Double words"]
     RXFF_LEVEL_1,
-    #[doc = "16 Words"]
+    #[doc = "16 Double words"]
     RXFF_LEVEL_2,
-    #[doc = "24 Words"]
+    #[doc = "24 Double words"]
     RXFF_LEVEL_3,
-    #[doc = "32 Words"]
+    #[doc = "32 Double words"]
     RXFF_LEVEL_4,
-    #[doc = "48 Words"]
+    #[doc = "48 Double words"]
     RXFF_LEVEL_5,
-    #[doc = "64 Words"]
+    #[doc = "64 Double words"]
     RXFF_LEVEL_6,
-    #[doc = "96 Words"]
+    #[doc = "96 Double words"]
     RXFF_LEVEL_7,
 }
 impl RXFF_LEVELW {
@@ -987,42 +987,42 @@ impl<'a> _RXFF_LEVELW<'a> {
             self.bits(variant._bits())
         }
     }
-    #[doc = "4 Words"]
+    #[doc = "4 Double words"]
     #[inline]
     pub fn rx_ff_level_0(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_0)
     }
-    #[doc = "8 Words"]
+    #[doc = "8 Double words"]
     #[inline]
     pub fn rx_ff_level_1(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_1)
     }
-    #[doc = "16 Words"]
+    #[doc = "16 Double words"]
     #[inline]
     pub fn rx_ff_level_2(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_2)
     }
-    #[doc = "24 Words"]
+    #[doc = "24 Double words"]
     #[inline]
     pub fn rx_ff_level_3(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_3)
     }
-    #[doc = "32 Words"]
+    #[doc = "32 Double words"]
     #[inline]
     pub fn rx_ff_level_4(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_4)
     }
-    #[doc = "48 Words"]
+    #[doc = "48 Double words"]
     #[inline]
     pub fn rx_ff_level_5(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_5)
     }
-    #[doc = "64 Words"]
+    #[doc = "64 Double words"]
     #[inline]
     pub fn rx_ff_level_6(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_6)
     }
-    #[doc = "96 Words"]
+    #[doc = "96 Double words"]
     #[inline]
     pub fn rx_ff_level_7(self) -> &'a mut W {
         self.variant(RXFF_LEVELW::RXFF_LEVEL_7)
@@ -1097,21 +1097,21 @@ impl<'a> _HRESP_ERR_ENW<'a> {
 }
 #[doc = "Values that can be written to the field `STATFF_LEVEL`"]
 pub enum STATFF_LEVELW {
-    #[doc = "4 Words"]
+    #[doc = "4 Double words"]
     STATFF_LEVEL_0,
-    #[doc = "8 Words"]
+    #[doc = "8 Double words"]
     STATFF_LEVEL_1,
-    #[doc = "12 Words"]
+    #[doc = "12 Double words"]
     STATFF_LEVEL_2,
-    #[doc = "16 Words"]
+    #[doc = "16 Double words"]
     STATFF_LEVEL_3,
-    #[doc = "24 Words"]
+    #[doc = "24 Double words"]
     STATFF_LEVEL_4,
-    #[doc = "32 Words"]
+    #[doc = "32 Double words"]
     STATFF_LEVEL_5,
-    #[doc = "48 Words"]
+    #[doc = "48 Double words"]
     STATFF_LEVEL_6,
-    #[doc = "64 Words"]
+    #[doc = "64 Double words"]
     STATFF_LEVEL_7,
 }
 impl STATFF_LEVELW {
@@ -1143,42 +1143,42 @@ impl<'a> _STATFF_LEVELW<'a> {
             self.bits(variant._bits())
         }
     }
-    #[doc = "4 Words"]
+    #[doc = "4 Double words"]
     #[inline]
     pub fn statff_level_0(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_0)
     }
-    #[doc = "8 Words"]
+    #[doc = "8 Double words"]
     #[inline]
     pub fn statff_level_1(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_1)
     }
-    #[doc = "12 Words"]
+    #[doc = "12 Double words"]
     #[inline]
     pub fn statff_level_2(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_2)
     }
-    #[doc = "16 Words"]
+    #[doc = "16 Double words"]
     #[inline]
     pub fn statff_level_3(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_3)
     }
-    #[doc = "24 Words"]
+    #[doc = "24 Double words"]
     #[inline]
     pub fn statff_level_4(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_4)
     }
-    #[doc = "32 Words"]
+    #[doc = "32 Double words"]
     #[inline]
     pub fn statff_level_5(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_5)
     }
-    #[doc = "48 Words"]
+    #[doc = "48 Double words"]
     #[inline]
     pub fn statff_level_6(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_6)
     }
-    #[doc = "64 Words"]
+    #[doc = "64 Double words"]
     #[inline]
     pub fn statff_level_7(self) -> &'a mut W {
         self.variant(STATFF_LEVELW::STATFF_LEVEL_7)

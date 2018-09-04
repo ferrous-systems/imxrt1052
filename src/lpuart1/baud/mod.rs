@@ -103,9 +103,9 @@ impl SBNSR {
 #[doc = "Possible values of the field `RXEDGIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEDGIER {
-    #[doc = "Hardware interrupts from LPUART_STAT[RXEDGIF] disabled."]
+    #[doc = "Hardware interrupts from STAT[RXEDGIF] are disabled."]
     RXEDGIE_0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[RXEDGIF] flag is 1."]
+    #[doc = "Hardware interrupt is requested when STAT[RXEDGIF] flag is 1."]
     RXEDGIE_1,
 }
 impl RXEDGIER {
@@ -150,9 +150,9 @@ impl RXEDGIER {
 #[doc = "Possible values of the field `LBKDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBKDIER {
-    #[doc = "Hardware interrupts from LPUART_STAT[LBKDIF] disabled (use polling)."]
+    #[doc = "Hardware interrupts from STAT[LBKDIF] flag are disabled (use polling)."]
     LBKDIE_0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[LBKDIF] flag is 1."]
+    #[doc = "Hardware interrupt requested when STAT[LBKDIF] flag is 1."]
     LBKDIE_1,
 }
 impl LBKDIER {
@@ -342,6 +342,53 @@ impl MATCFGR {
     #[inline]
     pub fn is_matcfg_3(&self) -> bool {
         *self == MATCFGR::MATCFG_3
+    }
+}
+#[doc = "Possible values of the field `RIDMAE`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RIDMAER {
+    #[doc = "DMA request disabled."]
+    RIDMAE_0,
+    #[doc = "DMA request enabled."]
+    RIDMAE_1,
+}
+impl RIDMAER {
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            RIDMAER::RIDMAE_0 => false,
+            RIDMAER::RIDMAE_1 => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> RIDMAER {
+        match value {
+            false => RIDMAER::RIDMAE_0,
+            true => RIDMAER::RIDMAE_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `RIDMAE_0`"]
+    #[inline]
+    pub fn is_ridmae_0(&self) -> bool {
+        *self == RIDMAER::RIDMAE_0
+    }
+    #[doc = "Checks if the value of the field is `RIDMAE_1`"]
+    #[inline]
+    pub fn is_ridmae_1(&self) -> bool {
+        *self == RIDMAER::RIDMAE_1
     }
 }
 #[doc = "Possible values of the field `RDMAE`"]
@@ -947,9 +994,9 @@ impl<'a> _SBNSW<'a> {
 }
 #[doc = "Values that can be written to the field `RXEDGIE`"]
 pub enum RXEDGIEW {
-    #[doc = "Hardware interrupts from LPUART_STAT[RXEDGIF] disabled."]
+    #[doc = "Hardware interrupts from STAT[RXEDGIF] are disabled."]
     RXEDGIE_0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[RXEDGIF] flag is 1."]
+    #[doc = "Hardware interrupt is requested when STAT[RXEDGIF] flag is 1."]
     RXEDGIE_1,
 }
 impl RXEDGIEW {
@@ -975,12 +1022,12 @@ impl<'a> _RXEDGIEW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Hardware interrupts from LPUART_STAT[RXEDGIF] disabled."]
+    #[doc = "Hardware interrupts from STAT[RXEDGIF] are disabled."]
     #[inline]
     pub fn rxedgie_0(self) -> &'a mut W {
         self.variant(RXEDGIEW::RXEDGIE_0)
     }
-    #[doc = "Hardware interrupt requested when LPUART_STAT[RXEDGIF] flag is 1."]
+    #[doc = "Hardware interrupt is requested when STAT[RXEDGIF] flag is 1."]
     #[inline]
     pub fn rxedgie_1(self) -> &'a mut W {
         self.variant(RXEDGIEW::RXEDGIE_1)
@@ -1005,9 +1052,9 @@ impl<'a> _RXEDGIEW<'a> {
 }
 #[doc = "Values that can be written to the field `LBKDIE`"]
 pub enum LBKDIEW {
-    #[doc = "Hardware interrupts from LPUART_STAT[LBKDIF] disabled (use polling)."]
+    #[doc = "Hardware interrupts from STAT[LBKDIF] flag are disabled (use polling)."]
     LBKDIE_0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[LBKDIF] flag is 1."]
+    #[doc = "Hardware interrupt requested when STAT[LBKDIF] flag is 1."]
     LBKDIE_1,
 }
 impl LBKDIEW {
@@ -1033,12 +1080,12 @@ impl<'a> _LBKDIEW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Hardware interrupts from LPUART_STAT[LBKDIF] disabled (use polling)."]
+    #[doc = "Hardware interrupts from STAT[LBKDIF] flag are disabled (use polling)."]
     #[inline]
     pub fn lbkdie_0(self) -> &'a mut W {
         self.variant(LBKDIEW::LBKDIE_0)
     }
-    #[doc = "Hardware interrupt requested when LPUART_STAT[LBKDIF] flag is 1."]
+    #[doc = "Hardware interrupt requested when STAT[LBKDIF] flag is 1."]
     #[inline]
     pub fn lbkdie_1(self) -> &'a mut W {
         self.variant(LBKDIEW::LBKDIE_1)
@@ -1238,6 +1285,64 @@ impl<'a> _MATCFGW<'a> {
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 18;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
+#[doc = "Values that can be written to the field `RIDMAE`"]
+pub enum RIDMAEW {
+    #[doc = "DMA request disabled."]
+    RIDMAE_0,
+    #[doc = "DMA request enabled."]
+    RIDMAE_1,
+}
+impl RIDMAEW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            RIDMAEW::RIDMAE_0 => false,
+            RIDMAEW::RIDMAE_1 => true,
+        }
+    }
+}
+#[doc = r" Proxy"]
+pub struct _RIDMAEW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _RIDMAEW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: RIDMAEW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "DMA request disabled."]
+    #[inline]
+    pub fn ridmae_0(self) -> &'a mut W {
+        self.variant(RIDMAEW::RIDMAE_0)
+    }
+    #[doc = "DMA request enabled."]
+    #[inline]
+    pub fn ridmae_1(self) -> &'a mut W {
+        self.variant(RIDMAEW::RIDMAE_1)
+    }
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 20;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -1875,6 +1980,15 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
+    #[doc = "Bit 20 - Receiver Idle DMA Enable"]
+    #[inline]
+    pub fn ridmae(&self) -> RIDMAER {
+        RIDMAER::_from({
+            const MASK: bool = true;
+            const OFFSET: u8 = 20;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        })
+    }
     #[doc = "Bit 21 - Receiver Full DMA Enable"]
     #[inline]
     pub fn rdmae(&self) -> RDMAER {
@@ -1976,6 +2090,11 @@ impl W {
     #[inline]
     pub fn matcfg(&mut self) -> _MATCFGW {
         _MATCFGW { w: self }
+    }
+    #[doc = "Bit 20 - Receiver Idle DMA Enable"]
+    #[inline]
+    pub fn ridmae(&mut self) -> _RIDMAEW {
+        _RIDMAEW { w: self }
     }
     #[doc = "Bit 21 - Receiver Full DMA Enable"]
     #[inline]

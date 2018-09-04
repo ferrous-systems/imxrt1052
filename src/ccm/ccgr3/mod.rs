@@ -514,7 +514,7 @@ impl R {
         };
         CG4R { bits }
     }
-    #[doc = "Bits 10:11 - LCDIF pix clock (LCDIF_pix_clk_enable)"]
+    #[doc = "Bits 10:11 - lcdif pix clock (lcdif_pix_clk_enable)"]
     #[inline]
     pub fn cg5(&self) -> CG5R {
         let bits = {
@@ -662,7 +662,7 @@ impl W {
     pub fn cg4(&mut self) -> _CG4W {
         _CG4W { w: self }
     }
-    #[doc = "Bits 10:11 - LCDIF pix clock (LCDIF_pix_clk_enable)"]
+    #[doc = "Bits 10:11 - lcdif pix clock (lcdif_pix_clk_enable)"]
     #[inline]
     pub fn cg5(&mut self) -> _CG5W {
         _CG5W { w: self }

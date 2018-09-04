@@ -60,9 +60,9 @@ pub struct RegisterBlock {
     #[doc = "0x90 - SNVS_LP General Purpose Registers 0 .. 3"]
     pub lpgpr_alias: [LPGPR_ALIAS; 4],
     _reserved2: [u8; 96usize],
-    #[doc = "0x100 - SNVS_LP General Purpose Registers 0 .. 3"]
-    pub lpgpr: [LPGPR; 4],
-    _reserved3: [u8; 2792usize],
+    #[doc = "0x100 - SNVS_LP General Purpose Registers 0 .. 7"]
+    pub lpgpr: [LPGPR; 8],
+    _reserved3: [u8; 2776usize],
     #[doc = "0xbf8 - SNVS_HP Version ID Register 1"]
     pub hpvidr1: HPVIDR1,
     #[doc = "0xbfc - SNVS_HP Version ID Register 2"]
@@ -236,11 +236,11 @@ pub struct LPGPR_ALIAS {
 }
 #[doc = "SNVS_LP General Purpose Registers 0 .. 3"]
 pub mod lpgpr_alias;
-#[doc = "SNVS_LP General Purpose Registers 0 .. 3"]
+#[doc = "SNVS_LP General Purpose Registers 0 .. 7"]
 pub struct LPGPR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "SNVS_LP General Purpose Registers 0 .. 3"]
+#[doc = "SNVS_LP General Purpose Registers 0 .. 7"]
 pub mod lpgpr;
 #[doc = "SNVS_HP Version ID Register 1"]
 pub struct HPVIDR1 {

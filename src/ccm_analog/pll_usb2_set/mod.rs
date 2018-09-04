@@ -44,13 +44,23 @@ impl super::PLL_USB2_SET {
 }
 #[doc = r" Value of the field"]
 pub struct DIV_SELECTR {
-    bits: u8,
+    bits: bool,
 }
 impl DIV_SELECTR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u8 {
+    pub fn bit(&self) -> bool {
         self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
     }
 }
 #[doc = r" Value of the field"]
@@ -204,11 +214,19 @@ pub struct _DIV_SELECTW<'a> {
     w: &'a mut W,
 }
 impl<'a> _DIV_SELECTW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 1;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -360,13 +378,13 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
+    #[doc = "Bit 1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
     #[inline]
     pub fn div_select(&self) -> DIV_SELECTR {
         let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            const MASK: bool = true;
+            const OFFSET: u8 = 1;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         DIV_SELECTR { bits }
     }
@@ -442,7 +460,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
+    #[doc = "Bit 1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
     #[inline]
     pub fn div_select(&mut self) -> _DIV_SELECTW {
         _DIV_SELECTW { w: self }

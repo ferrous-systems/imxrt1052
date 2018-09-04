@@ -92,9 +92,9 @@ impl MENR {
 #[doc = "Possible values of the field `RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTR {
-    #[doc = "Master logic is not reset"]
+    #[doc = "Module is not reset"]
     RST_0,
-    #[doc = "Master logic is reset"]
+    #[doc = "Module is reset"]
     RST_1,
 }
 impl RSTR {
@@ -290,9 +290,9 @@ impl<'a> _MENW<'a> {
 }
 #[doc = "Values that can be written to the field `RST`"]
 pub enum RSTW {
-    #[doc = "Master logic is not reset"]
+    #[doc = "Module is not reset"]
     RST_0,
-    #[doc = "Master logic is reset"]
+    #[doc = "Module is reset"]
     RST_1,
 }
 impl RSTW {
@@ -318,12 +318,12 @@ impl<'a> _RSTW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Master logic is not reset"]
+    #[doc = "Module is not reset"]
     #[inline]
     pub fn rst_0(self) -> &'a mut W {
         self.variant(RSTW::RST_0)
     }
-    #[doc = "Master logic is reset"]
+    #[doc = "Module is reset"]
     #[inline]
     pub fn rst_1(self) -> &'a mut W {
         self.variant(RSTW::RST_1)

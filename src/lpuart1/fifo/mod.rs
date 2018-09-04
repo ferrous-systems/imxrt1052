@@ -137,7 +137,7 @@ impl RXFIFOSIZER {
 #[doc = "Possible values of the field `RXFE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFER {
-    #[doc = "Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)"]
+    #[doc = "Receive FIFO is not enabled. Buffer is depth 1."]
     RXFE_0,
     #[doc = "Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE."]
     RXFE_1,
@@ -276,7 +276,7 @@ impl TXFIFOSIZER {
 #[doc = "Possible values of the field `TXFE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFER {
-    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support)."]
+    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1."]
     TXFE_0,
     #[doc = "Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE."]
     TXFE_1,
@@ -696,7 +696,7 @@ impl TXEMPTR {
 }
 #[doc = "Values that can be written to the field `RXFE`"]
 pub enum RXFEW {
-    #[doc = "Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)"]
+    #[doc = "Receive FIFO is not enabled. Buffer is depth 1."]
     RXFE_0,
     #[doc = "Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE."]
     RXFE_1,
@@ -724,7 +724,7 @@ impl<'a> _RXFEW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)"]
+    #[doc = "Receive FIFO is not enabled. Buffer is depth 1."]
     #[inline]
     pub fn rxfe_0(self) -> &'a mut W {
         self.variant(RXFEW::RXFE_0)
@@ -754,7 +754,7 @@ impl<'a> _RXFEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXFE`"]
 pub enum TXFEW {
-    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support)."]
+    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1."]
     TXFE_0,
     #[doc = "Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE."]
     TXFE_1,
@@ -782,7 +782,7 @@ impl<'a> _TXFEW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support)."]
+    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1."]
     #[inline]
     pub fn txfe_0(self) -> &'a mut W {
         self.variant(TXFEW::TXFE_0)
@@ -1262,7 +1262,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:2 - Receive FIFO. Buffer Depth"]
+    #[doc = "Bits 0:2 - Receive FIFO Buffer Depth"]
     #[inline]
     pub fn rxfifosize(&self) -> RXFIFOSIZER {
         RXFIFOSIZER::_from({
@@ -1280,7 +1280,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 4:6 - Transmit FIFO. Buffer Depth"]
+    #[doc = "Bits 4:6 - Transmit FIFO Buffer Depth"]
     #[inline]
     pub fn txfifosize(&self) -> TXFIFOSIZER {
         TXFIFOSIZER::_from({

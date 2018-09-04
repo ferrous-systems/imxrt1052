@@ -218,7 +218,7 @@ impl R {
         };
         VSYNC_ONLYR { bits }
     }
-    #[doc = "Bit 29 - When this bit is set, the eLCDIF block will internally mux HSYNC with LCD_D14, DOTCLK with LCD_D13 and ENABLE with LCD_D12, otherwise these signals will go out on separate pins"]
+    #[doc = "Bit 29 - When this bit is set, the LCDIF block will internally mux HSYNC with LCD_D14, DOTCLK with LCD_D13 and ENABLE with LCD_D12, otherwise these signals will go out on separate pins"]
     #[inline]
     pub fn mux_sync_signals(&self) -> MUX_SYNC_SIGNALSR {
         let bits = {
@@ -256,7 +256,7 @@ impl W {
     pub fn vsync_only(&mut self) -> _VSYNC_ONLYW {
         _VSYNC_ONLYW { w: self }
     }
-    #[doc = "Bit 29 - When this bit is set, the eLCDIF block will internally mux HSYNC with LCD_D14, DOTCLK with LCD_D13 and ENABLE with LCD_D12, otherwise these signals will go out on separate pins"]
+    #[doc = "Bit 29 - When this bit is set, the LCDIF block will internally mux HSYNC with LCD_D14, DOTCLK with LCD_D13 and ENABLE with LCD_D12, otherwise these signals will go out on separate pins"]
     #[inline]
     pub fn mux_sync_signals(&mut self) -> _MUX_SYNC_SIGNALSW {
         _MUX_SYNC_SIGNALSW { w: self }

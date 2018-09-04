@@ -41,69 +41,69 @@ pub struct RegisterBlock {
     pub ears: EARS,
     _reserved6: [u8; 184usize],
     #[doc = "0x100 - Channel n Priority Register"]
-    pub dchpri3: DCHPRI,
+    pub dchpri3: DCHPRI3,
     #[doc = "0x101 - Channel n Priority Register"]
-    pub dchpri2: DCHPRI,
+    pub dchpri2: DCHPRI2,
     #[doc = "0x102 - Channel n Priority Register"]
-    pub dchpri1: DCHPRI,
+    pub dchpri1: DCHPRI1,
     #[doc = "0x103 - Channel n Priority Register"]
-    pub dchpri0: DCHPRI,
+    pub dchpri0: DCHPRI0,
     #[doc = "0x104 - Channel n Priority Register"]
-    pub dchpri7: DCHPRI,
+    pub dchpri7: DCHPRI7,
     #[doc = "0x105 - Channel n Priority Register"]
-    pub dchpri6: DCHPRI,
+    pub dchpri6: DCHPRI6,
     #[doc = "0x106 - Channel n Priority Register"]
-    pub dchpri5: DCHPRI,
+    pub dchpri5: DCHPRI5,
     #[doc = "0x107 - Channel n Priority Register"]
-    pub dchpri4: DCHPRI,
+    pub dchpri4: DCHPRI4,
     #[doc = "0x108 - Channel n Priority Register"]
-    pub dchpri11: DCHPRI,
+    pub dchpri11: DCHPRI11,
     #[doc = "0x109 - Channel n Priority Register"]
-    pub dchpri10: DCHPRI,
+    pub dchpri10: DCHPRI10,
     #[doc = "0x10a - Channel n Priority Register"]
-    pub dchpri9: DCHPRI,
+    pub dchpri9: DCHPRI9,
     #[doc = "0x10b - Channel n Priority Register"]
-    pub dchpri8: DCHPRI,
+    pub dchpri8: DCHPRI8,
     #[doc = "0x10c - Channel n Priority Register"]
-    pub dchpri15: DCHPRI,
+    pub dchpri15: DCHPRI15,
     #[doc = "0x10d - Channel n Priority Register"]
-    pub dchpri14: DCHPRI,
+    pub dchpri14: DCHPRI14,
     #[doc = "0x10e - Channel n Priority Register"]
-    pub dchpri13: DCHPRI,
+    pub dchpri13: DCHPRI13,
     #[doc = "0x10f - Channel n Priority Register"]
-    pub dchpri12: DCHPRI,
+    pub dchpri12: DCHPRI12,
     #[doc = "0x110 - Channel n Priority Register"]
-    pub dchpri19: DCHPRI,
+    pub dchpri19: DCHPRI19,
     #[doc = "0x111 - Channel n Priority Register"]
-    pub dchpri18: DCHPRI,
+    pub dchpri18: DCHPRI18,
     #[doc = "0x112 - Channel n Priority Register"]
-    pub dchpri17: DCHPRI,
+    pub dchpri17: DCHPRI17,
     #[doc = "0x113 - Channel n Priority Register"]
-    pub dchpri16: DCHPRI,
+    pub dchpri16: DCHPRI16,
     #[doc = "0x114 - Channel n Priority Register"]
-    pub dchpri23: DCHPRI,
+    pub dchpri23: DCHPRI23,
     #[doc = "0x115 - Channel n Priority Register"]
-    pub dchpri22: DCHPRI,
+    pub dchpri22: DCHPRI22,
     #[doc = "0x116 - Channel n Priority Register"]
-    pub dchpri21: DCHPRI,
+    pub dchpri21: DCHPRI21,
     #[doc = "0x117 - Channel n Priority Register"]
-    pub dchpri20: DCHPRI,
+    pub dchpri20: DCHPRI20,
     #[doc = "0x118 - Channel n Priority Register"]
-    pub dchpri27: DCHPRI,
+    pub dchpri27: DCHPRI27,
     #[doc = "0x119 - Channel n Priority Register"]
-    pub dchpri26: DCHPRI,
+    pub dchpri26: DCHPRI26,
     #[doc = "0x11a - Channel n Priority Register"]
-    pub dchpri25: DCHPRI,
+    pub dchpri25: DCHPRI25,
     #[doc = "0x11b - Channel n Priority Register"]
-    pub dchpri24: DCHPRI,
+    pub dchpri24: DCHPRI24,
     #[doc = "0x11c - Channel n Priority Register"]
-    pub dchpri31: DCHPRI,
+    pub dchpri31: DCHPRI31,
     #[doc = "0x11d - Channel n Priority Register"]
-    pub dchpri30: DCHPRI,
+    pub dchpri30: DCHPRI30,
     #[doc = "0x11e - Channel n Priority Register"]
-    pub dchpri29: DCHPRI,
+    pub dchpri29: DCHPRI29,
     #[doc = "0x11f - Channel n Priority Register"]
-    pub dchpri28: DCHPRI,
+    pub dchpri28: DCHPRI28,
     _reserved7: [u8; 3808usize],
     #[doc = "0x1000 - TCD Source Address"]
     pub tcd0_saddr: TCD0_SADDR,
@@ -907,11 +907,197 @@ pub struct EARS {
 #[doc = "Enable Asynchronous Request in Stop Register"]
 pub mod ears;
 #[doc = "Channel n Priority Register"]
-pub struct DCHPRI {
+pub struct DCHPRI3 {
     register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Channel n Priority Register"]
-pub mod dchpri;
+pub mod dchpri3;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI2 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri2;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI1 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri1;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI0 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri0;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI7 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri7;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI6 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri6;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI5 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri5;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI4 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri4;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI11 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri11;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI10 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri10;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI9 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri9;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI8 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri8;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI15 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri15;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI14 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri14;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI13 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri13;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI12 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri12;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI19 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri19;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI18 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri18;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI17 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri17;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI16 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri16;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI23 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri23;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI22 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri22;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI21 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri21;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI20 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri20;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI27 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri27;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI26 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri26;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI25 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri25;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI24 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri24;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI31 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri31;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI30 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri30;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI29 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri29;
+#[doc = "Channel n Priority Register"]
+pub struct DCHPRI28 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Channel n Priority Register"]
+pub mod dchpri28;
 #[doc = "TCD Source Address"]
 pub struct TCD0_SADDR {
     register: ::vcell::VolatileCell<u32>,

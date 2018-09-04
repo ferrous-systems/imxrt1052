@@ -42,74 +42,6 @@ impl super::CSCDR2 {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `LCDIF_CLK_SEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LCDIF_CLK_SELR {
-    #[doc = "derive clock from divided pre-muxed LCDIF clock"]
-    LCDIF_CLK_SEL_0,
-    #[doc = "derive clock from ipp_di0_clk"]
-    LCDIF_CLK_SEL_1,
-    #[doc = "derive clock from ipp_di1_clk"]
-    LCDIF_CLK_SEL_2,
-    #[doc = "derive clock from ldb_di0_clk"]
-    LCDIF_CLK_SEL_3,
-    #[doc = "derive clock from ldb_di1_clk"]
-    LCDIF_CLK_SEL_4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl LCDIF_CLK_SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LCDIF_CLK_SELR::LCDIF_CLK_SEL_0 => 0,
-            LCDIF_CLK_SELR::LCDIF_CLK_SEL_1 => 1,
-            LCDIF_CLK_SELR::LCDIF_CLK_SEL_2 => 2,
-            LCDIF_CLK_SELR::LCDIF_CLK_SEL_3 => 3,
-            LCDIF_CLK_SELR::LCDIF_CLK_SEL_4 => 4,
-            LCDIF_CLK_SELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LCDIF_CLK_SELR {
-        match value {
-            0 => LCDIF_CLK_SELR::LCDIF_CLK_SEL_0,
-            1 => LCDIF_CLK_SELR::LCDIF_CLK_SEL_1,
-            2 => LCDIF_CLK_SELR::LCDIF_CLK_SEL_2,
-            3 => LCDIF_CLK_SELR::LCDIF_CLK_SEL_3,
-            4 => LCDIF_CLK_SELR::LCDIF_CLK_SEL_4,
-            i => LCDIF_CLK_SELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `LCDIF_CLK_SEL_0`"]
-    #[inline]
-    pub fn is_lcdif_clk_sel_0(&self) -> bool {
-        *self == LCDIF_CLK_SELR::LCDIF_CLK_SEL_0
-    }
-    #[doc = "Checks if the value of the field is `LCDIF_CLK_SEL_1`"]
-    #[inline]
-    pub fn is_lcdif_clk_sel_1(&self) -> bool {
-        *self == LCDIF_CLK_SELR::LCDIF_CLK_SEL_1
-    }
-    #[doc = "Checks if the value of the field is `LCDIF_CLK_SEL_2`"]
-    #[inline]
-    pub fn is_lcdif_clk_sel_2(&self) -> bool {
-        *self == LCDIF_CLK_SELR::LCDIF_CLK_SEL_2
-    }
-    #[doc = "Checks if the value of the field is `LCDIF_CLK_SEL_3`"]
-    #[inline]
-    pub fn is_lcdif_clk_sel_3(&self) -> bool {
-        *self == LCDIF_CLK_SELR::LCDIF_CLK_SEL_3
-    }
-    #[doc = "Checks if the value of the field is `LCDIF_CLK_SEL_4`"]
-    #[inline]
-    pub fn is_lcdif_clk_sel_4(&self) -> bool {
-        *self == LCDIF_CLK_SELR::LCDIF_CLK_SEL_4
-    }
-}
 #[doc = "Possible values of the field `LCDIF_PRED`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCDIF_PREDR {
@@ -365,78 +297,6 @@ impl LPI2C_CLK_PODFR {
     #[inline]
     pub fn is_lpi2c_clk_podf_63(&self) -> bool {
         *self == LPI2C_CLK_PODFR::LPI2C_CLK_PODF_63
-    }
-}
-#[doc = "Values that can be written to the field `LCDIF_CLK_SEL`"]
-pub enum LCDIF_CLK_SELW {
-    #[doc = "derive clock from divided pre-muxed LCDIF clock"]
-    LCDIF_CLK_SEL_0,
-    #[doc = "derive clock from ipp_di0_clk"]
-    LCDIF_CLK_SEL_1,
-    #[doc = "derive clock from ipp_di1_clk"]
-    LCDIF_CLK_SEL_2,
-    #[doc = "derive clock from ldb_di0_clk"]
-    LCDIF_CLK_SEL_3,
-    #[doc = "derive clock from ldb_di1_clk"]
-    LCDIF_CLK_SEL_4,
-}
-impl LCDIF_CLK_SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LCDIF_CLK_SELW::LCDIF_CLK_SEL_0 => 0,
-            LCDIF_CLK_SELW::LCDIF_CLK_SEL_1 => 1,
-            LCDIF_CLK_SELW::LCDIF_CLK_SEL_2 => 2,
-            LCDIF_CLK_SELW::LCDIF_CLK_SEL_3 => 3,
-            LCDIF_CLK_SELW::LCDIF_CLK_SEL_4 => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LCDIF_CLK_SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LCDIF_CLK_SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LCDIF_CLK_SELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "derive clock from divided pre-muxed LCDIF clock"]
-    #[inline]
-    pub fn lcdif_clk_sel_0(self) -> &'a mut W {
-        self.variant(LCDIF_CLK_SELW::LCDIF_CLK_SEL_0)
-    }
-    #[doc = "derive clock from ipp_di0_clk"]
-    #[inline]
-    pub fn lcdif_clk_sel_1(self) -> &'a mut W {
-        self.variant(LCDIF_CLK_SELW::LCDIF_CLK_SEL_1)
-    }
-    #[doc = "derive clock from ipp_di1_clk"]
-    #[inline]
-    pub fn lcdif_clk_sel_2(self) -> &'a mut W {
-        self.variant(LCDIF_CLK_SELW::LCDIF_CLK_SEL_2)
-    }
-    #[doc = "derive clock from ldb_di0_clk"]
-    #[inline]
-    pub fn lcdif_clk_sel_3(self) -> &'a mut W {
-        self.variant(LCDIF_CLK_SELW::LCDIF_CLK_SEL_3)
-    }
-    #[doc = "derive clock from ldb_di1_clk"]
-    #[inline]
-    pub fn lcdif_clk_sel_4(self) -> &'a mut W {
-        self.variant(LCDIF_CLK_SELW::LCDIF_CLK_SEL_4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
     }
 }
 #[doc = "Values that can be written to the field `LCDIF_PRED`"]
@@ -729,15 +589,6 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 9:11 - Selector for LCDIF root clock multiplexer"]
-    #[inline]
-    pub fn lcdif_clk_sel(&self) -> LCDIF_CLK_SELR {
-        LCDIF_CLK_SELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
-    }
     #[doc = "Bits 12:14 - Pre-divider for lcdif clock. Divider should be updated when output clock is gated."]
     #[inline]
     pub fn lcdif_pred(&self) -> LCDIF_PREDR {
@@ -779,18 +630,13 @@ impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 170824 }
+        W { bits: 168272 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
-    }
-    #[doc = "Bits 9:11 - Selector for LCDIF root clock multiplexer"]
-    #[inline]
-    pub fn lcdif_clk_sel(&mut self) -> _LCDIF_CLK_SELW {
-        _LCDIF_CLK_SELW { w: self }
     }
     #[doc = "Bits 12:14 - Pre-divider for lcdif clock. Divider should be updated when output clock is gated."]
     #[inline]

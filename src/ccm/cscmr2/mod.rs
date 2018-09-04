@@ -101,8 +101,8 @@ pub enum CAN_CLK_SELR {
     CAN_CLK_SEL_1,
     #[doc = "derive clock from pll3_sw_clk divided clock (80M)"]
     CAN_CLK_SEL_2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Disable FlexCAN clock"]
+    CAN_CLK_SEL_3,
 }
 impl CAN_CLK_SELR {
     #[doc = r" Value of the field as raw bits"]
@@ -112,7 +112,7 @@ impl CAN_CLK_SELR {
             CAN_CLK_SELR::CAN_CLK_SEL_0 => 0,
             CAN_CLK_SELR::CAN_CLK_SEL_1 => 1,
             CAN_CLK_SELR::CAN_CLK_SEL_2 => 2,
-            CAN_CLK_SELR::_Reserved(bits) => bits,
+            CAN_CLK_SELR::CAN_CLK_SEL_3 => 3,
         }
     }
     #[allow(missing_docs)]
@@ -123,7 +123,8 @@ impl CAN_CLK_SELR {
             0 => CAN_CLK_SELR::CAN_CLK_SEL_0,
             1 => CAN_CLK_SELR::CAN_CLK_SEL_1,
             2 => CAN_CLK_SELR::CAN_CLK_SEL_2,
-            i => CAN_CLK_SELR::_Reserved(i),
+            3 => CAN_CLK_SELR::CAN_CLK_SEL_3,
+            _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `CAN_CLK_SEL_0`"]
@@ -140,6 +141,11 @@ impl CAN_CLK_SELR {
     #[inline]
     pub fn is_can_clk_sel_2(&self) -> bool {
         *self == CAN_CLK_SELR::CAN_CLK_SEL_2
+    }
+    #[doc = "Checks if the value of the field is `CAN_CLK_SEL_3`"]
+    #[inline]
+    pub fn is_can_clk_sel_3(&self) -> bool {
+        *self == CAN_CLK_SELR::CAN_CLK_SEL_3
     }
 }
 #[doc = "Possible values of the field `FLEXIO2_CLK_SEL`"]
@@ -262,6 +268,8 @@ pub enum CAN_CLK_SELW {
     CAN_CLK_SEL_1,
     #[doc = "derive clock from pll3_sw_clk divided clock (80M)"]
     CAN_CLK_SEL_2,
+    #[doc = "Disable FlexCAN clock"]
+    CAN_CLK_SEL_3,
 }
 impl CAN_CLK_SELW {
     #[allow(missing_docs)]
@@ -272,6 +280,7 @@ impl CAN_CLK_SELW {
             CAN_CLK_SELW::CAN_CLK_SEL_0 => 0,
             CAN_CLK_SELW::CAN_CLK_SEL_1 => 1,
             CAN_CLK_SELW::CAN_CLK_SEL_2 => 2,
+            CAN_CLK_SELW::CAN_CLK_SEL_3 => 3,
         }
     }
 }
@@ -283,7 +292,9 @@ impl<'a> _CAN_CLK_SELW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: CAN_CLK_SELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+        {
+            self.bits(variant._bits())
+        }
     }
     #[doc = "derive clock from pll3_sw_clk divided clock (60M)"]
     #[inline]
@@ -300,9 +311,14 @@ impl<'a> _CAN_CLK_SELW<'a> {
     pub fn can_clk_sel_2(self) -> &'a mut W {
         self.variant(CAN_CLK_SELW::CAN_CLK_SEL_2)
     }
+    #[doc = "Disable FlexCAN clock"]
+    #[inline]
+    pub fn can_clk_sel_3(self) -> &'a mut W {
+        self.variant(CAN_CLK_SELW::CAN_CLK_SEL_3)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 8;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -382,7 +398,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 2:7 - Divider for can clock podf."]
+    #[doc = "Bits 2:7 - Divider for CAN clock podf."]
     #[inline]
     pub fn can_clk_podf(&self) -> CAN_CLK_PODFR {
         CAN_CLK_PODFR::_from({
@@ -391,7 +407,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 8:9 - Selector for FlexCAN clock multiplexer"]
+    #[doc = "Bits 8:9 - Selector for CAN clock multiplexer"]
     #[inline]
     pub fn can_clk_sel(&self) -> CAN_CLK_SELR {
         CAN_CLK_SELR::_from({
@@ -414,7 +430,7 @@ impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 51981318 }
+        W { bits: 320417542 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
@@ -422,12 +438,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 2:7 - Divider for can clock podf."]
+    #[doc = "Bits 2:7 - Divider for CAN clock podf."]
     #[inline]
     pub fn can_clk_podf(&mut self) -> _CAN_CLK_PODFW {
         _CAN_CLK_PODFW { w: self }
     }
-    #[doc = "Bits 8:9 - Selector for FlexCAN clock multiplexer"]
+    #[doc = "Bits 8:9 - Selector for CAN clock multiplexer"]
     #[inline]
     pub fn can_clk_sel(&mut self) -> _CAN_CLK_SELW {
         _CAN_CLK_SELW { w: self }

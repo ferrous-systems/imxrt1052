@@ -1127,7 +1127,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 8 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 8 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn vsync_edge_irq(&self) -> VSYNC_EDGE_IRQR {
         VSYNC_EDGE_IRQR::_from({
@@ -1136,7 +1136,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 9 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn cur_frame_done_irq(&self) -> CUR_FRAME_DONE_IRQR {
         CUR_FRAME_DONE_IRQR::_from({
@@ -1145,7 +1145,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 10 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn underflow_irq(&self) -> UNDERFLOW_IRQR {
         UNDERFLOW_IRQR::_from({
@@ -1154,7 +1154,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 11 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn overflow_irq(&self) -> OVERFLOW_IRQR {
         OVERFLOW_IRQR::_from({
@@ -1213,7 +1213,7 @@ impl R {
         };
         BYTE_PACKING_FORMATR { bits }
     }
-    #[doc = "Bit 20 - If this bit is set, the eLCDIF block will assert the cur_frame_done interrupt only on alternate fields, otherwise it will issue the interrupt on both odd and even field"]
+    #[doc = "Bit 20 - If this bit is set, the LCDIF block will assert the cur_frame_done interrupt only on alternate fields, otherwise it will issue the interrupt on both odd and even field"]
     #[inline]
     pub fn irq_on_alternate_fields(&self) -> IRQ_ON_ALTERNATE_FIELDSR {
         let bits = {
@@ -1243,7 +1243,7 @@ impl R {
         };
         START_INTERLACE_FROM_SECOND_FIELDR { bits }
     }
-    #[doc = "Bit 23 - Set this bit if it is required that the eLCDIF block fetches odd lines in one field and even lines in the other field"]
+    #[doc = "Bit 23 - Set this bit if it is required that the LCDIF block fetches odd lines in one field and even lines in the other field"]
     #[inline]
     pub fn interlace_fields(&self) -> INTERLACE_FIELDSR {
         let bits = {
@@ -1253,7 +1253,7 @@ impl R {
         };
         INTERLACE_FIELDSR { bits }
     }
-    #[doc = "Bit 24 - Set this bit to enable the eLCDIF block to recover in the next field/frame if there was an underflow in the current field/frame"]
+    #[doc = "Bit 24 - Set this bit to enable the LCDIF block to recover in the next field/frame if there was an underflow in the current field/frame"]
     #[inline]
     pub fn recover_on_underflow(&self) -> RECOVER_ON_UNDERFLOWR {
         let bits = {
@@ -1263,7 +1263,7 @@ impl R {
         };
         RECOVER_ON_UNDERFLOWR { bits }
     }
-    #[doc = "Bit 25 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 25 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn bm_error_irq(&self) -> BM_ERROR_IRQR {
         BM_ERROR_IRQR::_from({
@@ -1272,7 +1272,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 26 - This bit is set to enable bus master error interrupt in the eLCDIF master mode."]
+    #[doc = "Bit 26 - This bit is set to enable bus master error interrupt in the LCDIF master mode."]
     #[inline]
     pub fn bm_error_irq_en(&self) -> BM_ERROR_IRQ_ENR {
         let bits = {
@@ -1315,22 +1315,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 8 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 8 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn vsync_edge_irq(&mut self) -> _VSYNC_EDGE_IRQW {
         _VSYNC_EDGE_IRQW { w: self }
     }
-    #[doc = "Bit 9 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 9 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn cur_frame_done_irq(&mut self) -> _CUR_FRAME_DONE_IRQW {
         _CUR_FRAME_DONE_IRQW { w: self }
     }
-    #[doc = "Bit 10 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 10 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn underflow_irq(&mut self) -> _UNDERFLOW_IRQW {
         _UNDERFLOW_IRQW { w: self }
     }
-    #[doc = "Bit 11 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 11 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn overflow_irq(&mut self) -> _OVERFLOW_IRQW {
         _OVERFLOW_IRQW { w: self }
@@ -1360,7 +1360,7 @@ impl W {
     pub fn byte_packing_format(&mut self) -> _BYTE_PACKING_FORMATW {
         _BYTE_PACKING_FORMATW { w: self }
     }
-    #[doc = "Bit 20 - If this bit is set, the eLCDIF block will assert the cur_frame_done interrupt only on alternate fields, otherwise it will issue the interrupt on both odd and even field"]
+    #[doc = "Bit 20 - If this bit is set, the LCDIF block will assert the cur_frame_done interrupt only on alternate fields, otherwise it will issue the interrupt on both odd and even field"]
     #[inline]
     pub fn irq_on_alternate_fields(&mut self) -> _IRQ_ON_ALTERNATE_FIELDSW {
         _IRQ_ON_ALTERNATE_FIELDSW { w: self }
@@ -1375,22 +1375,22 @@ impl W {
     pub fn start_interlace_from_second_field(&mut self) -> _START_INTERLACE_FROM_SECOND_FIELDW {
         _START_INTERLACE_FROM_SECOND_FIELDW { w: self }
     }
-    #[doc = "Bit 23 - Set this bit if it is required that the eLCDIF block fetches odd lines in one field and even lines in the other field"]
+    #[doc = "Bit 23 - Set this bit if it is required that the LCDIF block fetches odd lines in one field and even lines in the other field"]
     #[inline]
     pub fn interlace_fields(&mut self) -> _INTERLACE_FIELDSW {
         _INTERLACE_FIELDSW { w: self }
     }
-    #[doc = "Bit 24 - Set this bit to enable the eLCDIF block to recover in the next field/frame if there was an underflow in the current field/frame"]
+    #[doc = "Bit 24 - Set this bit to enable the LCDIF block to recover in the next field/frame if there was an underflow in the current field/frame"]
     #[inline]
     pub fn recover_on_underflow(&mut self) -> _RECOVER_ON_UNDERFLOWW {
         _RECOVER_ON_UNDERFLOWW { w: self }
     }
-    #[doc = "Bit 25 - This bit is set to indicate that an interrupt is requested by the eLCDIF block"]
+    #[doc = "Bit 25 - This bit is set to indicate that an interrupt is requested by the LCDIF block"]
     #[inline]
     pub fn bm_error_irq(&mut self) -> _BM_ERROR_IRQW {
         _BM_ERROR_IRQW { w: self }
     }
-    #[doc = "Bit 26 - This bit is set to enable bus master error interrupt in the eLCDIF master mode."]
+    #[doc = "Bit 26 - This bit is set to enable bus master error interrupt in the LCDIF master mode."]
     #[inline]
     pub fn bm_error_irq_en(&mut self) -> _BM_ERROR_IRQ_ENW {
         _BM_ERROR_IRQ_ENW { w: self }

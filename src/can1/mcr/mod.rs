@@ -1961,7 +1961,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 30 - The FRZ bit specifies the FLEXCAN behavior when the HALT bit in the MCR Register is set or when Debug Mode is requested at ARM level"]
+    #[doc = "Bit 30 - The FRZ bit specifies the FLEXCAN behavior when the HALT bit in the MCR Register is set or when Debug Mode is requested at Arm level"]
     #[inline]
     pub fn frz(&self) -> FRZR {
         FRZR::_from({
@@ -2062,7 +2062,7 @@ impl W {
     pub fn rfen(&mut self) -> _RFENW {
         _RFENW { w: self }
     }
-    #[doc = "Bit 30 - The FRZ bit specifies the FLEXCAN behavior when the HALT bit in the MCR Register is set or when Debug Mode is requested at ARM level"]
+    #[doc = "Bit 30 - The FRZ bit specifies the FLEXCAN behavior when the HALT bit in the MCR Register is set or when Debug Mode is requested at Arm level"]
     #[inline]
     pub fn frz(&mut self) -> _FRZW {
         _FRZW { w: self }

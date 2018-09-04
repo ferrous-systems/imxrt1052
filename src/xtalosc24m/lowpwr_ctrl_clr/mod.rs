@@ -89,17 +89,6 @@ impl RC_OSC_ENR {
         *self == RC_OSC_ENR::RC_OSC_EN_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct RC_OSC_PROGR {
-    bits: u8,
-}
-impl RC_OSC_PROGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
 #[doc = "Possible values of the field `OSC_SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSC_SELR {
@@ -465,6 +454,27 @@ impl MIX_PWRGATER {
         self.bit()
     }
 }
+#[doc = r" Value of the field"]
+pub struct GPU_PWRGATER {
+    bits: bool,
+}
+impl GPU_PWRGATER {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
 #[doc = "Values that can be written to the field `RC_OSC_EN`"]
 pub enum RC_OSC_ENW {
     #[doc = "Use XTAL OSC to source the 24MHz clock"]
@@ -518,21 +528,6 @@ impl<'a> _RC_OSC_ENW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RC_OSC_PROGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RC_OSC_PROGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 1;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -904,6 +899,29 @@ impl<'a> _MIX_PWRGATEW<'a> {
         self.w
     }
 }
+#[doc = r" Proxy"]
+pub struct _GPU_PWRGATEW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _GPU_PWRGATEW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 18;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
@@ -918,16 +936,6 @@ impl R {
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
-    }
-    #[doc = "Bits 1:3 - RC osc. tuning values."]
-    #[inline]
-    pub fn rc_osc_prog(&self) -> RC_OSC_PROGR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RC_OSC_PROGR { bits }
     }
     #[doc = "Bit 4 - Select the source for the 24MHz clock."]
     #[inline]
@@ -1045,12 +1053,22 @@ impl R {
         };
         MIX_PWRGATER { bits }
     }
+    #[doc = "Bit 18 - GPU power gate control. Used as software mask. Set to zero to force ungated."]
+    #[inline]
+    pub fn gpu_pwrgate(&self) -> GPU_PWRGATER {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 18;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        GPU_PWRGATER { bits }
+    }
 }
 impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 16393 }
+        W { bits: 16385 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
@@ -1062,11 +1080,6 @@ impl W {
     #[inline]
     pub fn rc_osc_en(&mut self) -> _RC_OSC_ENW {
         _RC_OSC_ENW { w: self }
-    }
-    #[doc = "Bits 1:3 - RC osc. tuning values."]
-    #[inline]
-    pub fn rc_osc_prog(&mut self) -> _RC_OSC_PROGW {
-        _RC_OSC_PROGW { w: self }
     }
     #[doc = "Bit 4 - Select the source for the 24MHz clock."]
     #[inline]
@@ -1122,5 +1135,10 @@ impl W {
     #[inline]
     pub fn mix_pwrgate(&mut self) -> _MIX_PWRGATEW {
         _MIX_PWRGATEW { w: self }
+    }
+    #[doc = "Bit 18 - GPU power gate control. Used as software mask. Set to zero to force ungated."]
+    #[inline]
+    pub fn gpu_pwrgate(&mut self) -> _GPU_PWRGATEW {
+        _GPU_PWRGATEW { w: self }
     }
 }
