@@ -1,6 +1,9 @@
 #![doc = "Peripheral access API for MIMXRT1052 microcontrollers (generated using svd2rust v0.13.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.13.1/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
+#![deny(warnings)]
 #![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(dead_code)]
 #![no_std]
 extern crate bare_metal;
 extern crate cortex_m;
@@ -30,6 +33,9 @@ extern "C" {
     fn DMA14_DMA30();
     fn DMA15_DMA31();
     fn DMA_ERROR();
+    fn CTI0_ERROR();
+    fn CTI1_ERROR();
+    fn CORE();
     fn LPUART1();
     fn LPUART2();
     fn LPUART3();
@@ -51,6 +57,7 @@ extern "C" {
     fn FLEXRAM();
     fn KPP();
     fn TSC_DIG();
+    fn GPR_IRQ();
     fn LCDIF();
     fn CSI();
     fn PXP();
@@ -61,18 +68,26 @@ extern "C" {
     fn CSU();
     fn DCP();
     fn DCP_VMI();
+    fn RESERVED68();
     fn TRNG();
+    fn SJC();
     fn BEE();
     fn SAI1();
     fn SAI2();
     fn SAI3_RX();
     fn SAI3_TX();
     fn SPDIF();
+    fn ANATOP_EVENT0();
+    fn ANATOP_EVENT1();
+    fn ANATOP_TAMP_LOW_HIGH();
+    fn ANATOP_TEMP_PANIC();
     fn USB_PHY1();
     fn USB_PHY2();
     fn ADC1();
     fn ADC2();
     fn DCDC();
+    fn RESERVED86();
+    fn RESERVED87();
     fn GPIO1_INT0();
     fn GPIO1_INT1();
     fn GPIO1_INT2();
@@ -100,6 +115,7 @@ extern "C" {
     fn CCM_2();
     fn GPC();
     fn SRC();
+    fn RESERVED115();
     fn GPT1();
     fn GPT2();
     fn PWM1_0();
@@ -107,6 +123,7 @@ extern "C" {
     fn PWM1_2();
     fn PWM1_3();
     fn PWM1_FAULT();
+    fn RESERVED123();
     fn FLEXSPI();
     fn SEMC();
     fn USDHC1();
@@ -115,6 +132,8 @@ extern "C" {
     fn USB_OTG1();
     fn ENET();
     fn ENET_1588_TIMER();
+    fn XBAR1_IRQ_0_1();
+    fn XBAR1_IRQ_2_3();
     fn ADC_ETC_IRQ0();
     fn ADC_ETC_IRQ1();
     fn ADC_ETC_IRQ2();
@@ -124,6 +143,8 @@ extern "C" {
     fn ACMP2();
     fn ACMP3();
     fn ACMP4();
+    fn RESERVED143();
+    fn RESERVED144();
     fn ENC1();
     fn ENC2();
     fn ENC3();
@@ -147,6 +168,14 @@ extern "C" {
     fn PWM4_2();
     fn PWM4_3();
     fn PWM4_FAULT();
+    fn RESERVED168();
+    fn RESERVED169();
+    fn RESERVED170();
+    fn RESERVED171();
+    fn RESERVED172();
+    fn RESERVED173();
+    fn SJC_ARM_DEBUG();
+    fn NMI_WAKEUP();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -157,7 +186,7 @@ pub union Vector {
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
 #[no_mangle]
-pub static __INTERRUPTS: [Vector; 152] = [
+pub static __INTERRUPTS: [Vector; 160] = [
     Vector {
         _handler: DMA0_DMA16,
     },
@@ -209,9 +238,13 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector {
         _handler: DMA_ERROR,
     },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: CTI0_ERROR,
+    },
+    Vector {
+        _handler: CTI1_ERROR,
+    },
+    Vector { _handler: CORE },
     Vector { _handler: LPUART1 },
     Vector { _handler: LPUART2 },
     Vector { _handler: LPUART3 },
@@ -233,7 +266,7 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector { _handler: FLEXRAM },
     Vector { _handler: KPP },
     Vector { _handler: TSC_DIG },
-    Vector { _reserved: 0 },
+    Vector { _handler: GPR_IRQ },
     Vector { _handler: LCDIF },
     Vector { _handler: CSI },
     Vector { _handler: PXP },
@@ -250,26 +283,40 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector { _handler: CSU },
     Vector { _handler: DCP },
     Vector { _handler: DCP_VMI },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: RESERVED68,
+    },
     Vector { _handler: TRNG },
-    Vector { _reserved: 0 },
+    Vector { _handler: SJC },
     Vector { _handler: BEE },
     Vector { _handler: SAI1 },
     Vector { _handler: SAI2 },
     Vector { _handler: SAI3_RX },
     Vector { _handler: SAI3_TX },
     Vector { _handler: SPDIF },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: ANATOP_EVENT0,
+    },
+    Vector {
+        _handler: ANATOP_EVENT1,
+    },
+    Vector {
+        _handler: ANATOP_TAMP_LOW_HIGH,
+    },
+    Vector {
+        _handler: ANATOP_TEMP_PANIC,
+    },
     Vector { _handler: USB_PHY1 },
     Vector { _handler: USB_PHY2 },
     Vector { _handler: ADC1 },
     Vector { _handler: ADC2 },
     Vector { _handler: DCDC },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: RESERVED86,
+    },
+    Vector {
+        _handler: RESERVED87,
+    },
     Vector {
         _handler: GPIO1_INT0,
     },
@@ -333,7 +380,9 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector { _handler: CCM_2 },
     Vector { _handler: GPC },
     Vector { _handler: SRC },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: RESERVED115,
+    },
     Vector { _handler: GPT1 },
     Vector { _handler: GPT2 },
     Vector { _handler: PWM1_0 },
@@ -343,7 +392,9 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector {
         _handler: PWM1_FAULT,
     },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: RESERVED123,
+    },
     Vector { _handler: FLEXSPI },
     Vector { _handler: SEMC },
     Vector { _handler: USDHC1 },
@@ -354,8 +405,12 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector {
         _handler: ENET_1588_TIMER,
     },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: XBAR1_IRQ_0_1,
+    },
+    Vector {
+        _handler: XBAR1_IRQ_2_3,
+    },
     Vector {
         _handler: ADC_ETC_IRQ0,
     },
@@ -373,8 +428,12 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector { _handler: ACMP2 },
     Vector { _handler: ACMP3 },
     Vector { _handler: ACMP4 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: RESERVED143,
+    },
+    Vector {
+        _handler: RESERVED144,
+    },
     Vector { _handler: ENC1 },
     Vector { _handler: ENC2 },
     Vector { _handler: ENC3 },
@@ -404,6 +463,30 @@ pub static __INTERRUPTS: [Vector; 152] = [
     Vector {
         _handler: PWM4_FAULT,
     },
+    Vector {
+        _handler: RESERVED168,
+    },
+    Vector {
+        _handler: RESERVED169,
+    },
+    Vector {
+        _handler: RESERVED170,
+    },
+    Vector {
+        _handler: RESERVED171,
+    },
+    Vector {
+        _handler: RESERVED172,
+    },
+    Vector {
+        _handler: RESERVED173,
+    },
+    Vector {
+        _handler: SJC_ARM_DEBUG,
+    },
+    Vector {
+        _handler: NMI_WAKEUP,
+    },
 ];
 #[doc = r" Macro to override a device specific interrupt handler"]
 #[doc = r""]
@@ -430,7 +513,7 @@ pub static __INTERRUPTS: [Vector; 152] = [
 #[cfg(feature = "rt")]
 #[macro_export]
 macro_rules! interrupt {
-    ($Name:ident, $handler:path,state: $State:ty = $initial_state:expr) => {
+    ( $ Name : ident , $ handler : path , state : $ State : ty = $ initial_state : expr ) => {
         #[allow(unsafe_code)]
         #[deny(private_no_mangle_fns)]
         #[no_mangle]
@@ -441,7 +524,7 @@ macro_rules! interrupt {
             f(&mut STATE)
         }
     };
-    ($Name:ident, $handler:path) => {
+    ( $ Name : ident , $ handler : path ) => {
         #[allow(unsafe_code)]
         #[deny(private_no_mangle_fns)]
         #[no_mangle]
@@ -488,6 +571,12 @@ pub enum Interrupt {
     DMA15_DMA31,
     #[doc = "16 - DMA_ERROR"]
     DMA_ERROR,
+    #[doc = "17 - CTI0_ERROR"]
+    CTI0_ERROR,
+    #[doc = "18 - CTI1_ERROR"]
+    CTI1_ERROR,
+    #[doc = "19 - CORE"]
+    CORE,
     #[doc = "20 - LPUART1"]
     LPUART1,
     #[doc = "21 - LPUART2"]
@@ -530,6 +619,8 @@ pub enum Interrupt {
     KPP,
     #[doc = "40 - TSC_DIG"]
     TSC_DIG,
+    #[doc = "41 - GPR_IRQ"]
+    GPR_IRQ,
     #[doc = "42 - LCDIF"]
     LCDIF,
     #[doc = "43 - CSI"]
@@ -550,8 +641,12 @@ pub enum Interrupt {
     DCP,
     #[doc = "51 - DCP_VMI"]
     DCP_VMI,
+    #[doc = "52 - Reserved68"]
+    RESERVED68,
     #[doc = "53 - TRNG"]
     TRNG,
+    #[doc = "54 - SJC"]
+    SJC,
     #[doc = "55 - BEE"]
     BEE,
     #[doc = "56 - SAI1"]
@@ -564,6 +659,14 @@ pub enum Interrupt {
     SAI3_TX,
     #[doc = "60 - SPDIF"]
     SPDIF,
+    #[doc = "61 - ANATOP_EVENT0"]
+    ANATOP_EVENT0,
+    #[doc = "62 - ANATOP_EVENT1"]
+    ANATOP_EVENT1,
+    #[doc = "63 - ANATOP_TAMP_LOW_HIGH"]
+    ANATOP_TAMP_LOW_HIGH,
+    #[doc = "64 - ANATOP_TEMP_PANIC"]
+    ANATOP_TEMP_PANIC,
     #[doc = "65 - USB_PHY1"]
     USB_PHY1,
     #[doc = "66 - USB_PHY2"]
@@ -574,6 +677,10 @@ pub enum Interrupt {
     ADC2,
     #[doc = "69 - DCDC"]
     DCDC,
+    #[doc = "70 - Reserved86"]
+    RESERVED86,
+    #[doc = "71 - Reserved87"]
+    RESERVED87,
     #[doc = "72 - GPIO1_INT0"]
     GPIO1_INT0,
     #[doc = "73 - GPIO1_INT1"]
@@ -628,6 +735,8 @@ pub enum Interrupt {
     GPC,
     #[doc = "98 - SRC"]
     SRC,
+    #[doc = "99 - Reserved115"]
+    RESERVED115,
     #[doc = "100 - GPT1"]
     GPT1,
     #[doc = "101 - GPT2"]
@@ -642,6 +751,8 @@ pub enum Interrupt {
     PWM1_3,
     #[doc = "106 - PWM1_FAULT"]
     PWM1_FAULT,
+    #[doc = "107 - Reserved123"]
+    RESERVED123,
     #[doc = "108 - FLEXSPI"]
     FLEXSPI,
     #[doc = "109 - SEMC"]
@@ -658,6 +769,10 @@ pub enum Interrupt {
     ENET,
     #[doc = "115 - ENET_1588_Timer"]
     ENET_1588_TIMER,
+    #[doc = "116 - XBAR1_IRQ_0_1"]
+    XBAR1_IRQ_0_1,
+    #[doc = "117 - XBAR1_IRQ_2_3"]
+    XBAR1_IRQ_2_3,
     #[doc = "118 - ADC_ETC_IRQ0"]
     ADC_ETC_IRQ0,
     #[doc = "119 - ADC_ETC_IRQ1"]
@@ -676,6 +791,10 @@ pub enum Interrupt {
     ACMP3,
     #[doc = "126 - ACMP4"]
     ACMP4,
+    #[doc = "127 - Reserved143"]
+    RESERVED143,
+    #[doc = "128 - Reserved144"]
+    RESERVED144,
     #[doc = "129 - ENC1"]
     ENC1,
     #[doc = "130 - ENC2"]
@@ -722,6 +841,22 @@ pub enum Interrupt {
     PWM4_3,
     #[doc = "151 - PWM4_FAULT"]
     PWM4_FAULT,
+    #[doc = "152 - Reserved168"]
+    RESERVED168,
+    #[doc = "153 - Reserved169"]
+    RESERVED169,
+    #[doc = "154 - Reserved170"]
+    RESERVED170,
+    #[doc = "155 - Reserved171"]
+    RESERVED171,
+    #[doc = "156 - Reserved172"]
+    RESERVED172,
+    #[doc = "157 - Reserved173"]
+    RESERVED173,
+    #[doc = "158 - SJC_ARM_DEBUG"]
+    SJC_ARM_DEBUG,
+    #[doc = "159 - NMI_WAKEUP"]
+    NMI_WAKEUP,
 }
 unsafe impl ::bare_metal::Nr for Interrupt {
     #[inline]
@@ -744,6 +879,9 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::DMA14_DMA30 => 14,
             Interrupt::DMA15_DMA31 => 15,
             Interrupt::DMA_ERROR => 16,
+            Interrupt::CTI0_ERROR => 17,
+            Interrupt::CTI1_ERROR => 18,
+            Interrupt::CORE => 19,
             Interrupt::LPUART1 => 20,
             Interrupt::LPUART2 => 21,
             Interrupt::LPUART3 => 22,
@@ -765,6 +903,7 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::FLEXRAM => 38,
             Interrupt::KPP => 39,
             Interrupt::TSC_DIG => 40,
+            Interrupt::GPR_IRQ => 41,
             Interrupt::LCDIF => 42,
             Interrupt::CSI => 43,
             Interrupt::PXP => 44,
@@ -775,18 +914,26 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::CSU => 49,
             Interrupt::DCP => 50,
             Interrupt::DCP_VMI => 51,
+            Interrupt::RESERVED68 => 52,
             Interrupt::TRNG => 53,
+            Interrupt::SJC => 54,
             Interrupt::BEE => 55,
             Interrupt::SAI1 => 56,
             Interrupt::SAI2 => 57,
             Interrupt::SAI3_RX => 58,
             Interrupt::SAI3_TX => 59,
             Interrupt::SPDIF => 60,
+            Interrupt::ANATOP_EVENT0 => 61,
+            Interrupt::ANATOP_EVENT1 => 62,
+            Interrupt::ANATOP_TAMP_LOW_HIGH => 63,
+            Interrupt::ANATOP_TEMP_PANIC => 64,
             Interrupt::USB_PHY1 => 65,
             Interrupt::USB_PHY2 => 66,
             Interrupt::ADC1 => 67,
             Interrupt::ADC2 => 68,
             Interrupt::DCDC => 69,
+            Interrupt::RESERVED86 => 70,
+            Interrupt::RESERVED87 => 71,
             Interrupt::GPIO1_INT0 => 72,
             Interrupt::GPIO1_INT1 => 73,
             Interrupt::GPIO1_INT2 => 74,
@@ -814,6 +961,7 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::CCM_2 => 96,
             Interrupt::GPC => 97,
             Interrupt::SRC => 98,
+            Interrupt::RESERVED115 => 99,
             Interrupt::GPT1 => 100,
             Interrupt::GPT2 => 101,
             Interrupt::PWM1_0 => 102,
@@ -821,6 +969,7 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::PWM1_2 => 104,
             Interrupt::PWM1_3 => 105,
             Interrupt::PWM1_FAULT => 106,
+            Interrupt::RESERVED123 => 107,
             Interrupt::FLEXSPI => 108,
             Interrupt::SEMC => 109,
             Interrupt::USDHC1 => 110,
@@ -829,6 +978,8 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::USB_OTG1 => 113,
             Interrupt::ENET => 114,
             Interrupt::ENET_1588_TIMER => 115,
+            Interrupt::XBAR1_IRQ_0_1 => 116,
+            Interrupt::XBAR1_IRQ_2_3 => 117,
             Interrupt::ADC_ETC_IRQ0 => 118,
             Interrupt::ADC_ETC_IRQ1 => 119,
             Interrupt::ADC_ETC_IRQ2 => 120,
@@ -838,6 +989,8 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::ACMP2 => 124,
             Interrupt::ACMP3 => 125,
             Interrupt::ACMP4 => 126,
+            Interrupt::RESERVED143 => 127,
+            Interrupt::RESERVED144 => 128,
             Interrupt::ENC1 => 129,
             Interrupt::ENC2 => 130,
             Interrupt::ENC3 => 131,
@@ -861,6 +1014,14 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::PWM4_2 => 149,
             Interrupt::PWM4_3 => 150,
             Interrupt::PWM4_FAULT => 151,
+            Interrupt::RESERVED168 => 152,
+            Interrupt::RESERVED169 => 153,
+            Interrupt::RESERVED170 => 154,
+            Interrupt::RESERVED171 => 155,
+            Interrupt::RESERVED172 => 156,
+            Interrupt::RESERVED173 => 157,
+            Interrupt::SJC_ARM_DEBUG => 158,
+            Interrupt::NMI_WAKEUP => 159,
         }
     }
 }
@@ -2070,7 +2231,7 @@ impl Deref for PXP {
 }
 #[doc = "PXP v2.0 Register Reference Index"]
 pub mod pxp;
-#[doc = "eLCDIF Register Reference Index"]
+#[doc = "LCDIF Register Reference Index"]
 pub struct LCDIF {
     _marker: PhantomData<*const ()>,
 }
@@ -2087,7 +2248,7 @@ impl Deref for LCDIF {
         unsafe { &*LCDIF::ptr() }
     }
 }
-#[doc = "eLCDIF Register Reference Index"]
+#[doc = "LCDIF Register Reference Index"]
 pub mod lcdif;
 #[doc = "CSI"]
 pub struct CSI {
@@ -2754,6 +2915,25 @@ impl Deref for LPI2C4 {
         unsafe { &*LPI2C4::ptr() }
     }
 }
+#[doc = "System Control Block"]
+pub struct SYSTEMCONTROL {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SYSTEMCONTROL {}
+impl SYSTEMCONTROL {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const system_control::RegisterBlock {
+        3758153728 as *const _
+    }
+}
+impl Deref for SYSTEMCONTROL {
+    type Target = system_control::RegisterBlock;
+    fn deref(&self) -> &system_control::RegisterBlock {
+        unsafe { &*SYSTEMCONTROL::ptr() }
+    }
+}
+#[doc = "System Control Block"]
+pub mod system_control;
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
@@ -2968,6 +3148,8 @@ pub struct Peripherals {
     pub LPI2C3: LPI2C3,
     #[doc = "LPI2C4"]
     pub LPI2C4: LPI2C4,
+    #[doc = "SYSTEMCONTROL"]
+    pub SYSTEMCONTROL: SYSTEMCONTROL,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*"]
@@ -3296,6 +3478,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             LPI2C4: LPI2C4 {
+                _marker: PhantomData,
+            },
+            SYSTEMCONTROL: SYSTEMCONTROL {
                 _marker: PhantomData,
             },
         }

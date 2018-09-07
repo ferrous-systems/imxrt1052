@@ -96,10 +96,10 @@ impl POR_PULL_TYPER {
     }
 }
 #[doc = r" Value of the field"]
-pub struct DCDC_LOW_BATR {
+pub struct DCDC_IN_LOW_VOLR {
     bits: bool,
 }
-impl DCDC_LOW_BATR {
+impl DCDC_IN_LOW_VOLR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -276,17 +276,17 @@ impl R {
         };
         POR_PULL_TYPER { bits }
     }
-    #[doc = "Bit 16 - DCDC low battery detect"]
+    #[doc = "Bit 16 - DCDC_IN low voltage detect."]
     #[inline]
-    pub fn dcdc_low_bat(&self) -> DCDC_LOW_BATR {
+    pub fn dcdc_in_low_vol(&self) -> DCDC_IN_LOW_VOLR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 16;
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
-        DCDC_LOW_BATR { bits }
+        DCDC_IN_LOW_VOLR { bits }
     }
-    #[doc = "Bit 17 - DCDC over current alert"]
+    #[doc = "Bit 17 - DCDC output over current alert"]
     #[inline]
     pub fn dcdc_over_cur(&self) -> DCDC_OVER_CURR {
         let bits = {
@@ -296,7 +296,7 @@ impl R {
         };
         DCDC_OVER_CURR { bits }
     }
-    #[doc = "Bit 18 - DCDC over voltage alert"]
+    #[doc = "Bit 18 - DCDC output over voltage alert"]
     #[inline]
     pub fn dcdc_over_vol(&self) -> DCDC_OVER_VOLR {
         let bits = {

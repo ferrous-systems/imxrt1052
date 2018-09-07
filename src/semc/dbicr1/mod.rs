@@ -119,6 +119,28 @@ impl CEITVR {
         self.bits
     }
 }
+#[doc = r" Value of the field"]
+pub struct REL2R {
+    bits: u8,
+}
+impl REL2R {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        self.bits
+    }
+}
+#[doc = r" Value of the field"]
+pub struct REH2R {
+    bits: u8,
+}
+impl REH2R {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        self.bits
+    }
+}
 #[doc = r" Proxy"]
 pub struct _CESW<'a> {
     w: &'a mut W,
@@ -224,6 +246,36 @@ impl<'a> _CEITVW<'a> {
         self.w
     }
 }
+#[doc = r" Proxy"]
+pub struct _REL2W<'a> {
+    w: &'a mut W,
+}
+impl<'a> _REL2W<'a> {
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 3;
+        const OFFSET: u8 = 28;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
+pub struct _REH2W<'a> {
+    w: &'a mut W,
+}
+impl<'a> _REH2W<'a> {
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 3;
+        const OFFSET: u8 = 30;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
@@ -270,7 +322,7 @@ impl R {
         };
         WEHR { bits }
     }
-    #[doc = "Bits 16:19 - RDX Low Time"]
+    #[doc = "Bits 16:19 - RDX Low Time bit [3:0]"]
     #[inline]
     pub fn rel(&self) -> RELR {
         let bits = {
@@ -280,7 +332,7 @@ impl R {
         };
         RELR { bits }
     }
-    #[doc = "Bits 20:23 - RDX High Time"]
+    #[doc = "Bits 20:23 - RDX High Time bit [3:0]"]
     #[inline]
     pub fn reh(&self) -> REHR {
         let bits = {
@@ -299,6 +351,26 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         };
         CEITVR { bits }
+    }
+    #[doc = "Bits 28:29 - RDX Low Time bit [5:4]"]
+    #[inline]
+    pub fn rel2(&self) -> REL2R {
+        let bits = {
+            const MASK: u8 = 3;
+            const OFFSET: u8 = 28;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        };
+        REL2R { bits }
+    }
+    #[doc = "Bits 30:31 - RDX High Time bit [5:4]"]
+    #[inline]
+    pub fn reh2(&self) -> REH2R {
+        let bits = {
+            const MASK: u8 = 3;
+            const OFFSET: u8 = 30;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        };
+        REH2R { bits }
     }
 }
 impl W {
@@ -333,12 +405,12 @@ impl W {
     pub fn weh(&mut self) -> _WEHW {
         _WEHW { w: self }
     }
-    #[doc = "Bits 16:19 - RDX Low Time"]
+    #[doc = "Bits 16:19 - RDX Low Time bit [3:0]"]
     #[inline]
     pub fn rel(&mut self) -> _RELW {
         _RELW { w: self }
     }
-    #[doc = "Bits 20:23 - RDX High Time"]
+    #[doc = "Bits 20:23 - RDX High Time bit [3:0]"]
     #[inline]
     pub fn reh(&mut self) -> _REHW {
         _REHW { w: self }
@@ -347,5 +419,15 @@ impl W {
     #[inline]
     pub fn ceitv(&mut self) -> _CEITVW {
         _CEITVW { w: self }
+    }
+    #[doc = "Bits 28:29 - RDX Low Time bit [5:4]"]
+    #[inline]
+    pub fn rel2(&mut self) -> _REL2W {
+        _REL2W { w: self }
+    }
+    #[doc = "Bits 30:31 - RDX High Time bit [5:4]"]
+    #[inline]
+    pub fn reh2(&mut self) -> _REH2W {
+        _REH2W { w: self }
     }
 }

@@ -44,13 +44,23 @@ impl super::PLL_USB1_CLR {
 }
 #[doc = r" Value of the field"]
 pub struct DIV_SELECTR {
-    bits: u8,
+    bits: bool,
 }
 impl DIV_SELECTR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u8 {
+    pub fn bit(&self) -> bool {
         self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
     }
 }
 #[doc = "Possible values of the field `EN_USB_CLKS`"]
@@ -149,10 +159,8 @@ pub enum BYPASS_CLK_SRCR {
     REF_CLK_24M,
     #[doc = "Select the CLK1_N / CLK1_P as source."]
     CLK1,
-    #[doc = "GPANAIO"]
-    GPANAIO,
-    #[doc = "CHRG_DET_B"]
-    CHRG_DET_B,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl BYPASS_CLK_SRCR {
     #[doc = r" Value of the field as raw bits"]
@@ -161,8 +169,7 @@ impl BYPASS_CLK_SRCR {
         match *self {
             BYPASS_CLK_SRCR::REF_CLK_24M => 0,
             BYPASS_CLK_SRCR::CLK1 => 1,
-            BYPASS_CLK_SRCR::GPANAIO => 2,
-            BYPASS_CLK_SRCR::CHRG_DET_B => 3,
+            BYPASS_CLK_SRCR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
@@ -172,9 +179,7 @@ impl BYPASS_CLK_SRCR {
         match value {
             0 => BYPASS_CLK_SRCR::REF_CLK_24M,
             1 => BYPASS_CLK_SRCR::CLK1,
-            2 => BYPASS_CLK_SRCR::GPANAIO,
-            3 => BYPASS_CLK_SRCR::CHRG_DET_B,
-            _ => unreachable!(),
+            i => BYPASS_CLK_SRCR::_Reserved(i),
         }
     }
     #[doc = "Checks if the value of the field is `REF_CLK_24M`"]
@@ -186,16 +191,6 @@ impl BYPASS_CLK_SRCR {
     #[inline]
     pub fn is_clk1(&self) -> bool {
         *self == BYPASS_CLK_SRCR::CLK1
-    }
-    #[doc = "Checks if the value of the field is `GPANAIO`"]
-    #[inline]
-    pub fn is_gpanaio(&self) -> bool {
-        *self == BYPASS_CLK_SRCR::GPANAIO
-    }
-    #[doc = "Checks if the value of the field is `CHRG_DET_B`"]
-    #[inline]
-    pub fn is_chrg_det_b(&self) -> bool {
-        *self == BYPASS_CLK_SRCR::CHRG_DET_B
     }
 }
 #[doc = r" Value of the field"]
@@ -245,11 +240,19 @@ pub struct _DIV_SELECTW<'a> {
     w: &'a mut W,
 }
 impl<'a> _DIV_SELECTW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 1;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -365,10 +368,6 @@ pub enum BYPASS_CLK_SRCW {
     REF_CLK_24M,
     #[doc = "Select the CLK1_N / CLK1_P as source."]
     CLK1,
-    #[doc = "GPANAIO"]
-    GPANAIO,
-    #[doc = "CHRG_DET_B"]
-    CHRG_DET_B,
 }
 impl BYPASS_CLK_SRCW {
     #[allow(missing_docs)]
@@ -378,8 +377,6 @@ impl BYPASS_CLK_SRCW {
         match *self {
             BYPASS_CLK_SRCW::REF_CLK_24M => 0,
             BYPASS_CLK_SRCW::CLK1 => 1,
-            BYPASS_CLK_SRCW::GPANAIO => 2,
-            BYPASS_CLK_SRCW::CHRG_DET_B => 3,
         }
     }
 }
@@ -391,9 +388,7 @@ impl<'a> _BYPASS_CLK_SRCW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: BYPASS_CLK_SRCW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
+        unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Select the 24MHz oscillator as source."]
     #[inline]
@@ -405,19 +400,9 @@ impl<'a> _BYPASS_CLK_SRCW<'a> {
     pub fn clk1(self) -> &'a mut W {
         self.variant(BYPASS_CLK_SRCW::CLK1)
     }
-    #[doc = "GPANAIO"]
-    #[inline]
-    pub fn gpanaio(self) -> &'a mut W {
-        self.variant(BYPASS_CLK_SRCW::GPANAIO)
-    }
-    #[doc = "CHRG_DET_B"]
-    #[inline]
-    pub fn chrg_det_b(self) -> &'a mut W {
-        self.variant(BYPASS_CLK_SRCW::CHRG_DET_B)
-    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 14;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -454,13 +439,13 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
+    #[doc = "Bit 1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
     #[inline]
     pub fn div_select(&self) -> DIV_SELECTR {
         let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
+            const MASK: bool = true;
+            const OFFSET: u8 = 1;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         DIV_SELECTR { bits }
     }
@@ -535,7 +520,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
+    #[doc = "Bit 1 - This field controls the PLL loop divider. 0 - Fout=Fref*20; 1 - Fout=Fref*22."]
     #[inline]
     pub fn div_select(&mut self) -> _DIV_SELECTW {
         _DIV_SELECTW { w: self }

@@ -1116,7 +1116,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 12 - enable power saving features on L2 memory"]
+    #[doc = "Bit 12 - enable power saving features on memory"]
     #[inline]
     pub fn l2_mem_en_powersaving(&self) -> L2_MEM_EN_POWERSAVINGR {
         L2_MEM_EN_POWERSAVINGR::_from({
@@ -1219,7 +1219,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 12 - enable power saving features on L2 memory"]
+    #[doc = "Bit 12 - enable power saving features on memory"]
     #[inline]
     pub fn l2_mem_en_powersaving(&mut self) -> _L2_MEM_EN_POWERSAVINGW {
         _L2_MEM_EN_POWERSAVINGW { w: self }

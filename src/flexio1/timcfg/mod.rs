@@ -244,9 +244,9 @@ pub enum TIMDISR {
     TIMDIS_0,
     #[doc = "Timer disabled on Timer N-1 disable"]
     TIMDIS_1,
-    #[doc = "Timer disabled on Timer compare"]
+    #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement)"]
     TIMDIS_2,
-    #[doc = "Timer disabled on Timer compare and Trigger Low"]
+    #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement) and Trigger Low"]
     TIMDIS_3,
     #[doc = "Timer disabled on Pin rising or falling edge"]
     TIMDIS_4,
@@ -740,9 +740,9 @@ pub enum TIMDISW {
     TIMDIS_0,
     #[doc = "Timer disabled on Timer N-1 disable"]
     TIMDIS_1,
-    #[doc = "Timer disabled on Timer compare"]
+    #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement)"]
     TIMDIS_2,
-    #[doc = "Timer disabled on Timer compare and Trigger Low"]
+    #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement) and Trigger Low"]
     TIMDIS_3,
     #[doc = "Timer disabled on Pin rising or falling edge"]
     TIMDIS_4,
@@ -787,12 +787,12 @@ impl<'a> _TIMDISW<'a> {
     pub fn timdis_1(self) -> &'a mut W {
         self.variant(TIMDISW::TIMDIS_1)
     }
-    #[doc = "Timer disabled on Timer compare"]
+    #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement)"]
     #[inline]
     pub fn timdis_2(self) -> &'a mut W {
         self.variant(TIMDISW::TIMDIS_2)
     }
-    #[doc = "Timer disabled on Timer compare and Trigger Low"]
+    #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement) and Trigger Low"]
     #[inline]
     pub fn timdis_3(self) -> &'a mut W {
         self.variant(TIMDISW::TIMDIS_3)

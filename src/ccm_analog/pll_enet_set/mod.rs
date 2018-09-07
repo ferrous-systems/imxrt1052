@@ -42,116 +42,15 @@ impl super::PLL_ENET_SET {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `ENET0_DIV_SELECT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENET0_DIV_SELECTR {
-    #[doc = "25MHz"]
-    ENET0_DIV_SELECT_0,
-    #[doc = "50MHz"]
-    ENET0_DIV_SELECT_1,
-    #[doc = "100MHz (not 50% duty cycle)"]
-    ENET0_DIV_SELECT_2,
-    #[doc = "125MHz"]
-    ENET0_DIV_SELECT_3,
+#[doc = r" Value of the field"]
+pub struct DIV_SELECTR {
+    bits: u8,
 }
-impl ENET0_DIV_SELECTR {
+impl DIV_SELECTR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        match *self {
-            ENET0_DIV_SELECTR::ENET0_DIV_SELECT_0 => 0,
-            ENET0_DIV_SELECTR::ENET0_DIV_SELECT_1 => 1,
-            ENET0_DIV_SELECTR::ENET0_DIV_SELECT_2 => 2,
-            ENET0_DIV_SELECTR::ENET0_DIV_SELECT_3 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ENET0_DIV_SELECTR {
-        match value {
-            0 => ENET0_DIV_SELECTR::ENET0_DIV_SELECT_0,
-            1 => ENET0_DIV_SELECTR::ENET0_DIV_SELECT_1,
-            2 => ENET0_DIV_SELECTR::ENET0_DIV_SELECT_2,
-            3 => ENET0_DIV_SELECTR::ENET0_DIV_SELECT_3,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `ENET0_DIV_SELECT_0`"]
-    #[inline]
-    pub fn is_enet0_div_select_0(&self) -> bool {
-        *self == ENET0_DIV_SELECTR::ENET0_DIV_SELECT_0
-    }
-    #[doc = "Checks if the value of the field is `ENET0_DIV_SELECT_1`"]
-    #[inline]
-    pub fn is_enet0_div_select_1(&self) -> bool {
-        *self == ENET0_DIV_SELECTR::ENET0_DIV_SELECT_1
-    }
-    #[doc = "Checks if the value of the field is `ENET0_DIV_SELECT_2`"]
-    #[inline]
-    pub fn is_enet0_div_select_2(&self) -> bool {
-        *self == ENET0_DIV_SELECTR::ENET0_DIV_SELECT_2
-    }
-    #[doc = "Checks if the value of the field is `ENET0_DIV_SELECT_3`"]
-    #[inline]
-    pub fn is_enet0_div_select_3(&self) -> bool {
-        *self == ENET0_DIV_SELECTR::ENET0_DIV_SELECT_3
-    }
-}
-#[doc = "Possible values of the field `ENET1_DIV_SELECT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENET1_DIV_SELECTR {
-    #[doc = "25MHz"]
-    ENET1_DIV_SELECT_0,
-    #[doc = "50MHz"]
-    ENET1_DIV_SELECT_1,
-    #[doc = "100MHz (not 50% duty cycle)"]
-    ENET1_DIV_SELECT_2,
-    #[doc = "125MHz"]
-    ENET1_DIV_SELECT_3,
-}
-impl ENET1_DIV_SELECTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ENET1_DIV_SELECTR::ENET1_DIV_SELECT_0 => 0,
-            ENET1_DIV_SELECTR::ENET1_DIV_SELECT_1 => 1,
-            ENET1_DIV_SELECTR::ENET1_DIV_SELECT_2 => 2,
-            ENET1_DIV_SELECTR::ENET1_DIV_SELECT_3 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ENET1_DIV_SELECTR {
-        match value {
-            0 => ENET1_DIV_SELECTR::ENET1_DIV_SELECT_0,
-            1 => ENET1_DIV_SELECTR::ENET1_DIV_SELECT_1,
-            2 => ENET1_DIV_SELECTR::ENET1_DIV_SELECT_2,
-            3 => ENET1_DIV_SELECTR::ENET1_DIV_SELECT_3,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `ENET1_DIV_SELECT_0`"]
-    #[inline]
-    pub fn is_enet1_div_select_0(&self) -> bool {
-        *self == ENET1_DIV_SELECTR::ENET1_DIV_SELECT_0
-    }
-    #[doc = "Checks if the value of the field is `ENET1_DIV_SELECT_1`"]
-    #[inline]
-    pub fn is_enet1_div_select_1(&self) -> bool {
-        *self == ENET1_DIV_SELECTR::ENET1_DIV_SELECT_1
-    }
-    #[doc = "Checks if the value of the field is `ENET1_DIV_SELECT_2`"]
-    #[inline]
-    pub fn is_enet1_div_select_2(&self) -> bool {
-        *self == ENET1_DIV_SELECTR::ENET1_DIV_SELECT_2
-    }
-    #[doc = "Checks if the value of the field is `ENET1_DIV_SELECT_3`"]
-    #[inline]
-    pub fn is_enet1_div_select_3(&self) -> bool {
-        *self == ENET1_DIV_SELECTR::ENET1_DIV_SELECT_3
+        self.bits
     }
 }
 #[doc = r" Value of the field"]
@@ -176,10 +75,10 @@ impl POWERDOWNR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct ENET1_125M_ENR {
+pub struct ENABLER {
     bits: bool,
 }
-impl ENET1_125M_ENR {
+impl ENABLER {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -280,48 +179,6 @@ impl PFD_OFFSET_ENR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct ENABLE_125MR {
-    bits: bool,
-}
-impl ENABLE_125MR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ENET2_125M_ENR {
-    bits: bool,
-}
-impl ENET2_125M_ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
 pub struct ENET_25M_REF_ENR {
     bits: bool,
 }
@@ -363,133 +220,16 @@ impl LOCKR {
         self.bit()
     }
 }
-#[doc = "Values that can be written to the field `ENET0_DIV_SELECT`"]
-pub enum ENET0_DIV_SELECTW {
-    #[doc = "25MHz"]
-    ENET0_DIV_SELECT_0,
-    #[doc = "50MHz"]
-    ENET0_DIV_SELECT_1,
-    #[doc = "100MHz (not 50% duty cycle)"]
-    ENET0_DIV_SELECT_2,
-    #[doc = "125MHz"]
-    ENET0_DIV_SELECT_3,
-}
-impl ENET0_DIV_SELECTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ENET0_DIV_SELECTW::ENET0_DIV_SELECT_0 => 0,
-            ENET0_DIV_SELECTW::ENET0_DIV_SELECT_1 => 1,
-            ENET0_DIV_SELECTW::ENET0_DIV_SELECT_2 => 2,
-            ENET0_DIV_SELECTW::ENET0_DIV_SELECT_3 => 3,
-        }
-    }
-}
 #[doc = r" Proxy"]
-pub struct _ENET0_DIV_SELECTW<'a> {
+pub struct _DIV_SELECTW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENET0_DIV_SELECTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENET0_DIV_SELECTW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "25MHz"]
-    #[inline]
-    pub fn enet0_div_select_0(self) -> &'a mut W {
-        self.variant(ENET0_DIV_SELECTW::ENET0_DIV_SELECT_0)
-    }
-    #[doc = "50MHz"]
-    #[inline]
-    pub fn enet0_div_select_1(self) -> &'a mut W {
-        self.variant(ENET0_DIV_SELECTW::ENET0_DIV_SELECT_1)
-    }
-    #[doc = "100MHz (not 50% duty cycle)"]
-    #[inline]
-    pub fn enet0_div_select_2(self) -> &'a mut W {
-        self.variant(ENET0_DIV_SELECTW::ENET0_DIV_SELECT_2)
-    }
-    #[doc = "125MHz"]
-    #[inline]
-    pub fn enet0_div_select_3(self) -> &'a mut W {
-        self.variant(ENET0_DIV_SELECTW::ENET0_DIV_SELECT_3)
-    }
+impl<'a> _DIV_SELECTW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENET1_DIV_SELECT`"]
-pub enum ENET1_DIV_SELECTW {
-    #[doc = "25MHz"]
-    ENET1_DIV_SELECT_0,
-    #[doc = "50MHz"]
-    ENET1_DIV_SELECT_1,
-    #[doc = "100MHz (not 50% duty cycle)"]
-    ENET1_DIV_SELECT_2,
-    #[doc = "125MHz"]
-    ENET1_DIV_SELECT_3,
-}
-impl ENET1_DIV_SELECTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ENET1_DIV_SELECTW::ENET1_DIV_SELECT_0 => 0,
-            ENET1_DIV_SELECTW::ENET1_DIV_SELECT_1 => 1,
-            ENET1_DIV_SELECTW::ENET1_DIV_SELECT_2 => 2,
-            ENET1_DIV_SELECTW::ENET1_DIV_SELECT_3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENET1_DIV_SELECTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENET1_DIV_SELECTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENET1_DIV_SELECTW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "25MHz"]
-    #[inline]
-    pub fn enet1_div_select_0(self) -> &'a mut W {
-        self.variant(ENET1_DIV_SELECTW::ENET1_DIV_SELECT_0)
-    }
-    #[doc = "50MHz"]
-    #[inline]
-    pub fn enet1_div_select_1(self) -> &'a mut W {
-        self.variant(ENET1_DIV_SELECTW::ENET1_DIV_SELECT_1)
-    }
-    #[doc = "100MHz (not 50% duty cycle)"]
-    #[inline]
-    pub fn enet1_div_select_2(self) -> &'a mut W {
-        self.variant(ENET1_DIV_SELECTW::ENET1_DIV_SELECT_2)
-    }
-    #[doc = "125MHz"]
-    #[inline]
-    pub fn enet1_div_select_3(self) -> &'a mut W {
-        self.variant(ENET1_DIV_SELECTW::ENET1_DIV_SELECT_3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -519,10 +259,10 @@ impl<'a> _POWERDOWNW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _ENET1_125M_ENW<'a> {
+pub struct _ENABLEW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENET1_125M_ENW<'a> {
+impl<'a> _ENABLEW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -636,52 +376,6 @@ impl<'a> _PFD_OFFSET_ENW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _ENABLE_125MW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENABLE_125MW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENET2_125M_ENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENET2_125M_ENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
 pub struct _ENET_25M_REF_ENW<'a> {
     w: &'a mut W,
 }
@@ -710,23 +404,15 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Controls the frequency of the ethernet0 reference clock."]
+    #[doc = "Bits 0:1 - Controls the frequency of the ethernet reference clock"]
     #[inline]
-    pub fn enet0_div_select(&self) -> ENET0_DIV_SELECTR {
-        ENET0_DIV_SELECTR::_from({
+    pub fn div_select(&self) -> DIV_SELECTR {
+        let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
-    }
-    #[doc = "Bits 2:3 - Controls the frequency of the ethernet1 reference clock."]
-    #[inline]
-    pub fn enet1_div_select(&self) -> ENET1_DIV_SELECTR {
-        ENET1_DIV_SELECTR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+        };
+        DIV_SELECTR { bits }
     }
     #[doc = "Bit 12 - Powers down the PLL."]
     #[inline]
@@ -738,15 +424,15 @@ impl R {
         };
         POWERDOWNR { bits }
     }
-    #[doc = "Bit 13 - Enable the PLL providing the ENET1 125 MHz reference clock."]
+    #[doc = "Bit 13 - Enable the ethernet clock output."]
     #[inline]
-    pub fn enet1_125m_en(&self) -> ENET1_125M_ENR {
+    pub fn enable(&self) -> ENABLER {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 13;
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
-        ENET1_125M_ENR { bits }
+        ENABLER { bits }
     }
     #[doc = "Bits 14:15 - Determines the bypass source."]
     #[inline]
@@ -776,26 +462,6 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         PFD_OFFSET_ENR { bits }
-    }
-    #[doc = "Bit 19 - Enables an offset in the phase frequency detector."]
-    #[inline]
-    pub fn enable_125m(&self) -> ENABLE_125MR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ENABLE_125MR { bits }
-    }
-    #[doc = "Bit 20 - Enable the PLL providing the ENET2 125 MHz reference clock"]
-    #[inline]
-    pub fn enet2_125m_en(&self) -> ENET2_125M_ENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ENET2_125M_ENR { bits }
     }
     #[doc = "Bit 21 - Enable the PLL providing ENET 25 MHz reference clock"]
     #[inline]
@@ -830,25 +496,20 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Controls the frequency of the ethernet0 reference clock."]
+    #[doc = "Bits 0:1 - Controls the frequency of the ethernet reference clock"]
     #[inline]
-    pub fn enet0_div_select(&mut self) -> _ENET0_DIV_SELECTW {
-        _ENET0_DIV_SELECTW { w: self }
-    }
-    #[doc = "Bits 2:3 - Controls the frequency of the ethernet1 reference clock."]
-    #[inline]
-    pub fn enet1_div_select(&mut self) -> _ENET1_DIV_SELECTW {
-        _ENET1_DIV_SELECTW { w: self }
+    pub fn div_select(&mut self) -> _DIV_SELECTW {
+        _DIV_SELECTW { w: self }
     }
     #[doc = "Bit 12 - Powers down the PLL."]
     #[inline]
     pub fn powerdown(&mut self) -> _POWERDOWNW {
         _POWERDOWNW { w: self }
     }
-    #[doc = "Bit 13 - Enable the PLL providing the ENET1 125 MHz reference clock."]
+    #[doc = "Bit 13 - Enable the ethernet clock output."]
     #[inline]
-    pub fn enet1_125m_en(&mut self) -> _ENET1_125M_ENW {
-        _ENET1_125M_ENW { w: self }
+    pub fn enable(&mut self) -> _ENABLEW {
+        _ENABLEW { w: self }
     }
     #[doc = "Bits 14:15 - Determines the bypass source."]
     #[inline]
@@ -864,16 +525,6 @@ impl W {
     #[inline]
     pub fn pfd_offset_en(&mut self) -> _PFD_OFFSET_ENW {
         _PFD_OFFSET_ENW { w: self }
-    }
-    #[doc = "Bit 19 - Enables an offset in the phase frequency detector."]
-    #[inline]
-    pub fn enable_125m(&mut self) -> _ENABLE_125MW {
-        _ENABLE_125MW { w: self }
-    }
-    #[doc = "Bit 20 - Enable the PLL providing the ENET2 125 MHz reference clock"]
-    #[inline]
-    pub fn enet2_125m_en(&mut self) -> _ENET2_125M_ENW {
-        _ENET2_125M_ENW { w: self }
     }
     #[doc = "Bit 21 - Enable the PLL providing ENET 25 MHz reference clock"]
     #[inline]

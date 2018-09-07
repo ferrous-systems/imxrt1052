@@ -45,7 +45,7 @@ impl super::ROMPATCHA {
 #[doc = "Possible values of the field `THUMBX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum THUMBXR {
-    #[doc = "ARM patch"]
+    #[doc = "Arm patch"]
     THUMBX_0,
     #[doc = "THUMB patch (ignore if data fix)"]
     THUMBX_1,
@@ -102,7 +102,7 @@ impl ADDRXR {
 }
 #[doc = "Values that can be written to the field `THUMBX`"]
 pub enum THUMBXW {
-    #[doc = "ARM patch"]
+    #[doc = "Arm patch"]
     THUMBX_0,
     #[doc = "THUMB patch (ignore if data fix)"]
     THUMBX_1,
@@ -130,7 +130,7 @@ impl<'a> _THUMBXW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "ARM patch"]
+    #[doc = "Arm patch"]
     #[inline]
     pub fn thumbx_0(self) -> &'a mut W {
         self.variant(THUMBXW::THUMBX_0)
@@ -179,7 +179,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - THUMB Comparator Select - Indicates that this address will trigger a THUMB opcode patch or an ARM opcode patch"]
+    #[doc = "Bit 0 - THUMB Comparator Select - Indicates that this address will trigger a THUMB opcode patch or an Arm opcode patch"]
     #[inline]
     pub fn thumbx(&self) -> THUMBXR {
         THUMBXR::_from({
@@ -211,7 +211,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - THUMB Comparator Select - Indicates that this address will trigger a THUMB opcode patch or an ARM opcode patch"]
+    #[doc = "Bit 0 - THUMB Comparator Select - Indicates that this address will trigger a THUMB opcode patch or an Arm opcode patch"]
     #[inline]
     pub fn thumbx(&mut self) -> _THUMBXW {
         _THUMBXW { w: self }

@@ -45,10 +45,14 @@ impl super::CCOSR {
 #[doc = "Possible values of the field `CLKO1_SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKO1_SELR {
+    #[doc = "USB1 PLL clock (divided by 2)"]
+    CLKO1_SEL_0,
+    #[doc = "SYS PLL clock (divided by 2)"]
+    CLKO1_SEL_1,
+    #[doc = "VIDEO PLL clock (divided by 2)"]
+    CLKO1_SEL_3,
     #[doc = "semc_clk_root"]
     CLKO1_SEL_5,
-    #[doc = "enc_clk_root"]
-    CLKO1_SEL_6,
     #[doc = "lcdif_pix_clk_root"]
     CLKO1_SEL_10,
     #[doc = "ahb_clk_root"]
@@ -69,8 +73,10 @@ impl CLKO1_SELR {
     #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
+            CLKO1_SELR::CLKO1_SEL_0 => 0,
+            CLKO1_SELR::CLKO1_SEL_1 => 1,
+            CLKO1_SELR::CLKO1_SEL_3 => 3,
             CLKO1_SELR::CLKO1_SEL_5 => 5,
-            CLKO1_SELR::CLKO1_SEL_6 => 6,
             CLKO1_SELR::CLKO1_SEL_10 => 10,
             CLKO1_SELR::CLKO1_SEL_11 => 11,
             CLKO1_SELR::CLKO1_SEL_12 => 12,
@@ -85,8 +91,10 @@ impl CLKO1_SELR {
     #[inline]
     pub fn _from(value: u8) -> CLKO1_SELR {
         match value {
+            0 => CLKO1_SELR::CLKO1_SEL_0,
+            1 => CLKO1_SELR::CLKO1_SEL_1,
+            3 => CLKO1_SELR::CLKO1_SEL_3,
             5 => CLKO1_SELR::CLKO1_SEL_5,
-            6 => CLKO1_SELR::CLKO1_SEL_6,
             10 => CLKO1_SELR::CLKO1_SEL_10,
             11 => CLKO1_SELR::CLKO1_SEL_11,
             12 => CLKO1_SELR::CLKO1_SEL_12,
@@ -96,15 +104,25 @@ impl CLKO1_SELR {
             i => CLKO1_SELR::_Reserved(i),
         }
     }
+    #[doc = "Checks if the value of the field is `CLKO1_SEL_0`"]
+    #[inline]
+    pub fn is_clko1_sel_0(&self) -> bool {
+        *self == CLKO1_SELR::CLKO1_SEL_0
+    }
+    #[doc = "Checks if the value of the field is `CLKO1_SEL_1`"]
+    #[inline]
+    pub fn is_clko1_sel_1(&self) -> bool {
+        *self == CLKO1_SELR::CLKO1_SEL_1
+    }
+    #[doc = "Checks if the value of the field is `CLKO1_SEL_3`"]
+    #[inline]
+    pub fn is_clko1_sel_3(&self) -> bool {
+        *self == CLKO1_SELR::CLKO1_SEL_3
+    }
     #[doc = "Checks if the value of the field is `CLKO1_SEL_5`"]
     #[inline]
     pub fn is_clko1_sel_5(&self) -> bool {
         *self == CLKO1_SELR::CLKO1_SEL_5
-    }
-    #[doc = "Checks if the value of the field is `CLKO1_SEL_6`"]
-    #[inline]
-    pub fn is_clko1_sel_6(&self) -> bool {
-        *self == CLKO1_SELR::CLKO1_SEL_6
     }
     #[doc = "Checks if the value of the field is `CLKO1_SEL_10`"]
     #[inline]
@@ -332,7 +350,7 @@ pub enum CLKO2_SELR {
     CLKO2_SEL_5,
     #[doc = "lpi2c_clk_root"]
     CLKO2_SEL_6,
-    #[doc = "csi_core"]
+    #[doc = "csi_clk_root"]
     CLKO2_SEL_11,
     #[doc = "osc_clk"]
     CLKO2_SEL_14,
@@ -604,10 +622,14 @@ impl CLKO2_ENR {
 }
 #[doc = "Values that can be written to the field `CLKO1_SEL`"]
 pub enum CLKO1_SELW {
+    #[doc = "USB1 PLL clock (divided by 2)"]
+    CLKO1_SEL_0,
+    #[doc = "SYS PLL clock (divided by 2)"]
+    CLKO1_SEL_1,
+    #[doc = "VIDEO PLL clock (divided by 2)"]
+    CLKO1_SEL_3,
     #[doc = "semc_clk_root"]
     CLKO1_SEL_5,
-    #[doc = "enc_clk_root"]
-    CLKO1_SEL_6,
     #[doc = "lcdif_pix_clk_root"]
     CLKO1_SEL_10,
     #[doc = "ahb_clk_root"]
@@ -627,8 +649,10 @@ impl CLKO1_SELW {
     #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
+            CLKO1_SELW::CLKO1_SEL_0 => 0,
+            CLKO1_SELW::CLKO1_SEL_1 => 1,
+            CLKO1_SELW::CLKO1_SEL_3 => 3,
             CLKO1_SELW::CLKO1_SEL_5 => 5,
-            CLKO1_SELW::CLKO1_SEL_6 => 6,
             CLKO1_SELW::CLKO1_SEL_10 => 10,
             CLKO1_SELW::CLKO1_SEL_11 => 11,
             CLKO1_SELW::CLKO1_SEL_12 => 12,
@@ -648,15 +672,25 @@ impl<'a> _CLKO1_SELW<'a> {
     pub fn variant(self, variant: CLKO1_SELW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
+    #[doc = "USB1 PLL clock (divided by 2)"]
+    #[inline]
+    pub fn clko1_sel_0(self) -> &'a mut W {
+        self.variant(CLKO1_SELW::CLKO1_SEL_0)
+    }
+    #[doc = "SYS PLL clock (divided by 2)"]
+    #[inline]
+    pub fn clko1_sel_1(self) -> &'a mut W {
+        self.variant(CLKO1_SELW::CLKO1_SEL_1)
+    }
+    #[doc = "VIDEO PLL clock (divided by 2)"]
+    #[inline]
+    pub fn clko1_sel_3(self) -> &'a mut W {
+        self.variant(CLKO1_SELW::CLKO1_SEL_3)
+    }
     #[doc = "semc_clk_root"]
     #[inline]
     pub fn clko1_sel_5(self) -> &'a mut W {
         self.variant(CLKO1_SELW::CLKO1_SEL_5)
-    }
-    #[doc = "enc_clk_root"]
-    #[inline]
-    pub fn clko1_sel_6(self) -> &'a mut W {
-        self.variant(CLKO1_SELW::CLKO1_SEL_6)
     }
     #[doc = "lcdif_pix_clk_root"]
     #[inline]
@@ -920,7 +954,7 @@ pub enum CLKO2_SELW {
     CLKO2_SEL_5,
     #[doc = "lpi2c_clk_root"]
     CLKO2_SEL_6,
-    #[doc = "csi_core"]
+    #[doc = "csi_clk_root"]
     CLKO2_SEL_11,
     #[doc = "osc_clk"]
     CLKO2_SEL_14,
@@ -988,7 +1022,7 @@ impl<'a> _CLKO2_SELW<'a> {
     pub fn clko2_sel_6(self) -> &'a mut W {
         self.variant(CLKO2_SELW::CLKO2_SEL_6)
     }
-    #[doc = "csi_core"]
+    #[doc = "csi_clk_root"]
     #[inline]
     pub fn clko2_sel_11(self) -> &'a mut W {
         self.variant(CLKO2_SELW::CLKO2_SEL_11)

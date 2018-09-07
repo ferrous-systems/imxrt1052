@@ -606,212 +606,212 @@ impl ACMP4_SAMPLE_SYNC_ENR {
         *self == ACMP4_SAMPLE_SYNC_ENR::ACMP4_SAMPLE_SYNC_EN_1
     }
 }
-#[doc = "Possible values of the field `CM7_MX6RT_CFGITCMSZ`"]
+#[doc = "Possible values of the field `CM7_CFGITCMSZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CM7_MX6RT_CFGITCMSZR {
+pub enum CM7_CFGITCMSZR {
     #[doc = "0 KB (No ITCM)"]
-    CM7_MX6RT_CFGITCMSZ_0,
+    CM7_CFGITCMSZ_0,
     #[doc = "4 KB"]
-    CM7_MX6RT_CFGITCMSZ_3,
+    CM7_CFGITCMSZ_3,
     #[doc = "8 KB"]
-    CM7_MX6RT_CFGITCMSZ_4,
+    CM7_CFGITCMSZ_4,
     #[doc = "16 KB"]
-    CM7_MX6RT_CFGITCMSZ_5,
+    CM7_CFGITCMSZ_5,
     #[doc = "32 KB"]
-    CM7_MX6RT_CFGITCMSZ_6,
+    CM7_CFGITCMSZ_6,
     #[doc = "64 KB"]
-    CM7_MX6RT_CFGITCMSZ_7,
+    CM7_CFGITCMSZ_7,
     #[doc = "128 KB"]
-    CM7_MX6RT_CFGITCMSZ_8,
+    CM7_CFGITCMSZ_8,
     #[doc = "256 KB"]
-    CM7_MX6RT_CFGITCMSZ_9,
+    CM7_CFGITCMSZ_9,
     #[doc = "512 KB"]
-    CM7_MX6RT_CFGITCMSZ_10,
+    CM7_CFGITCMSZ_10,
     #[doc = r" Reserved"]
     _Reserved(u8),
 }
-impl CM7_MX6RT_CFGITCMSZR {
+impl CM7_CFGITCMSZR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_0 => 0,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_3 => 3,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_4 => 4,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_5 => 5,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_6 => 6,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_7 => 7,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_8 => 8,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_9 => 9,
-            CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_10 => 10,
-            CM7_MX6RT_CFGITCMSZR::_Reserved(bits) => bits,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_0 => 0,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_3 => 3,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_4 => 4,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_5 => 5,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_6 => 6,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_7 => 7,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_8 => 8,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_9 => 9,
+            CM7_CFGITCMSZR::CM7_CFGITCMSZ_10 => 10,
+            CM7_CFGITCMSZR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: u8) -> CM7_MX6RT_CFGITCMSZR {
+    pub fn _from(value: u8) -> CM7_CFGITCMSZR {
         match value {
-            0 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_0,
-            3 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_3,
-            4 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_4,
-            5 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_5,
-            6 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_6,
-            7 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_7,
-            8 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_8,
-            9 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_9,
-            10 => CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_10,
-            i => CM7_MX6RT_CFGITCMSZR::_Reserved(i),
+            0 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_0,
+            3 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_3,
+            4 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_4,
+            5 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_5,
+            6 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_6,
+            7 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_7,
+            8 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_8,
+            9 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_9,
+            10 => CM7_CFGITCMSZR::CM7_CFGITCMSZ_10,
+            i => CM7_CFGITCMSZR::_Reserved(i),
         }
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_0`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_0`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_0(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_0
+    pub fn is_cm7_cfgitcmsz_0(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_0
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_3`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_3`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_3(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_3
+    pub fn is_cm7_cfgitcmsz_3(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_3
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_4`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_4`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_4(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_4
+    pub fn is_cm7_cfgitcmsz_4(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_4
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_5`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_5`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_5(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_5
+    pub fn is_cm7_cfgitcmsz_5(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_5
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_6`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_6`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_6(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_6
+    pub fn is_cm7_cfgitcmsz_6(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_6
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_7`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_7`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_7(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_7
+    pub fn is_cm7_cfgitcmsz_7(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_7
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_8`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_8`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_8(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_8
+    pub fn is_cm7_cfgitcmsz_8(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_8
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_9`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_9`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_9(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_9
+    pub fn is_cm7_cfgitcmsz_9(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_9
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGITCMSZ_10`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGITCMSZ_10`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgitcmsz_10(&self) -> bool {
-        *self == CM7_MX6RT_CFGITCMSZR::CM7_MX6RT_CFGITCMSZ_10
+    pub fn is_cm7_cfgitcmsz_10(&self) -> bool {
+        *self == CM7_CFGITCMSZR::CM7_CFGITCMSZ_10
     }
 }
-#[doc = "Possible values of the field `CM7_MX6RT_CFGDTCMSZ`"]
+#[doc = "Possible values of the field `CM7_CFGDTCMSZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CM7_MX6RT_CFGDTCMSZR {
+pub enum CM7_CFGDTCMSZR {
     #[doc = "0 KB (No DTCM)"]
-    CM7_MX6RT_CFGDTCMSZ_0,
+    CM7_CFGDTCMSZ_0,
     #[doc = "4 KB"]
-    CM7_MX6RT_CFGDTCMSZ_3,
+    CM7_CFGDTCMSZ_3,
     #[doc = "8 KB"]
-    CM7_MX6RT_CFGDTCMSZ_4,
+    CM7_CFGDTCMSZ_4,
     #[doc = "16 KB"]
-    CM7_MX6RT_CFGDTCMSZ_5,
+    CM7_CFGDTCMSZ_5,
     #[doc = "32 KB"]
-    CM7_MX6RT_CFGDTCMSZ_6,
+    CM7_CFGDTCMSZ_6,
     #[doc = "64 KB"]
-    CM7_MX6RT_CFGDTCMSZ_7,
+    CM7_CFGDTCMSZ_7,
     #[doc = "128 KB"]
-    CM7_MX6RT_CFGDTCMSZ_8,
+    CM7_CFGDTCMSZ_8,
     #[doc = "256 KB"]
-    CM7_MX6RT_CFGDTCMSZ_9,
+    CM7_CFGDTCMSZ_9,
     #[doc = "512 KB"]
-    CM7_MX6RT_CFGDTCMSZ_10,
+    CM7_CFGDTCMSZ_10,
     #[doc = r" Reserved"]
     _Reserved(u8),
 }
-impl CM7_MX6RT_CFGDTCMSZR {
+impl CM7_CFGDTCMSZR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_0 => 0,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_3 => 3,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_4 => 4,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_5 => 5,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_6 => 6,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_7 => 7,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_8 => 8,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_9 => 9,
-            CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_10 => 10,
-            CM7_MX6RT_CFGDTCMSZR::_Reserved(bits) => bits,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_0 => 0,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_3 => 3,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_4 => 4,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_5 => 5,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_6 => 6,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_7 => 7,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_8 => 8,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_9 => 9,
+            CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_10 => 10,
+            CM7_CFGDTCMSZR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: u8) -> CM7_MX6RT_CFGDTCMSZR {
+    pub fn _from(value: u8) -> CM7_CFGDTCMSZR {
         match value {
-            0 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_0,
-            3 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_3,
-            4 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_4,
-            5 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_5,
-            6 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_6,
-            7 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_7,
-            8 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_8,
-            9 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_9,
-            10 => CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_10,
-            i => CM7_MX6RT_CFGDTCMSZR::_Reserved(i),
+            0 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_0,
+            3 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_3,
+            4 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_4,
+            5 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_5,
+            6 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_6,
+            7 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_7,
+            8 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_8,
+            9 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_9,
+            10 => CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_10,
+            i => CM7_CFGDTCMSZR::_Reserved(i),
         }
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_0`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_0`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_0(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_0
+    pub fn is_cm7_cfgdtcmsz_0(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_0
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_3`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_3`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_3(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_3
+    pub fn is_cm7_cfgdtcmsz_3(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_3
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_4`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_4`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_4(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_4
+    pub fn is_cm7_cfgdtcmsz_4(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_4
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_5`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_5`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_5(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_5
+    pub fn is_cm7_cfgdtcmsz_5(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_5
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_6`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_6`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_6(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_6
+    pub fn is_cm7_cfgdtcmsz_6(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_6
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_7`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_7`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_7(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_7
+    pub fn is_cm7_cfgdtcmsz_7(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_7
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_8`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_8`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_8(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_8
+    pub fn is_cm7_cfgdtcmsz_8(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_8
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_9`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_9`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_9(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_9
+    pub fn is_cm7_cfgdtcmsz_9(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_9
     }
-    #[doc = "Checks if the value of the field is `CM7_MX6RT_CFGDTCMSZ_10`"]
+    #[doc = "Checks if the value of the field is `CM7_CFGDTCMSZ_10`"]
     #[inline]
-    pub fn is_cm7_mx6rt_cfgdtcmsz_10(&self) -> bool {
-        *self == CM7_MX6RT_CFGDTCMSZR::CM7_MX6RT_CFGDTCMSZ_10
+    pub fn is_cm7_cfgdtcmsz_10(&self) -> bool {
+        *self == CM7_CFGDTCMSZR::CM7_CFGDTCMSZ_10
     }
 }
 #[doc = "Values that can be written to the field `ACMP1_CMP_IGEN_TRIM_DN`"]
@@ -1510,99 +1510,99 @@ impl<'a> _ACMP4_SAMPLE_SYNC_ENW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CM7_MX6RT_CFGITCMSZ`"]
-pub enum CM7_MX6RT_CFGITCMSZW {
+#[doc = "Values that can be written to the field `CM7_CFGITCMSZ`"]
+pub enum CM7_CFGITCMSZW {
     #[doc = "0 KB (No ITCM)"]
-    CM7_MX6RT_CFGITCMSZ_0,
+    CM7_CFGITCMSZ_0,
     #[doc = "4 KB"]
-    CM7_MX6RT_CFGITCMSZ_3,
+    CM7_CFGITCMSZ_3,
     #[doc = "8 KB"]
-    CM7_MX6RT_CFGITCMSZ_4,
+    CM7_CFGITCMSZ_4,
     #[doc = "16 KB"]
-    CM7_MX6RT_CFGITCMSZ_5,
+    CM7_CFGITCMSZ_5,
     #[doc = "32 KB"]
-    CM7_MX6RT_CFGITCMSZ_6,
+    CM7_CFGITCMSZ_6,
     #[doc = "64 KB"]
-    CM7_MX6RT_CFGITCMSZ_7,
+    CM7_CFGITCMSZ_7,
     #[doc = "128 KB"]
-    CM7_MX6RT_CFGITCMSZ_8,
+    CM7_CFGITCMSZ_8,
     #[doc = "256 KB"]
-    CM7_MX6RT_CFGITCMSZ_9,
+    CM7_CFGITCMSZ_9,
     #[doc = "512 KB"]
-    CM7_MX6RT_CFGITCMSZ_10,
+    CM7_CFGITCMSZ_10,
 }
-impl CM7_MX6RT_CFGITCMSZW {
+impl CM7_CFGITCMSZW {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_0 => 0,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_3 => 3,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_4 => 4,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_5 => 5,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_6 => 6,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_7 => 7,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_8 => 8,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_9 => 9,
-            CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_10 => 10,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_0 => 0,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_3 => 3,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_4 => 4,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_5 => 5,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_6 => 6,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_7 => 7,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_8 => 8,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_9 => 9,
+            CM7_CFGITCMSZW::CM7_CFGITCMSZ_10 => 10,
         }
     }
 }
 #[doc = r" Proxy"]
-pub struct _CM7_MX6RT_CFGITCMSZW<'a> {
+pub struct _CM7_CFGITCMSZW<'a> {
     w: &'a mut W,
 }
-impl<'a> _CM7_MX6RT_CFGITCMSZW<'a> {
+impl<'a> _CM7_CFGITCMSZW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
-    pub fn variant(self, variant: CM7_MX6RT_CFGITCMSZW) -> &'a mut W {
+    pub fn variant(self, variant: CM7_CFGITCMSZW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "0 KB (No ITCM)"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_0(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_0)
+    pub fn cm7_cfgitcmsz_0(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_0)
     }
     #[doc = "4 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_3(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_3)
+    pub fn cm7_cfgitcmsz_3(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_3)
     }
     #[doc = "8 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_4(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_4)
+    pub fn cm7_cfgitcmsz_4(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_4)
     }
     #[doc = "16 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_5(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_5)
+    pub fn cm7_cfgitcmsz_5(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_5)
     }
     #[doc = "32 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_6(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_6)
+    pub fn cm7_cfgitcmsz_6(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_6)
     }
     #[doc = "64 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_7(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_7)
+    pub fn cm7_cfgitcmsz_7(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_7)
     }
     #[doc = "128 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_8(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_8)
+    pub fn cm7_cfgitcmsz_8(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_8)
     }
     #[doc = "256 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_9(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_9)
+    pub fn cm7_cfgitcmsz_9(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_9)
     }
     #[doc = "512 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz_10(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGITCMSZW::CM7_MX6RT_CFGITCMSZ_10)
+    pub fn cm7_cfgitcmsz_10(self) -> &'a mut W {
+        self.variant(CM7_CFGITCMSZW::CM7_CFGITCMSZ_10)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
@@ -1614,99 +1614,99 @@ impl<'a> _CM7_MX6RT_CFGITCMSZW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CM7_MX6RT_CFGDTCMSZ`"]
-pub enum CM7_MX6RT_CFGDTCMSZW {
+#[doc = "Values that can be written to the field `CM7_CFGDTCMSZ`"]
+pub enum CM7_CFGDTCMSZW {
     #[doc = "0 KB (No DTCM)"]
-    CM7_MX6RT_CFGDTCMSZ_0,
+    CM7_CFGDTCMSZ_0,
     #[doc = "4 KB"]
-    CM7_MX6RT_CFGDTCMSZ_3,
+    CM7_CFGDTCMSZ_3,
     #[doc = "8 KB"]
-    CM7_MX6RT_CFGDTCMSZ_4,
+    CM7_CFGDTCMSZ_4,
     #[doc = "16 KB"]
-    CM7_MX6RT_CFGDTCMSZ_5,
+    CM7_CFGDTCMSZ_5,
     #[doc = "32 KB"]
-    CM7_MX6RT_CFGDTCMSZ_6,
+    CM7_CFGDTCMSZ_6,
     #[doc = "64 KB"]
-    CM7_MX6RT_CFGDTCMSZ_7,
+    CM7_CFGDTCMSZ_7,
     #[doc = "128 KB"]
-    CM7_MX6RT_CFGDTCMSZ_8,
+    CM7_CFGDTCMSZ_8,
     #[doc = "256 KB"]
-    CM7_MX6RT_CFGDTCMSZ_9,
+    CM7_CFGDTCMSZ_9,
     #[doc = "512 KB"]
-    CM7_MX6RT_CFGDTCMSZ_10,
+    CM7_CFGDTCMSZ_10,
 }
-impl CM7_MX6RT_CFGDTCMSZW {
+impl CM7_CFGDTCMSZW {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_0 => 0,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_3 => 3,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_4 => 4,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_5 => 5,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_6 => 6,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_7 => 7,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_8 => 8,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_9 => 9,
-            CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_10 => 10,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_0 => 0,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_3 => 3,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_4 => 4,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_5 => 5,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_6 => 6,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_7 => 7,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_8 => 8,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_9 => 9,
+            CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_10 => 10,
         }
     }
 }
 #[doc = r" Proxy"]
-pub struct _CM7_MX6RT_CFGDTCMSZW<'a> {
+pub struct _CM7_CFGDTCMSZW<'a> {
     w: &'a mut W,
 }
-impl<'a> _CM7_MX6RT_CFGDTCMSZW<'a> {
+impl<'a> _CM7_CFGDTCMSZW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
-    pub fn variant(self, variant: CM7_MX6RT_CFGDTCMSZW) -> &'a mut W {
+    pub fn variant(self, variant: CM7_CFGDTCMSZW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "0 KB (No DTCM)"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_0(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_0)
+    pub fn cm7_cfgdtcmsz_0(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_0)
     }
     #[doc = "4 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_3(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_3)
+    pub fn cm7_cfgdtcmsz_3(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_3)
     }
     #[doc = "8 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_4(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_4)
+    pub fn cm7_cfgdtcmsz_4(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_4)
     }
     #[doc = "16 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_5(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_5)
+    pub fn cm7_cfgdtcmsz_5(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_5)
     }
     #[doc = "32 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_6(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_6)
+    pub fn cm7_cfgdtcmsz_6(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_6)
     }
     #[doc = "64 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_7(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_7)
+    pub fn cm7_cfgdtcmsz_7(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_7)
     }
     #[doc = "128 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_8(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_8)
+    pub fn cm7_cfgdtcmsz_8(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_8)
     }
     #[doc = "256 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_9(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_9)
+    pub fn cm7_cfgdtcmsz_9(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_9)
     }
     #[doc = "512 KB"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz_10(self) -> &'a mut W {
-        self.variant(CM7_MX6RT_CFGDTCMSZW::CM7_MX6RT_CFGDTCMSZ_10)
+    pub fn cm7_cfgdtcmsz_10(self) -> &'a mut W {
+        self.variant(CM7_CFGDTCMSZW::CM7_CFGDTCMSZ_10)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
@@ -1834,8 +1834,8 @@ impl R {
     }
     #[doc = "Bits 16:19 - ITCM total size configuration"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz(&self) -> CM7_MX6RT_CFGITCMSZR {
-        CM7_MX6RT_CFGITCMSZR::_from({
+    pub fn cm7_cfgitcmsz(&self) -> CM7_CFGITCMSZR {
+        CM7_CFGITCMSZR::_from({
             const MASK: u8 = 15;
             const OFFSET: u8 = 16;
             ((self.bits >> OFFSET) & MASK as u32) as u8
@@ -1843,8 +1843,8 @@ impl R {
     }
     #[doc = "Bits 20:23 - DTCM total size configuration"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz(&self) -> CM7_MX6RT_CFGDTCMSZR {
-        CM7_MX6RT_CFGDTCMSZR::_from({
+    pub fn cm7_cfgdtcmsz(&self) -> CM7_CFGDTCMSZR {
+        CM7_CFGDTCMSZR::_from({
             const MASK: u8 = 15;
             const OFFSET: u8 = 20;
             ((self.bits >> OFFSET) & MASK as u32) as u8
@@ -1925,12 +1925,12 @@ impl W {
     }
     #[doc = "Bits 16:19 - ITCM total size configuration"]
     #[inline]
-    pub fn cm7_mx6rt_cfgitcmsz(&mut self) -> _CM7_MX6RT_CFGITCMSZW {
-        _CM7_MX6RT_CFGITCMSZW { w: self }
+    pub fn cm7_cfgitcmsz(&mut self) -> _CM7_CFGITCMSZW {
+        _CM7_CFGITCMSZW { w: self }
     }
     #[doc = "Bits 20:23 - DTCM total size configuration"]
     #[inline]
-    pub fn cm7_mx6rt_cfgdtcmsz(&mut self) -> _CM7_MX6RT_CFGDTCMSZW {
-        _CM7_MX6RT_CFGDTCMSZW { w: self }
+    pub fn cm7_cfgdtcmsz(&mut self) -> _CM7_CFGDTCMSZW {
+        _CM7_CFGDTCMSZW { w: self }
     }
 }

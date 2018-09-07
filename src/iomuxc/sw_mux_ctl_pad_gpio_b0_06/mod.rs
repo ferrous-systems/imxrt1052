@@ -51,6 +51,8 @@ pub enum MUX_MODER {
     ALT1,
     #[doc = "Select mux mode: ALT2 mux port: FLEXPWM2_PWMA00 of instance: flexpwm2"]
     ALT2,
+    #[doc = "Select mux mode: ALT3 mux port: ARM_CM7_TRACE02 of instance: cm7_mx6rt"]
+    ALT3,
     #[doc = "Select mux mode: ALT4 mux port: FLEXIO2_FLEXIO06 of instance: flexio2"]
     ALT4,
     #[doc = "Select mux mode: ALT5 mux port: GPIO2_IO06 of instance: gpio2"]
@@ -68,6 +70,7 @@ impl MUX_MODER {
             MUX_MODER::ALT0 => 0,
             MUX_MODER::ALT1 => 1,
             MUX_MODER::ALT2 => 2,
+            MUX_MODER::ALT3 => 3,
             MUX_MODER::ALT4 => 4,
             MUX_MODER::ALT5 => 5,
             MUX_MODER::ALT6 => 6,
@@ -82,6 +85,7 @@ impl MUX_MODER {
             0 => MUX_MODER::ALT0,
             1 => MUX_MODER::ALT1,
             2 => MUX_MODER::ALT2,
+            3 => MUX_MODER::ALT3,
             4 => MUX_MODER::ALT4,
             5 => MUX_MODER::ALT5,
             6 => MUX_MODER::ALT6,
@@ -102,6 +106,11 @@ impl MUX_MODER {
     #[inline]
     pub fn is_alt2(&self) -> bool {
         *self == MUX_MODER::ALT2
+    }
+    #[doc = "Checks if the value of the field is `ALT3`"]
+    #[inline]
+    pub fn is_alt3(&self) -> bool {
+        *self == MUX_MODER::ALT3
     }
     #[doc = "Checks if the value of the field is `ALT4`"]
     #[inline]
@@ -174,6 +183,8 @@ pub enum MUX_MODEW {
     ALT1,
     #[doc = "Select mux mode: ALT2 mux port: FLEXPWM2_PWMA00 of instance: flexpwm2"]
     ALT2,
+    #[doc = "Select mux mode: ALT3 mux port: ARM_CM7_TRACE02 of instance: cm7_mx6rt"]
+    ALT3,
     #[doc = "Select mux mode: ALT4 mux port: FLEXIO2_FLEXIO06 of instance: flexio2"]
     ALT4,
     #[doc = "Select mux mode: ALT5 mux port: GPIO2_IO06 of instance: gpio2"]
@@ -190,6 +201,7 @@ impl MUX_MODEW {
             MUX_MODEW::ALT0 => 0,
             MUX_MODEW::ALT1 => 1,
             MUX_MODEW::ALT2 => 2,
+            MUX_MODEW::ALT3 => 3,
             MUX_MODEW::ALT4 => 4,
             MUX_MODEW::ALT5 => 5,
             MUX_MODEW::ALT6 => 6,
@@ -220,6 +232,11 @@ impl<'a> _MUX_MODEW<'a> {
     #[inline]
     pub fn alt2(self) -> &'a mut W {
         self.variant(MUX_MODEW::ALT2)
+    }
+    #[doc = "Select mux mode: ALT3 mux port: ARM_CM7_TRACE02 of instance: cm7_mx6rt"]
+    #[inline]
+    pub fn alt3(self) -> &'a mut W {
+        self.variant(MUX_MODEW::ALT3)
     }
     #[doc = "Select mux mode: ALT4 mux port: FLEXIO2_FLEXIO06 of instance: flexio2"]
     #[inline]

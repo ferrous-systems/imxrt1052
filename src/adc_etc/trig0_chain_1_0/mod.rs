@@ -302,7 +302,7 @@ impl R {
         };
         CSEL0R { bits }
     }
-    #[doc = "Bits 4:11 - CHAIN0 HWTS ADC hardware trigger selection"]
+    #[doc = "Bits 4:11 - CHAIN0 HWTS ADC hardware trigger selection. For more information, see the ADC chapter."]
     #[inline]
     pub fn hwts0(&self) -> HWTS0R {
         let bits = {
@@ -342,7 +342,7 @@ impl R {
         };
         CSEL1R { bits }
     }
-    #[doc = "Bits 20:27 - CHAIN1 HWTS ADC hardware trigger selection"]
+    #[doc = "Bits 20:27 - CHAIN1 HWTS ADC hardware trigger selection. For more information, see the ADC chapter."]
     #[inline]
     pub fn hwts1(&self) -> HWTS1R {
         let bits = {
@@ -390,7 +390,7 @@ impl W {
     pub fn csel0(&mut self) -> _CSEL0W {
         _CSEL0W { w: self }
     }
-    #[doc = "Bits 4:11 - CHAIN0 HWTS ADC hardware trigger selection"]
+    #[doc = "Bits 4:11 - CHAIN0 HWTS ADC hardware trigger selection. For more information, see the ADC chapter."]
     #[inline]
     pub fn hwts0(&mut self) -> _HWTS0W {
         _HWTS0W { w: self }
@@ -410,7 +410,7 @@ impl W {
     pub fn csel1(&mut self) -> _CSEL1W {
         _CSEL1W { w: self }
     }
-    #[doc = "Bits 20:27 - CHAIN1 HWTS ADC hardware trigger selection"]
+    #[doc = "Bits 20:27 - CHAIN1 HWTS ADC hardware trigger selection. For more information, see the ADC chapter."]
     #[inline]
     pub fn hwts1(&mut self) -> _HWTS1W {
         _HWTS1W { w: self }

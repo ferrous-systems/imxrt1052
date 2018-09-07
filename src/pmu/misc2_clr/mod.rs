@@ -167,6 +167,110 @@ impl PLL3_DISABLER {
         self.bit()
     }
 }
+#[doc = "Possible values of the field `REG1_BO_OFFSET`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REG1_BO_OFFSETR {
+    #[doc = "Brownout offset = 0.100V"]
+    REG1_BO_OFFSET_4,
+    #[doc = "Brownout offset = 0.175V"]
+    REG1_BO_OFFSET_7,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
+}
+impl REG1_BO_OFFSETR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        match *self {
+            REG1_BO_OFFSETR::REG1_BO_OFFSET_4 => 4,
+            REG1_BO_OFFSETR::REG1_BO_OFFSET_7 => 7,
+            REG1_BO_OFFSETR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> REG1_BO_OFFSETR {
+        match value {
+            4 => REG1_BO_OFFSETR::REG1_BO_OFFSET_4,
+            7 => REG1_BO_OFFSETR::REG1_BO_OFFSET_7,
+            i => REG1_BO_OFFSETR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `REG1_BO_OFFSET_4`"]
+    #[inline]
+    pub fn is_reg1_bo_offset_4(&self) -> bool {
+        *self == REG1_BO_OFFSETR::REG1_BO_OFFSET_4
+    }
+    #[doc = "Checks if the value of the field is `REG1_BO_OFFSET_7`"]
+    #[inline]
+    pub fn is_reg1_bo_offset_7(&self) -> bool {
+        *self == REG1_BO_OFFSETR::REG1_BO_OFFSET_7
+    }
+}
+#[doc = "Possible values of the field `REG1_BO_STATUS`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REG1_BO_STATUSR {
+    #[doc = "Brownout, supply is below target minus brownout offset."]
+    REG1_BO_STATUS_1,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
+}
+impl REG1_BO_STATUSR {
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            REG1_BO_STATUSR::REG1_BO_STATUS_1 => true,
+            REG1_BO_STATUSR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> REG1_BO_STATUSR {
+        match value {
+            true => REG1_BO_STATUSR::REG1_BO_STATUS_1,
+            i => REG1_BO_STATUSR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `REG1_BO_STATUS_1`"]
+    #[inline]
+    pub fn is_reg1_bo_status_1(&self) -> bool {
+        *self == REG1_BO_STATUSR::REG1_BO_STATUS_1
+    }
+}
+#[doc = r" Value of the field"]
+pub struct REG1_ENABLE_BOR {
+    bits: bool,
+}
+impl REG1_ENABLE_BOR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
 #[doc = "Possible values of the field `AUDIO_DIV_LSB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUDIO_DIV_LSBR {
@@ -421,6 +525,62 @@ impl REG0_STEP_TIMER {
         *self == REG0_STEP_TIMER::_512_CLOCKS
     }
 }
+#[doc = "Possible values of the field `REG1_STEP_TIME`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REG1_STEP_TIMER {
+    #[doc = "64"]
+    _64_CLOCKS,
+    #[doc = "128"]
+    _128_CLOCKS,
+    #[doc = "256"]
+    _256_CLOCKS,
+    #[doc = "512"]
+    _512_CLOCKS,
+}
+impl REG1_STEP_TIMER {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        match *self {
+            REG1_STEP_TIMER::_64_CLOCKS => 0,
+            REG1_STEP_TIMER::_128_CLOCKS => 1,
+            REG1_STEP_TIMER::_256_CLOCKS => 2,
+            REG1_STEP_TIMER::_512_CLOCKS => 3,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> REG1_STEP_TIMER {
+        match value {
+            0 => REG1_STEP_TIMER::_64_CLOCKS,
+            1 => REG1_STEP_TIMER::_128_CLOCKS,
+            2 => REG1_STEP_TIMER::_256_CLOCKS,
+            3 => REG1_STEP_TIMER::_512_CLOCKS,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_64_CLOCKS`"]
+    #[inline]
+    pub fn is_64_clocks(&self) -> bool {
+        *self == REG1_STEP_TIMER::_64_CLOCKS
+    }
+    #[doc = "Checks if the value of the field is `_128_CLOCKS`"]
+    #[inline]
+    pub fn is_128_clocks(&self) -> bool {
+        *self == REG1_STEP_TIMER::_128_CLOCKS
+    }
+    #[doc = "Checks if the value of the field is `_256_CLOCKS`"]
+    #[inline]
+    pub fn is_256_clocks(&self) -> bool {
+        *self == REG1_STEP_TIMER::_256_CLOCKS
+    }
+    #[doc = "Checks if the value of the field is `_512_CLOCKS`"]
+    #[inline]
+    pub fn is_512_clocks(&self) -> bool {
+        *self == REG1_STEP_TIMER::_512_CLOCKS
+    }
+}
 #[doc = "Possible values of the field `REG2_STEP_TIME`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REG2_STEP_TIMER {
@@ -574,6 +734,29 @@ impl<'a> _PLL3_DISABLEW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
+pub struct _REG1_ENABLE_BOW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _REG1_ENABLE_BOW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 13;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -784,6 +967,72 @@ impl<'a> _REG0_STEP_TIMEW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `REG1_STEP_TIME`"]
+pub enum REG1_STEP_TIMEW {
+    #[doc = "64"]
+    _64_CLOCKS,
+    #[doc = "128"]
+    _128_CLOCKS,
+    #[doc = "256"]
+    _256_CLOCKS,
+    #[doc = "512"]
+    _512_CLOCKS,
+}
+impl REG1_STEP_TIMEW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            REG1_STEP_TIMEW::_64_CLOCKS => 0,
+            REG1_STEP_TIMEW::_128_CLOCKS => 1,
+            REG1_STEP_TIMEW::_256_CLOCKS => 2,
+            REG1_STEP_TIMEW::_512_CLOCKS => 3,
+        }
+    }
+}
+#[doc = r" Proxy"]
+pub struct _REG1_STEP_TIMEW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _REG1_STEP_TIMEW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: REG1_STEP_TIMEW) -> &'a mut W {
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "64"]
+    #[inline]
+    pub fn _64_clocks(self) -> &'a mut W {
+        self.variant(REG1_STEP_TIMEW::_64_CLOCKS)
+    }
+    #[doc = "128"]
+    #[inline]
+    pub fn _128_clocks(self) -> &'a mut W {
+        self.variant(REG1_STEP_TIMEW::_128_CLOCKS)
+    }
+    #[doc = "256"]
+    #[inline]
+    pub fn _256_clocks(self) -> &'a mut W {
+        self.variant(REG1_STEP_TIMEW::_256_CLOCKS)
+    }
+    #[doc = "512"]
+    #[inline]
+    pub fn _512_clocks(self) -> &'a mut W {
+        self.variant(REG1_STEP_TIMEW::_512_CLOCKS)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 3;
+        const OFFSET: u8 = 26;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 #[doc = "Values that can be written to the field `REG2_STEP_TIME`"]
 pub enum REG2_STEP_TIMEW {
     #[doc = "64"]
@@ -960,6 +1209,34 @@ impl R {
         };
         PLL3_DISABLER { bits }
     }
+    #[doc = "Bits 8:10 - This field defines the brown out voltage offset for the xPU power domain"]
+    #[inline]
+    pub fn reg1_bo_offset(&self) -> REG1_BO_OFFSETR {
+        REG1_BO_OFFSETR::_from({
+            const MASK: u8 = 7;
+            const OFFSET: u8 = 8;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        })
+    }
+    #[doc = "Bit 11 - Reg1 brownout status bit."]
+    #[inline]
+    pub fn reg1_bo_status(&self) -> REG1_BO_STATUSR {
+        REG1_BO_STATUSR::_from({
+            const MASK: bool = true;
+            const OFFSET: u8 = 11;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        })
+    }
+    #[doc = "Bit 13 - Enables the brownout detection."]
+    #[inline]
+    pub fn reg1_enable_bo(&self) -> REG1_ENABLE_BOR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 13;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        REG1_ENABLE_BOR { bits }
+    }
     #[doc = "Bit 15 - LSB of Post-divider for Audio PLL"]
     #[inline]
     pub fn audio_div_lsb(&self) -> AUDIO_DIV_LSBR {
@@ -1026,6 +1303,15 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
+    #[doc = "Bits 26:27 - Number of clock periods (24MHz clock)."]
+    #[inline]
+    pub fn reg1_step_time(&self) -> REG1_STEP_TIMER {
+        REG1_STEP_TIMER::_from({
+            const MASK: u8 = 3;
+            const OFFSET: u8 = 26;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        })
+    }
     #[doc = "Bits 28:29 - Number of clock periods (24MHz clock)."]
     #[inline]
     pub fn reg2_step_time(&self) -> REG2_STEP_TIMER {
@@ -1067,6 +1353,11 @@ impl W {
     pub fn pll3_disable(&mut self) -> _PLL3_DISABLEW {
         _PLL3_DISABLEW { w: self }
     }
+    #[doc = "Bit 13 - Enables the brownout detection."]
+    #[inline]
+    pub fn reg1_enable_bo(&mut self) -> _REG1_ENABLE_BOW {
+        _REG1_ENABLE_BOW { w: self }
+    }
     #[doc = "Bit 15 - LSB of Post-divider for Audio PLL"]
     #[inline]
     pub fn audio_div_lsb(&mut self) -> _AUDIO_DIV_LSBW {
@@ -1086,6 +1377,11 @@ impl W {
     #[inline]
     pub fn reg0_step_time(&mut self) -> _REG0_STEP_TIMEW {
         _REG0_STEP_TIMEW { w: self }
+    }
+    #[doc = "Bits 26:27 - Number of clock periods (24MHz clock)."]
+    #[inline]
+    pub fn reg1_step_time(&mut self) -> _REG1_STEP_TIMEW {
+        _REG1_STEP_TIMEW { w: self }
     }
     #[doc = "Bits 28:29 - Number of clock periods (24MHz clock)."]
     #[inline]

@@ -59,8 +59,8 @@ pub enum MUX_MODER {
     ALT5,
     #[doc = "Select mux mode: ALT6 mux port: ENET_1588_EVENT1_OUT of instance: enet"]
     ALT6,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Select mux mode: ALT7 mux port: NMI_GLUE_NMI of instance: nmi_glue"]
+    ALT7,
 }
 impl MUX_MODER {
     #[doc = r" Value of the field as raw bits"]
@@ -74,7 +74,7 @@ impl MUX_MODER {
             MUX_MODER::ALT4 => 4,
             MUX_MODER::ALT5 => 5,
             MUX_MODER::ALT6 => 6,
-            MUX_MODER::_Reserved(bits) => bits,
+            MUX_MODER::ALT7 => 7,
         }
     }
     #[allow(missing_docs)]
@@ -89,7 +89,8 @@ impl MUX_MODER {
             4 => MUX_MODER::ALT4,
             5 => MUX_MODER::ALT5,
             6 => MUX_MODER::ALT6,
-            i => MUX_MODER::_Reserved(i),
+            7 => MUX_MODER::ALT7,
+            _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ALT0`"]
@@ -126,6 +127,11 @@ impl MUX_MODER {
     #[inline]
     pub fn is_alt6(&self) -> bool {
         *self == MUX_MODER::ALT6
+    }
+    #[doc = "Checks if the value of the field is `ALT7`"]
+    #[inline]
+    pub fn is_alt7(&self) -> bool {
+        *self == MUX_MODER::ALT7
     }
 }
 #[doc = "Possible values of the field `SION`"]
@@ -191,6 +197,8 @@ pub enum MUX_MODEW {
     ALT5,
     #[doc = "Select mux mode: ALT6 mux port: ENET_1588_EVENT1_OUT of instance: enet"]
     ALT6,
+    #[doc = "Select mux mode: ALT7 mux port: NMI_GLUE_NMI of instance: nmi_glue"]
+    ALT7,
 }
 impl MUX_MODEW {
     #[allow(missing_docs)]
@@ -205,6 +213,7 @@ impl MUX_MODEW {
             MUX_MODEW::ALT4 => 4,
             MUX_MODEW::ALT5 => 5,
             MUX_MODEW::ALT6 => 6,
+            MUX_MODEW::ALT7 => 7,
         }
     }
 }
@@ -216,7 +225,9 @@ impl<'a> _MUX_MODEW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: MUX_MODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+        {
+            self.bits(variant._bits())
+        }
     }
     #[doc = "Select mux mode: ALT0 mux port: LPI2C4_SCL of instance: lpi2c4"]
     #[inline]
@@ -253,9 +264,14 @@ impl<'a> _MUX_MODEW<'a> {
     pub fn alt6(self) -> &'a mut W {
         self.variant(MUX_MODEW::ALT6)
     }
+    #[doc = "Select mux mode: ALT7 mux port: NMI_GLUE_NMI of instance: nmi_glue"]
+    #[inline]
+    pub fn alt7(self) -> &'a mut W {
+        self.variant(MUX_MODEW::ALT7)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);

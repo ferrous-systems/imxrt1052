@@ -631,53 +631,6 @@ impl XTAL_24M_PWDR {
         self.bit()
     }
 }
-#[doc = "Possible values of the field `VID_PLL_PREDIV`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VID_PLL_PREDIVR {
-    #[doc = "Divide by 1"]
-    VID_PLL_PREDIV_0,
-    #[doc = "Divide by 2"]
-    VID_PLL_PREDIV_1,
-}
-impl VID_PLL_PREDIVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VID_PLL_PREDIVR::VID_PLL_PREDIV_0 => false,
-            VID_PLL_PREDIVR::VID_PLL_PREDIV_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VID_PLL_PREDIVR {
-        match value {
-            false => VID_PLL_PREDIVR::VID_PLL_PREDIV_0,
-            true => VID_PLL_PREDIVR::VID_PLL_PREDIV_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VID_PLL_PREDIV_0`"]
-    #[inline]
-    pub fn is_vid_pll_prediv_0(&self) -> bool {
-        *self == VID_PLL_PREDIVR::VID_PLL_PREDIV_0
-    }
-    #[doc = "Checks if the value of the field is `VID_PLL_PREDIV_1`"]
-    #[inline]
-    pub fn is_vid_pll_prediv_1(&self) -> bool {
-        *self == VID_PLL_PREDIVR::VID_PLL_PREDIV_1
-    }
-}
 #[doc = r" Proxy"]
 pub struct _REFTOP_PWDW<'a> {
     w: &'a mut W,
@@ -1330,64 +1283,6 @@ impl<'a> _XTAL_24M_PWDW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `VID_PLL_PREDIV`"]
-pub enum VID_PLL_PREDIVW {
-    #[doc = "Divide by 1"]
-    VID_PLL_PREDIV_0,
-    #[doc = "Divide by 2"]
-    VID_PLL_PREDIV_1,
-}
-impl VID_PLL_PREDIVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            VID_PLL_PREDIVW::VID_PLL_PREDIV_0 => false,
-            VID_PLL_PREDIVW::VID_PLL_PREDIV_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VID_PLL_PREDIVW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VID_PLL_PREDIVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: VID_PLL_PREDIVW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Divide by 1"]
-    #[inline]
-    pub fn vid_pll_prediv_0(self) -> &'a mut W {
-        self.variant(VID_PLL_PREDIVW::VID_PLL_PREDIV_0)
-    }
-    #[doc = "Divide by 2"]
-    #[inline]
-    pub fn vid_pll_prediv_1(self) -> &'a mut W {
-        self.variant(VID_PLL_PREDIVW::VID_PLL_PREDIV_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
@@ -1516,15 +1411,6 @@ impl R {
         };
         XTAL_24M_PWDR { bits }
     }
-    #[doc = "Bit 31 - Predivider for the source clock of the PLL's."]
-    #[inline]
-    pub fn vid_pll_prediv(&self) -> VID_PLL_PREDIVR {
-        VID_PLL_PREDIVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
-    }
 }
 impl W {
     #[doc = r" Reset value of the register"]
@@ -1597,10 +1483,5 @@ impl W {
     #[inline]
     pub fn xtal_24m_pwd(&mut self) -> _XTAL_24M_PWDW {
         _XTAL_24M_PWDW { w: self }
-    }
-    #[doc = "Bit 31 - Predivider for the source clock of the PLL's."]
-    #[inline]
-    pub fn vid_pll_prediv(&mut self) -> _VID_PLL_PREDIVW {
-        _VID_PLL_PREDIVW { w: self }
     }
 }

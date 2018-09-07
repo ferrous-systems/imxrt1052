@@ -42,53 +42,6 @@ impl super::SCR {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `lockup_rst`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKUP_RSTR {
-    #[doc = "disabled"]
-    LOCKUP_RST_0,
-    #[doc = "enabled"]
-    LOCKUP_RST_1,
-}
-impl LOCKUP_RSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOCKUP_RSTR::LOCKUP_RST_0 => false,
-            LOCKUP_RSTR::LOCKUP_RST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOCKUP_RSTR {
-        match value {
-            false => LOCKUP_RSTR::LOCKUP_RST_0,
-            true => LOCKUP_RSTR::LOCKUP_RST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `LOCKUP_RST_0`"]
-    #[inline]
-    pub fn is_lockup_rst_0(&self) -> bool {
-        *self == LOCKUP_RSTR::LOCKUP_RST_0
-    }
-    #[doc = "Checks if the value of the field is `LOCKUP_RST_1`"]
-    #[inline]
-    pub fn is_lockup_rst_1(&self) -> bool {
-        *self == LOCKUP_RSTR::LOCKUP_RST_1
-    }
-}
 #[doc = "Possible values of the field `mask_wdog_rst`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MASK_WDOG_RSTR {
@@ -310,64 +263,6 @@ impl MASK_WDOG3_RSTR {
     #[inline]
     pub fn is_mask_wdog3_rst_10(&self) -> bool {
         *self == MASK_WDOG3_RSTR::MASK_WDOG3_RST_10
-    }
-}
-#[doc = "Values that can be written to the field `lockup_rst`"]
-pub enum LOCKUP_RSTW {
-    #[doc = "disabled"]
-    LOCKUP_RST_0,
-    #[doc = "enabled"]
-    LOCKUP_RST_1,
-}
-impl LOCKUP_RSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LOCKUP_RSTW::LOCKUP_RST_0 => false,
-            LOCKUP_RSTW::LOCKUP_RST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCKUP_RSTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOCKUP_RSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCKUP_RSTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "disabled"]
-    #[inline]
-    pub fn lockup_rst_0(self) -> &'a mut W {
-        self.variant(LOCKUP_RSTW::LOCKUP_RST_0)
-    }
-    #[doc = "enabled"]
-    #[inline]
-    pub fn lockup_rst_1(self) -> &'a mut W {
-        self.variant(LOCKUP_RSTW::LOCKUP_RST_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
     }
 }
 #[doc = "Values that can be written to the field `mask_wdog_rst`"]
@@ -646,15 +541,6 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 4 - lockup reset enable bit"]
-    #[inline]
-    pub fn lockup_rst(&self) -> LOCKUP_RSTR {
-        LOCKUP_RSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
-    }
     #[doc = "Bits 7:10 - Mask wdog_rst_b source"]
     #[inline]
     pub fn mask_wdog_rst(&self) -> MASK_WDOG_RSTR {
@@ -705,18 +591,13 @@ impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 1280 }
+        W { bits: 2689074464 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
-    }
-    #[doc = "Bit 4 - lockup reset enable bit"]
-    #[inline]
-    pub fn lockup_rst(&mut self) -> _LOCKUP_RSTW {
-        _LOCKUP_RSTW { w: self }
     }
     #[doc = "Bits 7:10 - Mask wdog_rst_b source"]
     #[inline]

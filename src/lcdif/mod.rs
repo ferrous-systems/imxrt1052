@@ -1,31 +1,31 @@
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - eLCDIF General Control Register"]
+    #[doc = "0x00 - LCDIF General Control Register"]
     pub ctrl: CTRL,
-    #[doc = "0x04 - eLCDIF General Control Register"]
+    #[doc = "0x04 - LCDIF General Control Register"]
     pub ctrl_set: CTRL_SET,
-    #[doc = "0x08 - eLCDIF General Control Register"]
+    #[doc = "0x08 - LCDIF General Control Register"]
     pub ctrl_clr: CTRL_CLR,
-    #[doc = "0x0c - eLCDIF General Control Register"]
+    #[doc = "0x0c - LCDIF General Control Register"]
     pub ctrl_tog: CTRL_TOG,
-    #[doc = "0x10 - eLCDIF General Control1 Register"]
+    #[doc = "0x10 - LCDIF General Control1 Register"]
     pub ctrl1: CTRL1,
-    #[doc = "0x14 - eLCDIF General Control1 Register"]
+    #[doc = "0x14 - LCDIF General Control1 Register"]
     pub ctrl1_set: CTRL1_SET,
-    #[doc = "0x18 - eLCDIF General Control1 Register"]
+    #[doc = "0x18 - LCDIF General Control1 Register"]
     pub ctrl1_clr: CTRL1_CLR,
-    #[doc = "0x1c - eLCDIF General Control1 Register"]
+    #[doc = "0x1c - LCDIF General Control1 Register"]
     pub ctrl1_tog: CTRL1_TOG,
-    #[doc = "0x20 - eLCDIF General Control2 Register"]
+    #[doc = "0x20 - LCDIF General Control2 Register"]
     pub ctrl2: CTRL2,
-    #[doc = "0x24 - eLCDIF General Control2 Register"]
+    #[doc = "0x24 - LCDIF General Control2 Register"]
     pub ctrl2_set: CTRL2_SET,
-    #[doc = "0x28 - eLCDIF General Control2 Register"]
+    #[doc = "0x28 - LCDIF General Control2 Register"]
     pub ctrl2_clr: CTRL2_CLR,
-    #[doc = "0x2c - eLCDIF General Control2 Register"]
+    #[doc = "0x2c - LCDIF General Control2 Register"]
     pub ctrl2_tog: CTRL2_TOG,
-    #[doc = "0x30 - eLCDIF Horizontal and Vertical Valid Data Count Register"]
+    #[doc = "0x30 - LCDIF Horizontal and Vertical Valid Data Count Register"]
     pub transfer_count: TRANSFER_COUNT,
     _reserved0: [u8; 12usize],
     #[doc = "0x40 - LCD Interface Current Buffer Address Register"]
@@ -34,24 +34,24 @@ pub struct RegisterBlock {
     #[doc = "0x50 - LCD Interface Next Buffer Address Register"]
     pub next_buf: NEXT_BUF,
     _reserved2: [u8; 28usize],
-    #[doc = "0x70 - eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+    #[doc = "0x70 - LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
     pub vdctrl0: VDCTRL0,
-    #[doc = "0x74 - eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+    #[doc = "0x74 - LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
     pub vdctrl0_set: VDCTRL0_SET,
-    #[doc = "0x78 - eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+    #[doc = "0x78 - LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
     pub vdctrl0_clr: VDCTRL0_CLR,
-    #[doc = "0x7c - eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+    #[doc = "0x7c - LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
     pub vdctrl0_tog: VDCTRL0_TOG,
-    #[doc = "0x80 - eLCDIF VSYNC Mode and Dotclk Mode Control Register1"]
+    #[doc = "0x80 - LCDIF VSYNC Mode and Dotclk Mode Control Register1"]
     pub vdctrl1: VDCTRL1,
     _reserved3: [u8; 12usize],
     #[doc = "0x90 - LCDIF VSYNC Mode and Dotclk Mode Control Register2"]
     pub vdctrl2: VDCTRL2,
     _reserved4: [u8; 12usize],
-    #[doc = "0xa0 - eLCDIF VSYNC Mode and Dotclk Mode Control Register3"]
+    #[doc = "0xa0 - LCDIF VSYNC Mode and Dotclk Mode Control Register3"]
     pub vdctrl3: VDCTRL3,
     _reserved5: [u8; 12usize],
-    #[doc = "0xb0 - eLCDIF VSYNC Mode and Dotclk Mode Control Register4"]
+    #[doc = "0xb0 - LCDIF VSYNC Mode and Dotclk Mode Control Register4"]
     pub vdctrl4: VDCTRL4,
     _reserved6: [u8; 220usize],
     #[doc = "0x190 - Bus Master Error Status Register"]
@@ -63,7 +63,7 @@ pub struct RegisterBlock {
     #[doc = "0x1b0 - LCD Interface Status Register"]
     pub stat: STAT,
     _reserved9: [u8; 76usize],
-    #[doc = "0x200 - eLCDIF Threshold Register"]
+    #[doc = "0x200 - LCDIF Threshold Register"]
     pub thres: THRES,
     _reserved10: [u8; 380usize],
     #[doc = "0x380 - LCDIF Pigeon Mode Control0 Register"]
@@ -214,83 +214,83 @@ pub struct RegisterBlock {
     #[doc = "0xb40 - Lookup Table Data Register."]
     pub lut1_data: LUT1_DATA,
 }
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub struct CTRL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub mod ctrl;
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub struct CTRL_SET {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub mod ctrl_set;
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub struct CTRL_CLR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub mod ctrl_clr;
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub struct CTRL_TOG {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control Register"]
+#[doc = "LCDIF General Control Register"]
 pub mod ctrl_tog;
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub struct CTRL1 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub mod ctrl1;
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub struct CTRL1_SET {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub mod ctrl1_set;
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub struct CTRL1_CLR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub mod ctrl1_clr;
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub struct CTRL1_TOG {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control1 Register"]
+#[doc = "LCDIF General Control1 Register"]
 pub mod ctrl1_tog;
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub struct CTRL2 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub mod ctrl2;
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub struct CTRL2_SET {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub mod ctrl2_set;
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub struct CTRL2_CLR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub mod ctrl2_clr;
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub struct CTRL2_TOG {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF General Control2 Register"]
+#[doc = "LCDIF General Control2 Register"]
 pub mod ctrl2_tog;
-#[doc = "eLCDIF Horizontal and Vertical Valid Data Count Register"]
+#[doc = "LCDIF Horizontal and Vertical Valid Data Count Register"]
 pub struct TRANSFER_COUNT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF Horizontal and Vertical Valid Data Count Register"]
+#[doc = "LCDIF Horizontal and Vertical Valid Data Count Register"]
 pub mod transfer_count;
 #[doc = "LCD Interface Current Buffer Address Register"]
 pub struct CUR_BUF {
@@ -304,35 +304,35 @@ pub struct NEXT_BUF {
 }
 #[doc = "LCD Interface Next Buffer Address Register"]
 pub mod next_buf;
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub struct VDCTRL0 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub mod vdctrl0;
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub struct VDCTRL0_SET {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub mod vdctrl0_set;
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub struct VDCTRL0_CLR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub mod vdctrl0_clr;
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub struct VDCTRL0_TOG {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register0"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register0"]
 pub mod vdctrl0_tog;
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register1"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register1"]
 pub struct VDCTRL1 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register1"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register1"]
 pub mod vdctrl1;
 #[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register2"]
 pub struct VDCTRL2 {
@@ -340,17 +340,17 @@ pub struct VDCTRL2 {
 }
 #[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register2"]
 pub mod vdctrl2;
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register3"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register3"]
 pub struct VDCTRL3 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register3"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register3"]
 pub mod vdctrl3;
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register4"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register4"]
 pub struct VDCTRL4 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF VSYNC Mode and Dotclk Mode Control Register4"]
+#[doc = "LCDIF VSYNC Mode and Dotclk Mode Control Register4"]
 pub mod vdctrl4;
 #[doc = "Bus Master Error Status Register"]
 pub struct BM_ERROR_STAT {
@@ -370,11 +370,11 @@ pub struct STAT {
 }
 #[doc = "LCD Interface Status Register"]
 pub mod stat;
-#[doc = "eLCDIF Threshold Register"]
+#[doc = "LCDIF Threshold Register"]
 pub struct THRES {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "eLCDIF Threshold Register"]
+#[doc = "LCDIF Threshold Register"]
 pub mod thres;
 #[doc = "LCDIF Pigeon Mode Control0 Register"]
 pub struct PIGEONCTRL0 {

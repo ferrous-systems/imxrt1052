@@ -68,7 +68,7 @@ impl SWRSTR {
 pub enum MDISR {
     #[doc = "Module enabled"]
     MDIS_0,
-    #[doc = "Master disabled."]
+    #[doc = "Module disabled."]
     MDIS_1,
 }
 impl MDISR {
@@ -411,7 +411,7 @@ impl<'a> _SWRSTW<'a> {
 pub enum MDISW {
     #[doc = "Module enabled"]
     MDIS_0,
-    #[doc = "Master disabled."]
+    #[doc = "Module disabled."]
     MDIS_1,
 }
 impl MDISW {
@@ -442,7 +442,7 @@ impl<'a> _MDISW<'a> {
     pub fn mdis_0(self) -> &'a mut W {
         self.variant(MDISW::MDIS_0)
     }
-    #[doc = "Master disabled."]
+    #[doc = "Module disabled."]
     #[inline]
     pub fn mdis_1(self) -> &'a mut W {
         self.variant(MDISW::MDIS_1)

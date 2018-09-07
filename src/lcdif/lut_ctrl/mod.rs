@@ -92,7 +92,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - This bit controls whether the pixels entering the CSC2 unit get converted or not"]
+    #[doc = "Bit 0 - Setting this bit will bypass the LUT memory resource completely"]
     #[inline]
     pub fn lut_bypass(&self) -> LUT_BYPASSR {
         let bits = {
@@ -115,7 +115,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - This bit controls whether the pixels entering the CSC2 unit get converted or not"]
+    #[doc = "Bit 0 - Setting this bit will bypass the LUT memory resource completely"]
     #[inline]
     pub fn lut_bypass(&mut self) -> _LUT_BYPASSW {
         _LUT_BYPASSW { w: self }

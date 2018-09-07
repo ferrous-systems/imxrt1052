@@ -564,7 +564,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 20 - By default, when the eLCDIF is in the bus master mode, it will issue AXI bursts of length 16 (except when in packed 24 bpp mode, it will issue bursts of length 15)"]
+    #[doc = "Bit 20 - By default, when the LCDIF is in the bus master mode, it will issue AXI bursts of length 16 (except when in packed 24 bpp mode, it will issue bursts of length 15)"]
     #[inline]
     pub fn burst_len_8(&self) -> BURST_LEN_8R {
         let bits = {
@@ -574,7 +574,7 @@ impl R {
         };
         BURST_LEN_8R { bits }
     }
-    #[doc = "Bits 21:23 - This bitfield indicates the maximum number of outstanding transactions that eLCDIF should request when it is acting as a bus master"]
+    #[doc = "Bits 21:23 - This bitfield indicates the maximum number of outstanding transactions that LCDIF should request when it is acting as a bus master"]
     #[inline]
     pub fn outstanding_reqs(&self) -> OUTSTANDING_REQSR {
         OUTSTANDING_REQSR::_from({
@@ -606,12 +606,12 @@ impl W {
     pub fn odd_line_pattern(&mut self) -> _ODD_LINE_PATTERNW {
         _ODD_LINE_PATTERNW { w: self }
     }
-    #[doc = "Bit 20 - By default, when the eLCDIF is in the bus master mode, it will issue AXI bursts of length 16 (except when in packed 24 bpp mode, it will issue bursts of length 15)"]
+    #[doc = "Bit 20 - By default, when the LCDIF is in the bus master mode, it will issue AXI bursts of length 16 (except when in packed 24 bpp mode, it will issue bursts of length 15)"]
     #[inline]
     pub fn burst_len_8(&mut self) -> _BURST_LEN_8W {
         _BURST_LEN_8W { w: self }
     }
-    #[doc = "Bits 21:23 - This bitfield indicates the maximum number of outstanding transactions that eLCDIF should request when it is acting as a bus master"]
+    #[doc = "Bits 21:23 - This bitfield indicates the maximum number of outstanding transactions that LCDIF should request when it is acting as a bus master"]
     #[inline]
     pub fn outstanding_reqs(&mut self) -> _OUTSTANDING_REQSW {
         _OUTSTANDING_REQSW { w: self }

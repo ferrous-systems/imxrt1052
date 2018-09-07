@@ -209,6 +209,218 @@ impl LVDS1_CLK_SELR {
         *self == LVDS1_CLK_SELR::XTAL
     }
 }
+#[doc = "Possible values of the field `LVDS2_CLK_SEL`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LVDS2_CLK_SELR {
+    #[doc = "Arm PLL"]
+    ARM_PLL,
+    #[doc = "System PLL"]
+    SYS_PLL,
+    #[doc = "ref_pfd4_clk == pll2_pfd0_clk"]
+    PFD4,
+    #[doc = "ref_pfd5_clk == pll2_pfd1_clk"]
+    PFD5,
+    #[doc = "ref_pfd6_clk == pll2_pfd2_clk"]
+    PFD6,
+    #[doc = "ref_pfd7_clk == pll2_pfd3_clk"]
+    PFD7,
+    #[doc = "Audio PLL"]
+    AUDIO_PLL,
+    #[doc = "Video PLL"]
+    VIDEO_PLL,
+    #[doc = "MLB PLL"]
+    MLB_PLL,
+    #[doc = "ethernet ref clock (ENET_PLL)"]
+    ETHERNET_REF,
+    #[doc = "PCIe ref clock (125M)"]
+    PCIE_REF,
+    #[doc = "SATA ref clock (100M)"]
+    SATA_REF,
+    #[doc = "USB1 PLL clock"]
+    USB1_PLL,
+    #[doc = "USB2 PLL clock"]
+    USB2_PLL,
+    #[doc = "ref_pfd0_clk == pll3_pfd0_clk"]
+    PFD0,
+    #[doc = "ref_pfd1_clk == pll3_pfd1_clk"]
+    PFD1,
+    #[doc = "ref_pfd2_clk == pll3_pfd2_clk"]
+    PFD2,
+    #[doc = "ref_pfd3_clk == pll3_pfd3_clk"]
+    PFD3,
+    #[doc = "xtal (24M)"]
+    XTAL,
+    #[doc = "LVDS1 (loopback)"]
+    LVDS1,
+    #[doc = "LVDS2 (not useful)"]
+    LVDS2,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
+}
+impl LVDS2_CLK_SELR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bits(&self) -> u8 {
+        match *self {
+            LVDS2_CLK_SELR::ARM_PLL => 0,
+            LVDS2_CLK_SELR::SYS_PLL => 1,
+            LVDS2_CLK_SELR::PFD4 => 2,
+            LVDS2_CLK_SELR::PFD5 => 3,
+            LVDS2_CLK_SELR::PFD6 => 4,
+            LVDS2_CLK_SELR::PFD7 => 5,
+            LVDS2_CLK_SELR::AUDIO_PLL => 6,
+            LVDS2_CLK_SELR::VIDEO_PLL => 7,
+            LVDS2_CLK_SELR::MLB_PLL => 8,
+            LVDS2_CLK_SELR::ETHERNET_REF => 9,
+            LVDS2_CLK_SELR::PCIE_REF => 10,
+            LVDS2_CLK_SELR::SATA_REF => 11,
+            LVDS2_CLK_SELR::USB1_PLL => 12,
+            LVDS2_CLK_SELR::USB2_PLL => 13,
+            LVDS2_CLK_SELR::PFD0 => 14,
+            LVDS2_CLK_SELR::PFD1 => 15,
+            LVDS2_CLK_SELR::PFD2 => 16,
+            LVDS2_CLK_SELR::PFD3 => 17,
+            LVDS2_CLK_SELR::XTAL => 18,
+            LVDS2_CLK_SELR::LVDS1 => 19,
+            LVDS2_CLK_SELR::LVDS2 => 20,
+            LVDS2_CLK_SELR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> LVDS2_CLK_SELR {
+        match value {
+            0 => LVDS2_CLK_SELR::ARM_PLL,
+            1 => LVDS2_CLK_SELR::SYS_PLL,
+            2 => LVDS2_CLK_SELR::PFD4,
+            3 => LVDS2_CLK_SELR::PFD5,
+            4 => LVDS2_CLK_SELR::PFD6,
+            5 => LVDS2_CLK_SELR::PFD7,
+            6 => LVDS2_CLK_SELR::AUDIO_PLL,
+            7 => LVDS2_CLK_SELR::VIDEO_PLL,
+            8 => LVDS2_CLK_SELR::MLB_PLL,
+            9 => LVDS2_CLK_SELR::ETHERNET_REF,
+            10 => LVDS2_CLK_SELR::PCIE_REF,
+            11 => LVDS2_CLK_SELR::SATA_REF,
+            12 => LVDS2_CLK_SELR::USB1_PLL,
+            13 => LVDS2_CLK_SELR::USB2_PLL,
+            14 => LVDS2_CLK_SELR::PFD0,
+            15 => LVDS2_CLK_SELR::PFD1,
+            16 => LVDS2_CLK_SELR::PFD2,
+            17 => LVDS2_CLK_SELR::PFD3,
+            18 => LVDS2_CLK_SELR::XTAL,
+            19 => LVDS2_CLK_SELR::LVDS1,
+            20 => LVDS2_CLK_SELR::LVDS2,
+            i => LVDS2_CLK_SELR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `ARM_PLL`"]
+    #[inline]
+    pub fn is_arm_pll(&self) -> bool {
+        *self == LVDS2_CLK_SELR::ARM_PLL
+    }
+    #[doc = "Checks if the value of the field is `SYS_PLL`"]
+    #[inline]
+    pub fn is_sys_pll(&self) -> bool {
+        *self == LVDS2_CLK_SELR::SYS_PLL
+    }
+    #[doc = "Checks if the value of the field is `PFD4`"]
+    #[inline]
+    pub fn is_pfd4(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD4
+    }
+    #[doc = "Checks if the value of the field is `PFD5`"]
+    #[inline]
+    pub fn is_pfd5(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD5
+    }
+    #[doc = "Checks if the value of the field is `PFD6`"]
+    #[inline]
+    pub fn is_pfd6(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD6
+    }
+    #[doc = "Checks if the value of the field is `PFD7`"]
+    #[inline]
+    pub fn is_pfd7(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD7
+    }
+    #[doc = "Checks if the value of the field is `AUDIO_PLL`"]
+    #[inline]
+    pub fn is_audio_pll(&self) -> bool {
+        *self == LVDS2_CLK_SELR::AUDIO_PLL
+    }
+    #[doc = "Checks if the value of the field is `VIDEO_PLL`"]
+    #[inline]
+    pub fn is_video_pll(&self) -> bool {
+        *self == LVDS2_CLK_SELR::VIDEO_PLL
+    }
+    #[doc = "Checks if the value of the field is `MLB_PLL`"]
+    #[inline]
+    pub fn is_mlb_pll(&self) -> bool {
+        *self == LVDS2_CLK_SELR::MLB_PLL
+    }
+    #[doc = "Checks if the value of the field is `ETHERNET_REF`"]
+    #[inline]
+    pub fn is_ethernet_ref(&self) -> bool {
+        *self == LVDS2_CLK_SELR::ETHERNET_REF
+    }
+    #[doc = "Checks if the value of the field is `PCIE_REF`"]
+    #[inline]
+    pub fn is_pcie_ref(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PCIE_REF
+    }
+    #[doc = "Checks if the value of the field is `SATA_REF`"]
+    #[inline]
+    pub fn is_sata_ref(&self) -> bool {
+        *self == LVDS2_CLK_SELR::SATA_REF
+    }
+    #[doc = "Checks if the value of the field is `USB1_PLL`"]
+    #[inline]
+    pub fn is_usb1_pll(&self) -> bool {
+        *self == LVDS2_CLK_SELR::USB1_PLL
+    }
+    #[doc = "Checks if the value of the field is `USB2_PLL`"]
+    #[inline]
+    pub fn is_usb2_pll(&self) -> bool {
+        *self == LVDS2_CLK_SELR::USB2_PLL
+    }
+    #[doc = "Checks if the value of the field is `PFD0`"]
+    #[inline]
+    pub fn is_pfd0(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD0
+    }
+    #[doc = "Checks if the value of the field is `PFD1`"]
+    #[inline]
+    pub fn is_pfd1(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD1
+    }
+    #[doc = "Checks if the value of the field is `PFD2`"]
+    #[inline]
+    pub fn is_pfd2(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD2
+    }
+    #[doc = "Checks if the value of the field is `PFD3`"]
+    #[inline]
+    pub fn is_pfd3(&self) -> bool {
+        *self == LVDS2_CLK_SELR::PFD3
+    }
+    #[doc = "Checks if the value of the field is `XTAL`"]
+    #[inline]
+    pub fn is_xtal(&self) -> bool {
+        *self == LVDS2_CLK_SELR::XTAL
+    }
+    #[doc = "Checks if the value of the field is `LVDS1`"]
+    #[inline]
+    pub fn is_lvds1(&self) -> bool {
+        *self == LVDS2_CLK_SELR::LVDS1
+    }
+    #[doc = "Checks if the value of the field is `LVDS2`"]
+    #[inline]
+    pub fn is_lvds2(&self) -> bool {
+        *self == LVDS2_CLK_SELR::LVDS2
+    }
+}
 #[doc = r" Value of the field"]
 pub struct LVDSCLK1_OBENR {
     bits: bool,
@@ -231,10 +443,52 @@ impl LVDSCLK1_OBENR {
     }
 }
 #[doc = r" Value of the field"]
+pub struct LVDSCLK2_OBENR {
+    bits: bool,
+}
+impl LVDSCLK2_OBENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
 pub struct LVDSCLK1_IBENR {
     bits: bool,
 }
 impl LVDSCLK1_IBENR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct LVDSCLK2_IBENR {
+    bits: bool,
+}
+impl LVDSCLK2_IBENR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -558,6 +812,206 @@ impl<'a> _LVDS1_CLK_SELW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `LVDS2_CLK_SEL`"]
+pub enum LVDS2_CLK_SELW {
+    #[doc = "Arm PLL"]
+    ARM_PLL,
+    #[doc = "System PLL"]
+    SYS_PLL,
+    #[doc = "ref_pfd4_clk == pll2_pfd0_clk"]
+    PFD4,
+    #[doc = "ref_pfd5_clk == pll2_pfd1_clk"]
+    PFD5,
+    #[doc = "ref_pfd6_clk == pll2_pfd2_clk"]
+    PFD6,
+    #[doc = "ref_pfd7_clk == pll2_pfd3_clk"]
+    PFD7,
+    #[doc = "Audio PLL"]
+    AUDIO_PLL,
+    #[doc = "Video PLL"]
+    VIDEO_PLL,
+    #[doc = "MLB PLL"]
+    MLB_PLL,
+    #[doc = "ethernet ref clock (ENET_PLL)"]
+    ETHERNET_REF,
+    #[doc = "PCIe ref clock (125M)"]
+    PCIE_REF,
+    #[doc = "SATA ref clock (100M)"]
+    SATA_REF,
+    #[doc = "USB1 PLL clock"]
+    USB1_PLL,
+    #[doc = "USB2 PLL clock"]
+    USB2_PLL,
+    #[doc = "ref_pfd0_clk == pll3_pfd0_clk"]
+    PFD0,
+    #[doc = "ref_pfd1_clk == pll3_pfd1_clk"]
+    PFD1,
+    #[doc = "ref_pfd2_clk == pll3_pfd2_clk"]
+    PFD2,
+    #[doc = "ref_pfd3_clk == pll3_pfd3_clk"]
+    PFD3,
+    #[doc = "xtal (24M)"]
+    XTAL,
+    #[doc = "LVDS1 (loopback)"]
+    LVDS1,
+    #[doc = "LVDS2 (not useful)"]
+    LVDS2,
+}
+impl LVDS2_CLK_SELW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            LVDS2_CLK_SELW::ARM_PLL => 0,
+            LVDS2_CLK_SELW::SYS_PLL => 1,
+            LVDS2_CLK_SELW::PFD4 => 2,
+            LVDS2_CLK_SELW::PFD5 => 3,
+            LVDS2_CLK_SELW::PFD6 => 4,
+            LVDS2_CLK_SELW::PFD7 => 5,
+            LVDS2_CLK_SELW::AUDIO_PLL => 6,
+            LVDS2_CLK_SELW::VIDEO_PLL => 7,
+            LVDS2_CLK_SELW::MLB_PLL => 8,
+            LVDS2_CLK_SELW::ETHERNET_REF => 9,
+            LVDS2_CLK_SELW::PCIE_REF => 10,
+            LVDS2_CLK_SELW::SATA_REF => 11,
+            LVDS2_CLK_SELW::USB1_PLL => 12,
+            LVDS2_CLK_SELW::USB2_PLL => 13,
+            LVDS2_CLK_SELW::PFD0 => 14,
+            LVDS2_CLK_SELW::PFD1 => 15,
+            LVDS2_CLK_SELW::PFD2 => 16,
+            LVDS2_CLK_SELW::PFD3 => 17,
+            LVDS2_CLK_SELW::XTAL => 18,
+            LVDS2_CLK_SELW::LVDS1 => 19,
+            LVDS2_CLK_SELW::LVDS2 => 20,
+        }
+    }
+}
+#[doc = r" Proxy"]
+pub struct _LVDS2_CLK_SELW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _LVDS2_CLK_SELW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: LVDS2_CLK_SELW) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Arm PLL"]
+    #[inline]
+    pub fn arm_pll(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::ARM_PLL)
+    }
+    #[doc = "System PLL"]
+    #[inline]
+    pub fn sys_pll(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::SYS_PLL)
+    }
+    #[doc = "ref_pfd4_clk == pll2_pfd0_clk"]
+    #[inline]
+    pub fn pfd4(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD4)
+    }
+    #[doc = "ref_pfd5_clk == pll2_pfd1_clk"]
+    #[inline]
+    pub fn pfd5(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD5)
+    }
+    #[doc = "ref_pfd6_clk == pll2_pfd2_clk"]
+    #[inline]
+    pub fn pfd6(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD6)
+    }
+    #[doc = "ref_pfd7_clk == pll2_pfd3_clk"]
+    #[inline]
+    pub fn pfd7(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD7)
+    }
+    #[doc = "Audio PLL"]
+    #[inline]
+    pub fn audio_pll(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::AUDIO_PLL)
+    }
+    #[doc = "Video PLL"]
+    #[inline]
+    pub fn video_pll(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::VIDEO_PLL)
+    }
+    #[doc = "MLB PLL"]
+    #[inline]
+    pub fn mlb_pll(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::MLB_PLL)
+    }
+    #[doc = "ethernet ref clock (ENET_PLL)"]
+    #[inline]
+    pub fn ethernet_ref(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::ETHERNET_REF)
+    }
+    #[doc = "PCIe ref clock (125M)"]
+    #[inline]
+    pub fn pcie_ref(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PCIE_REF)
+    }
+    #[doc = "SATA ref clock (100M)"]
+    #[inline]
+    pub fn sata_ref(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::SATA_REF)
+    }
+    #[doc = "USB1 PLL clock"]
+    #[inline]
+    pub fn usb1_pll(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::USB1_PLL)
+    }
+    #[doc = "USB2 PLL clock"]
+    #[inline]
+    pub fn usb2_pll(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::USB2_PLL)
+    }
+    #[doc = "ref_pfd0_clk == pll3_pfd0_clk"]
+    #[inline]
+    pub fn pfd0(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD0)
+    }
+    #[doc = "ref_pfd1_clk == pll3_pfd1_clk"]
+    #[inline]
+    pub fn pfd1(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD1)
+    }
+    #[doc = "ref_pfd2_clk == pll3_pfd2_clk"]
+    #[inline]
+    pub fn pfd2(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD2)
+    }
+    #[doc = "ref_pfd3_clk == pll3_pfd3_clk"]
+    #[inline]
+    pub fn pfd3(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::PFD3)
+    }
+    #[doc = "xtal (24M)"]
+    #[inline]
+    pub fn xtal(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::XTAL)
+    }
+    #[doc = "LVDS1 (loopback)"]
+    #[inline]
+    pub fn lvds1(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::LVDS1)
+    }
+    #[doc = "LVDS2 (not useful)"]
+    #[inline]
+    pub fn lvds2(self) -> &'a mut W {
+        self.variant(LVDS2_CLK_SELW::LVDS2)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 31;
+        const OFFSET: u8 = 5;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 #[doc = r" Proxy"]
 pub struct _LVDSCLK1_OBENW<'a> {
     w: &'a mut W,
@@ -582,6 +1036,29 @@ impl<'a> _LVDSCLK1_OBENW<'a> {
     }
 }
 #[doc = r" Proxy"]
+pub struct _LVDSCLK2_OBENW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _LVDSCLK2_OBENW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 11;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
 pub struct _LVDSCLK1_IBENW<'a> {
     w: &'a mut W,
 }
@@ -599,6 +1076,29 @@ impl<'a> _LVDSCLK1_IBENW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
+pub struct _LVDSCLK2_IBENW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _LVDSCLK2_IBENW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 13;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -780,6 +1280,15 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
+    #[doc = "Bits 5:9 - This field selects the clk to be routed to anaclk2/2b.Not related to PMU."]
+    #[inline]
+    pub fn lvds2_clk_sel(&self) -> LVDS2_CLK_SELR {
+        LVDS2_CLK_SELR::_from({
+            const MASK: u8 = 31;
+            const OFFSET: u8 = 5;
+            ((self.bits >> OFFSET) & MASK as u32) as u8
+        })
+    }
     #[doc = "Bit 10 - This enables the LVDS output buffer for anaclk1/1b"]
     #[inline]
     pub fn lvdsclk1_oben(&self) -> LVDSCLK1_OBENR {
@@ -790,6 +1299,16 @@ impl R {
         };
         LVDSCLK1_OBENR { bits }
     }
+    #[doc = "Bit 11 - This enables the LVDS output buffer for anaclk2/2b"]
+    #[inline]
+    pub fn lvdsclk2_oben(&self) -> LVDSCLK2_OBENR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 11;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        LVDSCLK2_OBENR { bits }
+    }
     #[doc = "Bit 12 - This enables the LVDS input buffer for anaclk1/1b"]
     #[inline]
     pub fn lvdsclk1_iben(&self) -> LVDSCLK1_IBENR {
@@ -799,6 +1318,16 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         LVDSCLK1_IBENR { bits }
+    }
+    #[doc = "Bit 13 - This enables the LVDS input buffer for anaclk2/2b"]
+    #[inline]
+    pub fn lvdsclk2_iben(&self) -> LVDSCLK2_IBENR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 13;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        LVDSCLK2_IBENR { bits }
     }
     #[doc = "Bit 16 - This enables a feature that will clkgate (reset) all PFD_480 clocks anytime the USB1_PLL_480 is unlocked or powered off"]
     #[inline]
@@ -888,15 +1417,30 @@ impl W {
     pub fn lvds1_clk_sel(&mut self) -> _LVDS1_CLK_SELW {
         _LVDS1_CLK_SELW { w: self }
     }
+    #[doc = "Bits 5:9 - This field selects the clk to be routed to anaclk2/2b.Not related to PMU."]
+    #[inline]
+    pub fn lvds2_clk_sel(&mut self) -> _LVDS2_CLK_SELW {
+        _LVDS2_CLK_SELW { w: self }
+    }
     #[doc = "Bit 10 - This enables the LVDS output buffer for anaclk1/1b"]
     #[inline]
     pub fn lvdsclk1_oben(&mut self) -> _LVDSCLK1_OBENW {
         _LVDSCLK1_OBENW { w: self }
     }
+    #[doc = "Bit 11 - This enables the LVDS output buffer for anaclk2/2b"]
+    #[inline]
+    pub fn lvdsclk2_oben(&mut self) -> _LVDSCLK2_OBENW {
+        _LVDSCLK2_OBENW { w: self }
+    }
     #[doc = "Bit 12 - This enables the LVDS input buffer for anaclk1/1b"]
     #[inline]
     pub fn lvdsclk1_iben(&mut self) -> _LVDSCLK1_IBENW {
         _LVDSCLK1_IBENW { w: self }
+    }
+    #[doc = "Bit 13 - This enables the LVDS input buffer for anaclk2/2b"]
+    #[inline]
+    pub fn lvdsclk2_iben(&mut self) -> _LVDSCLK2_IBENW {
+        _LVDSCLK2_IBENW { w: self }
     }
     #[doc = "Bit 16 - This enables a feature that will clkgate (reset) all PFD_480 clocks anytime the USB1_PLL_480 is unlocked or powered off"]
     #[inline]

@@ -1171,7 +1171,7 @@ impl W {
     pub fn ssm_sfns_dis(&mut self) -> _SSM_SFNS_DISW {
         _SSM_SFNS_DISW { w: self }
     }
-    #[doc = "Bit 4 - LP Software Reset When set to 1, the registers in the SNVS_LP section are reset"]
+    #[doc = "Bit 4 - LP Software Reset When set to 1, most registers in the SNVS_LP section are reset, but the following registers are not reset by an LP software reset: Secure Real Time Counter Time Alarm Register This bit cannot be set when the LP_SWR_DIS bit is set"]
     #[inline]
     pub fn lp_swr(&mut self) -> _LP_SWRW {
         _LP_SWRW { w: self }

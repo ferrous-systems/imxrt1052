@@ -136,6 +136,53 @@ impl HPTA_ENR {
         *self == HPTA_ENR::HPTA_EN_1
     }
 }
+#[doc = "Possible values of the field `DIS_PI`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DIS_PIR {
+    #[doc = "Periodic interrupt will trigger a functional interrupt"]
+    DIS_PI_0,
+    #[doc = "Disable periodic interrupt in the function interrupt"]
+    DIS_PI_1,
+}
+impl DIS_PIR {
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            DIS_PIR::DIS_PI_0 => false,
+            DIS_PIR::DIS_PI_1 => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> DIS_PIR {
+        match value {
+            false => DIS_PIR::DIS_PI_0,
+            true => DIS_PIR::DIS_PI_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DIS_PI_0`"]
+    #[inline]
+    pub fn is_dis_pi_0(&self) -> bool {
+        *self == DIS_PIR::DIS_PI_0
+    }
+    #[doc = "Checks if the value of the field is `DIS_PI_1`"]
+    #[inline]
+    pub fn is_dis_pi_1(&self) -> bool {
+        *self == DIS_PIR::DIS_PI_1
+    }
+}
 #[doc = "Possible values of the field `PI_EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PI_ENR {
@@ -684,6 +731,64 @@ impl<'a> _HPTA_ENW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `DIS_PI`"]
+pub enum DIS_PIW {
+    #[doc = "Periodic interrupt will trigger a functional interrupt"]
+    DIS_PI_0,
+    #[doc = "Disable periodic interrupt in the function interrupt"]
+    DIS_PI_1,
+}
+impl DIS_PIW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            DIS_PIW::DIS_PI_0 => false,
+            DIS_PIW::DIS_PI_1 => true,
+        }
+    }
+}
+#[doc = r" Proxy"]
+pub struct _DIS_PIW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _DIS_PIW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: DIS_PIW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Periodic interrupt will trigger a functional interrupt"]
+    #[inline]
+    pub fn dis_pi_0(self) -> &'a mut W {
+        self.variant(DIS_PIW::DIS_PI_0)
+    }
+    #[doc = "Disable periodic interrupt in the function interrupt"]
+    #[inline]
+    pub fn dis_pi_1(self) -> &'a mut W {
+        self.variant(DIS_PIW::DIS_PI_1)
+    }
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 2;
+        self.w.bits &= !((MASK as u32) << OFFSET);
+        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w
+    }
+}
 #[doc = "Values that can be written to the field `PI_EN`"]
 pub enum PI_ENW {
     #[doc = "HP Periodic Interrupt is disabled"]
@@ -1178,6 +1283,15 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
+    #[doc = "Bit 2 - Disable periodic interrupt in the functional interrupt"]
+    #[inline]
+    pub fn dis_pi(&self) -> DIS_PIR {
+        DIS_PIR::_from({
+            const MASK: bool = true;
+            const OFFSET: u8 = 2;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        })
+    }
     #[doc = "Bit 3 - HP Periodic Interrupt Enable The periodic interrupt can be generated only if the HP Real Time Counter is enabled"]
     #[inline]
     pub fn pi_en(&self) -> PI_ENR {
@@ -1265,6 +1379,11 @@ impl W {
     #[inline]
     pub fn hpta_en(&mut self) -> _HPTA_ENW {
         _HPTA_ENW { w: self }
+    }
+    #[doc = "Bit 2 - Disable periodic interrupt in the functional interrupt"]
+    #[inline]
+    pub fn dis_pi(&mut self) -> _DIS_PIW {
+        _DIS_PIW { w: self }
     }
     #[doc = "Bit 3 - HP Periodic Interrupt Enable The periodic interrupt can be generated only if the HP Real Time Counter is enabled"]
     #[inline]

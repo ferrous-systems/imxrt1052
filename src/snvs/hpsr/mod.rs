@@ -294,84 +294,108 @@ impl SSM_STATER {
         *self == SSM_STATER::SSM_STATE_15
     }
 }
-#[doc = "Possible values of the field `SYS_SECURITY_CFG`"]
+#[doc = "Possible values of the field `SECURITY_CONFIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYS_SECURITY_CFGR {
-    #[doc = "Fab Configuration - the default configuration of newly fabricated chips"]
-    SYS_SECURITY_CFG_0,
-    #[doc = "Open Configuration - the configuration after NXP-programmable fuses have been blown"]
-    SYS_SECURITY_CFG_1,
-    #[doc = "Closed Configuration - the configuration after OEM-programmable fuses have been blown"]
-    SYS_SECURITY_CFG_3,
-    #[doc = "Field Return Configuration - the configuration of chips that are returned to NXP for analysis"]
-    SYS_SECURITY_CFG_7,
+pub enum SECURITY_CONFIGR {
+    #[doc = "FAB configuration"]
+    FAB_CONFIG1,
+    #[doc = "OPEN configuration"]
+    OPEN_CONFIG1,
+    #[doc = "OPEN configuration"]
+    OPEN_CONFIG2,
+    #[doc = "OPEN configuration"]
+    OPEN_CONFIG3,
+    #[doc = "FIELD RETURN configuration"]
+    FIELD_RETURN_CONFIG,
+    #[doc = "FAB configuration"]
+    FAB_CONFIG2,
+    #[doc = "CLOSED configuration"]
+    CLOSED_CONFIG1,
+    #[doc = "CLOSED configuration"]
+    CLOSED_CONFIG2,
+    #[doc = "CLOSED configuration"]
+    CLOSED_CONFIG3,
     #[doc = r" Reserved"]
     _Reserved(u8),
 }
-impl SYS_SECURITY_CFGR {
+impl SECURITY_CONFIGR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
-            SYS_SECURITY_CFGR::SYS_SECURITY_CFG_0 => 0,
-            SYS_SECURITY_CFGR::SYS_SECURITY_CFG_1 => 1,
-            SYS_SECURITY_CFGR::SYS_SECURITY_CFG_3 => 3,
-            SYS_SECURITY_CFGR::SYS_SECURITY_CFG_7 => 7,
-            SYS_SECURITY_CFGR::_Reserved(bits) => bits,
+            SECURITY_CONFIGR::FAB_CONFIG1 => 0,
+            SECURITY_CONFIGR::OPEN_CONFIG1 => 1,
+            SECURITY_CONFIGR::OPEN_CONFIG2 => 2,
+            SECURITY_CONFIGR::OPEN_CONFIG3 => 3,
+            SECURITY_CONFIGR::FIELD_RETURN_CONFIG => 4,
+            SECURITY_CONFIGR::FAB_CONFIG2 => 8,
+            SECURITY_CONFIGR::CLOSED_CONFIG1 => 9,
+            SECURITY_CONFIGR::CLOSED_CONFIG2 => 10,
+            SECURITY_CONFIGR::CLOSED_CONFIG3 => 11,
+            SECURITY_CONFIGR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: u8) -> SYS_SECURITY_CFGR {
+    pub fn _from(value: u8) -> SECURITY_CONFIGR {
         match value {
-            0 => SYS_SECURITY_CFGR::SYS_SECURITY_CFG_0,
-            1 => SYS_SECURITY_CFGR::SYS_SECURITY_CFG_1,
-            3 => SYS_SECURITY_CFGR::SYS_SECURITY_CFG_3,
-            7 => SYS_SECURITY_CFGR::SYS_SECURITY_CFG_7,
-            i => SYS_SECURITY_CFGR::_Reserved(i),
+            0 => SECURITY_CONFIGR::FAB_CONFIG1,
+            1 => SECURITY_CONFIGR::OPEN_CONFIG1,
+            2 => SECURITY_CONFIGR::OPEN_CONFIG2,
+            3 => SECURITY_CONFIGR::OPEN_CONFIG3,
+            4 => SECURITY_CONFIGR::FIELD_RETURN_CONFIG,
+            8 => SECURITY_CONFIGR::FAB_CONFIG2,
+            9 => SECURITY_CONFIGR::CLOSED_CONFIG1,
+            10 => SECURITY_CONFIGR::CLOSED_CONFIG2,
+            11 => SECURITY_CONFIGR::CLOSED_CONFIG3,
+            i => SECURITY_CONFIGR::_Reserved(i),
         }
     }
-    #[doc = "Checks if the value of the field is `SYS_SECURITY_CFG_0`"]
+    #[doc = "Checks if the value of the field is `FAB_CONFIG1`"]
     #[inline]
-    pub fn is_sys_security_cfg_0(&self) -> bool {
-        *self == SYS_SECURITY_CFGR::SYS_SECURITY_CFG_0
+    pub fn is_fab_config1(&self) -> bool {
+        *self == SECURITY_CONFIGR::FAB_CONFIG1
     }
-    #[doc = "Checks if the value of the field is `SYS_SECURITY_CFG_1`"]
+    #[doc = "Checks if the value of the field is `OPEN_CONFIG1`"]
     #[inline]
-    pub fn is_sys_security_cfg_1(&self) -> bool {
-        *self == SYS_SECURITY_CFGR::SYS_SECURITY_CFG_1
+    pub fn is_open_config1(&self) -> bool {
+        *self == SECURITY_CONFIGR::OPEN_CONFIG1
     }
-    #[doc = "Checks if the value of the field is `SYS_SECURITY_CFG_3`"]
+    #[doc = "Checks if the value of the field is `OPEN_CONFIG2`"]
     #[inline]
-    pub fn is_sys_security_cfg_3(&self) -> bool {
-        *self == SYS_SECURITY_CFGR::SYS_SECURITY_CFG_3
+    pub fn is_open_config2(&self) -> bool {
+        *self == SECURITY_CONFIGR::OPEN_CONFIG2
     }
-    #[doc = "Checks if the value of the field is `SYS_SECURITY_CFG_7`"]
+    #[doc = "Checks if the value of the field is `OPEN_CONFIG3`"]
     #[inline]
-    pub fn is_sys_security_cfg_7(&self) -> bool {
-        *self == SYS_SECURITY_CFGR::SYS_SECURITY_CFG_7
+    pub fn is_open_config3(&self) -> bool {
+        *self == SECURITY_CONFIGR::OPEN_CONFIG3
     }
-}
-#[doc = r" Value of the field"]
-pub struct SYS_SECURE_BOOTR {
-    bits: bool,
-}
-impl SYS_SECURE_BOOTR {
-    #[doc = r" Value of the field as raw bits"]
+    #[doc = "Checks if the value of the field is `FIELD_RETURN_CONFIG`"]
     #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+    pub fn is_field_return_config(&self) -> bool {
+        *self == SECURITY_CONFIGR::FIELD_RETURN_CONFIG
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[doc = "Checks if the value of the field is `FAB_CONFIG2`"]
     #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    pub fn is_fab_config2(&self) -> bool {
+        *self == SECURITY_CONFIGR::FAB_CONFIG2
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[doc = "Checks if the value of the field is `CLOSED_CONFIG1`"]
     #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    pub fn is_closed_config1(&self) -> bool {
+        *self == SECURITY_CONFIGR::CLOSED_CONFIG1
+    }
+    #[doc = "Checks if the value of the field is `CLOSED_CONFIG2`"]
+    #[inline]
+    pub fn is_closed_config2(&self) -> bool {
+        *self == SECURITY_CONFIGR::CLOSED_CONFIG2
+    }
+    #[doc = "Checks if the value of the field is `CLOSED_CONFIG3`"]
+    #[inline]
+    pub fn is_closed_config3(&self) -> bool {
+        *self == SECURITY_CONFIGR::CLOSED_CONFIG3
     }
 }
 #[doc = r" Value of the field"]
@@ -681,24 +705,14 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 12:14 - System Security Configuration This field indicates the security configuration of SNVS, defined as follows:"]
+    #[doc = "Bits 12:15 - Security Configuration This field reflects the settings of the sys_secure_boot input and the three security configuration inputs to SNVS"]
     #[inline]
-    pub fn sys_security_cfg(&self) -> SYS_SECURITY_CFGR {
-        SYS_SECURITY_CFGR::_from({
-            const MASK: u8 = 7;
+    pub fn security_config(&self) -> SECURITY_CONFIGR {
+        SECURITY_CONFIGR::_from({
+            const MASK: u8 = 15;
             const OFFSET: u8 = 12;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
-    }
-    #[doc = "Bit 15 - System Secure Boot If SYS_SECURE_BOOT is 1, the chip boots from internal ROM."]
-    #[inline]
-    pub fn sys_secure_boot(&self) -> SYS_SECURE_BOOTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SYS_SECURE_BOOTR { bits }
     }
     #[doc = "Bits 16:24 - One Time Programmable Master Key Syndrome In the case of a single-bit error, the eight lower bits of this value indicate the bit number of error location"]
     #[inline]
@@ -733,7 +747,7 @@ impl W {
     #[doc = r" Reset value of the register"]
     #[inline]
     pub fn reset_value() -> W {
-        W { bits: 2147528704 }
+        W { bits: 2147495936 }
     }
     #[doc = r" Writes raw bits to the register"]
     #[inline]

@@ -1,11 +1,11 @@
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - PS Input Buffer Address"]
+    #[doc = "0x00 - no description available"]
     pub basic_setting: BASIC_SETTING,
     _reserved0: [u8; 12usize],
-    #[doc = "0x10 - PS Input Buffer Address"]
-    pub ps_input_buffer_addr: PS_INPUT_BUFFER_ADDR,
+    #[doc = "0x10 - no description available"]
+    pub pre_charge_time: PRE_CHARGE_TIME,
     _reserved1: [u8; 12usize],
     #[doc = "0x20 - Flow Control"]
     pub flow_control: FLOW_CONTROL,
@@ -28,18 +28,18 @@ pub struct RegisterBlock {
     #[doc = "0x80 - no description available"]
     pub debug_mode2: DEBUG_MODE2,
 }
-#[doc = "PS Input Buffer Address"]
+#[doc = "no description available"]
 pub struct BASIC_SETTING {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "PS Input Buffer Address"]
+#[doc = "no description available"]
 pub mod basic_setting;
-#[doc = "PS Input Buffer Address"]
-pub struct PS_INPUT_BUFFER_ADDR {
+#[doc = "no description available"]
+pub struct PRE_CHARGE_TIME {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "PS Input Buffer Address"]
-pub mod ps_input_buffer_addr;
+#[doc = "no description available"]
+pub mod pre_charge_time;
 #[doc = "Flow Control"]
 pub struct FLOW_CONTROL {
     register: ::vcell::VolatileCell<u32>,

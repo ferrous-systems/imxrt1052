@@ -398,62 +398,6 @@ impl AHB_HPROTR {
         self.bits
     }
 }
-#[doc = "Possible values of the field `CSI_LCDIF_BUFFER_LINES`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CSI_LCDIF_BUFFER_LINESR {
-    #[doc = "4 lines"]
-    CSI_LCDIF_BUFFER_LINES_0,
-    #[doc = "8 lines"]
-    CSI_LCDIF_BUFFER_LINES_1,
-    #[doc = "16 lines"]
-    CSI_LCDIF_BUFFER_LINES_2,
-    #[doc = "16 lines"]
-    CSI_LCDIF_BUFFER_LINES_3,
-}
-impl CSI_LCDIF_BUFFER_LINESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_0 => 0,
-            CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_1 => 1,
-            CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_2 => 2,
-            CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_3 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CSI_LCDIF_BUFFER_LINESR {
-        match value {
-            0 => CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_0,
-            1 => CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_1,
-            2 => CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_2,
-            3 => CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_3,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `CSI_LCDIF_BUFFER_LINES_0`"]
-    #[inline]
-    pub fn is_csi_lcdif_buffer_lines_0(&self) -> bool {
-        *self == CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_0
-    }
-    #[doc = "Checks if the value of the field is `CSI_LCDIF_BUFFER_LINES_1`"]
-    #[inline]
-    pub fn is_csi_lcdif_buffer_lines_1(&self) -> bool {
-        *self == CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_1
-    }
-    #[doc = "Checks if the value of the field is `CSI_LCDIF_BUFFER_LINES_2`"]
-    #[inline]
-    pub fn is_csi_lcdif_buffer_lines_2(&self) -> bool {
-        *self == CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_2
-    }
-    #[doc = "Checks if the value of the field is `CSI_LCDIF_BUFFER_LINES_3`"]
-    #[inline]
-    pub fn is_csi_lcdif_buffer_lines_3(&self) -> bool {
-        *self == CSI_LCDIF_BUFFER_LINESR::CSI_LCDIF_BUFFER_LINES_3
-    }
-}
 #[doc = "Possible values of the field `MASK_OPTION`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MASK_OPTIONR {
@@ -963,72 +907,6 @@ impl<'a> _AHB_HPROTW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CSI_LCDIF_BUFFER_LINES`"]
-pub enum CSI_LCDIF_BUFFER_LINESW {
-    #[doc = "4 lines"]
-    CSI_LCDIF_BUFFER_LINES_0,
-    #[doc = "8 lines"]
-    CSI_LCDIF_BUFFER_LINES_1,
-    #[doc = "16 lines"]
-    CSI_LCDIF_BUFFER_LINES_2,
-    #[doc = "16 lines"]
-    CSI_LCDIF_BUFFER_LINES_3,
-}
-impl CSI_LCDIF_BUFFER_LINESW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_0 => 0,
-            CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_1 => 1,
-            CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_2 => 2,
-            CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CSI_LCDIF_BUFFER_LINESW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CSI_LCDIF_BUFFER_LINESW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CSI_LCDIF_BUFFER_LINESW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "4 lines"]
-    #[inline]
-    pub fn csi_lcdif_buffer_lines_0(self) -> &'a mut W {
-        self.variant(CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_0)
-    }
-    #[doc = "8 lines"]
-    #[inline]
-    pub fn csi_lcdif_buffer_lines_1(self) -> &'a mut W {
-        self.variant(CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_1)
-    }
-    #[doc = "16 lines"]
-    #[inline]
-    pub fn csi_lcdif_buffer_lines_2(self) -> &'a mut W {
-        self.variant(CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_2)
-    }
-    #[doc = "16 lines"]
-    #[inline]
-    pub fn csi_lcdif_buffer_lines_3(self) -> &'a mut W {
-        self.variant(CSI_LCDIF_BUFFER_LINESW::CSI_LCDIF_BUFFER_LINES_3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
 #[doc = "Values that can be written to the field `MASK_OPTION`"]
 pub enum MASK_OPTIONW {
     #[doc = "Writing to memory from first completely frame, when using this option, the CSI_ENABLE should be 1."]
@@ -1218,15 +1096,6 @@ impl R {
         };
         AHB_HPROTR { bits }
     }
-    #[doc = "Bits 16:17 - The number of lines are used in handshake mode with LCDIF."]
-    #[inline]
-    pub fn csi_lcdif_buffer_lines(&self) -> CSI_LCDIF_BUFFER_LINESR {
-        CSI_LCDIF_BUFFER_LINESR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
-    }
     #[doc = "Bits 18:19 - These bits used to choose the method to mask the CSI input."]
     #[inline]
     pub fn mask_option(&self) -> MASK_OPTIONR {
@@ -1308,11 +1177,6 @@ impl W {
     #[inline]
     pub fn ahb_hprot(&mut self) -> _AHB_HPROTW {
         _AHB_HPROTW { w: self }
-    }
-    #[doc = "Bits 16:17 - The number of lines are used in handshake mode with LCDIF."]
-    #[inline]
-    pub fn csi_lcdif_buffer_lines(&mut self) -> _CSI_LCDIF_BUFFER_LINESW {
-        _CSI_LCDIF_BUFFER_LINESW { w: self }
     }
     #[doc = "Bits 18:19 - These bits used to choose the method to mask the CSI input."]
     #[inline]

@@ -183,53 +183,6 @@ impl GPT2_CAPIN1_SELR {
         *self == GPT2_CAPIN1_SELR::GPT2_CAPIN1_SEL_1
     }
 }
-#[doc = "Possible values of the field `GPT2_CAPIN2_SEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GPT2_CAPIN2_SELR {
-    #[doc = "source from pad"]
-    GPT2_CAPIN2_SEL_0,
-    #[doc = "source from enet2.ipp_do_mac0_timer[3]"]
-    GPT2_CAPIN2_SEL_1,
-}
-impl GPT2_CAPIN2_SELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GPT2_CAPIN2_SELR::GPT2_CAPIN2_SEL_0 => false,
-            GPT2_CAPIN2_SELR::GPT2_CAPIN2_SEL_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GPT2_CAPIN2_SELR {
-        match value {
-            false => GPT2_CAPIN2_SELR::GPT2_CAPIN2_SEL_0,
-            true => GPT2_CAPIN2_SELR::GPT2_CAPIN2_SEL_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `GPT2_CAPIN2_SEL_0`"]
-    #[inline]
-    pub fn is_gpt2_capin2_sel_0(&self) -> bool {
-        *self == GPT2_CAPIN2_SELR::GPT2_CAPIN2_SEL_0
-    }
-    #[doc = "Checks if the value of the field is `GPT2_CAPIN2_SEL_1`"]
-    #[inline]
-    pub fn is_gpt2_capin2_sel_1(&self) -> bool {
-        *self == GPT2_CAPIN2_SELR::GPT2_CAPIN2_SEL_1
-    }
-}
 #[doc = "Possible values of the field `ENET_EVENT3IN_SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENET_EVENT3IN_SELR {
@@ -545,64 +498,6 @@ impl<'a> _GPT2_CAPIN1_SELW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `GPT2_CAPIN2_SEL`"]
-pub enum GPT2_CAPIN2_SELW {
-    #[doc = "source from pad"]
-    GPT2_CAPIN2_SEL_0,
-    #[doc = "source from enet2.ipp_do_mac0_timer[3]"]
-    GPT2_CAPIN2_SEL_1,
-}
-impl GPT2_CAPIN2_SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GPT2_CAPIN2_SELW::GPT2_CAPIN2_SEL_0 => false,
-            GPT2_CAPIN2_SELW::GPT2_CAPIN2_SEL_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GPT2_CAPIN2_SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _GPT2_CAPIN2_SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GPT2_CAPIN2_SELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "source from pad"]
-    #[inline]
-    pub fn gpt2_capin2_sel_0(self) -> &'a mut W {
-        self.variant(GPT2_CAPIN2_SELW::GPT2_CAPIN2_SEL_0)
-    }
-    #[doc = "source from enet2.ipp_do_mac0_timer[3]"]
-    #[inline]
-    pub fn gpt2_capin2_sel_1(self) -> &'a mut W {
-        self.variant(GPT2_CAPIN2_SELW::GPT2_CAPIN2_SEL_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
 #[doc = "Values that can be written to the field `ENET_EVENT3IN_SEL`"]
 pub enum ENET_EVENT3IN_SELW {
     #[doc = "event3 source input from pad"]
@@ -810,15 +705,6 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 24 - GPT2 input capture channel 2 source select"]
-    #[inline]
-    pub fn gpt2_capin2_sel(&self) -> GPT2_CAPIN2_SELR {
-        GPT2_CAPIN2_SELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
-    }
     #[doc = "Bit 25 - ENET input timer event3 source select"]
     #[inline]
     pub fn enet_event3in_sel(&self) -> ENET_EVENT3IN_SELR {
@@ -873,11 +759,6 @@ impl W {
     #[inline]
     pub fn gpt2_capin1_sel(&mut self) -> _GPT2_CAPIN1_SELW {
         _GPT2_CAPIN1_SELW { w: self }
-    }
-    #[doc = "Bit 24 - GPT2 input capture channel 2 source select"]
-    #[inline]
-    pub fn gpt2_capin2_sel(&mut self) -> _GPT2_CAPIN2_SELW {
-        _GPT2_CAPIN2_SELW { w: self }
     }
     #[doc = "Bit 25 - ENET input timer event3 source select"]
     #[inline]

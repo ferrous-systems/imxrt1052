@@ -464,7 +464,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Reserved"]
+    #[doc = "Bits 0:1 - ocram_exsc clock (ocram_exsc_clk_enable)"]
     #[inline]
     pub fn cg0(&self) -> CG0R {
         let bits = {
@@ -637,7 +637,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Reserved"]
+    #[doc = "Bits 0:1 - ocram_exsc clock (ocram_exsc_clk_enable)"]
     #[inline]
     pub fn cg0(&mut self) -> _CG0W {
         _CG0W { w: self }

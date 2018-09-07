@@ -414,7 +414,7 @@ impl GINTR {
 #[doc = "Possible values of the field `ENET1_CLK_SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENET1_CLK_SELR {
-    #[doc = "ENET1 TX reference clock driven by ref_enetpll. This clock is also output to pins via the IOMUX. ENET_REF_CLK1 function."]
+    #[doc = "ENET1 TX reference clock driven by ref_enetpll0. This clock is also output to pins via the IOMUX. ENET_REF_CLK1 function."]
     ENET1_CLK_SEL_0,
     #[doc = "Gets ENET1 TX reference clock from the ENET1_TX_CLK pin. In this use case, an external OSC provides the clock for both the external PHY and the internal controller."]
     ENET1_CLK_SEL_1,
@@ -508,9 +508,9 @@ impl USB_EXP_MODER {
 #[doc = "Possible values of the field `ENET1_TX_CLK_DIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENET1_TX_CLK_DIRR {
-    #[doc = "ENET1_TX_CLK output driver is disabled when configured for ALT1"]
+    #[doc = "ENET1_TX_CLK output driver is disabled and ENET_REF_CLK1 is a clock input."]
     ENET1_TX_CLK_DIR_0,
-    #[doc = "ENET1_TX_CLK output driver is enabled when configured for ALT1"]
+    #[doc = "ENET1_TX_CLK output driver is enabled and ENET_REF_CLK1 is an output driven by ref_enetpll0."]
     ENET1_TX_CLK_DIR_1,
 }
 impl ENET1_TX_CLK_DIRR {
@@ -555,9 +555,9 @@ impl ENET1_TX_CLK_DIRR {
 #[doc = "Possible values of the field `SAI1_MCLK_DIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAI1_MCLK_DIRR {
-    #[doc = "LCD_DATA00 output driver is disabled when configured for ALT8"]
+    #[doc = "sai1.MCLK is input signal"]
     SAI1_MCLK_DIR_0,
-    #[doc = "LCD_DATA00 output driver is enabled when configured for ALT8"]
+    #[doc = "sai1.MCLK is output signal"]
     SAI1_MCLK_DIR_1,
 }
 impl SAI1_MCLK_DIRR {
@@ -602,9 +602,9 @@ impl SAI1_MCLK_DIRR {
 #[doc = "Possible values of the field `SAI2_MCLK_DIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAI2_MCLK_DIRR {
-    #[doc = "SD1_CLK output driver is disabled when configured for ALT2"]
+    #[doc = "sai2.MCLK is input signal"]
     SAI2_MCLK_DIR_0,
-    #[doc = "SD1_CLK output driver is enabled when configured for ALT2"]
+    #[doc = "sai2.MCLK is output signal"]
     SAI2_MCLK_DIR_1,
 }
 impl SAI2_MCLK_DIRR {
@@ -649,9 +649,9 @@ impl SAI2_MCLK_DIRR {
 #[doc = "Possible values of the field `SAI3_MCLK_DIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAI3_MCLK_DIRR {
-    #[doc = "LCD_CLK output driver is disabled when configured for ALT3"]
+    #[doc = "sai3.MCLK is input signal"]
     SAI3_MCLK_DIR_0,
-    #[doc = "LCD_CLK output driver is enabled when configured for ALT3"]
+    #[doc = "sai3.MCLK is output signal"]
     SAI3_MCLK_DIR_1,
 }
 impl SAI3_MCLK_DIRR {
@@ -698,7 +698,7 @@ impl SAI3_MCLK_DIRR {
 pub enum EXC_MONR {
     #[doc = "OKAY response"]
     EXC_MON_0,
-    #[doc = "SLVError response (default)"]
+    #[doc = "SLVError response"]
     EXC_MON_1,
 }
 impl EXC_MONR {
@@ -1252,7 +1252,7 @@ impl<'a> _GINTW<'a> {
 }
 #[doc = "Values that can be written to the field `ENET1_CLK_SEL`"]
 pub enum ENET1_CLK_SELW {
-    #[doc = "ENET1 TX reference clock driven by ref_enetpll. This clock is also output to pins via the IOMUX. ENET_REF_CLK1 function."]
+    #[doc = "ENET1 TX reference clock driven by ref_enetpll0. This clock is also output to pins via the IOMUX. ENET_REF_CLK1 function."]
     ENET1_CLK_SEL_0,
     #[doc = "Gets ENET1 TX reference clock from the ENET1_TX_CLK pin. In this use case, an external OSC provides the clock for both the external PHY and the internal controller."]
     ENET1_CLK_SEL_1,
@@ -1280,7 +1280,7 @@ impl<'a> _ENET1_CLK_SELW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "ENET1 TX reference clock driven by ref_enetpll. This clock is also output to pins via the IOMUX. ENET_REF_CLK1 function."]
+    #[doc = "ENET1 TX reference clock driven by ref_enetpll0. This clock is also output to pins via the IOMUX. ENET_REF_CLK1 function."]
     #[inline]
     pub fn enet1_clk_sel_0(self) -> &'a mut W {
         self.variant(ENET1_CLK_SELW::ENET1_CLK_SEL_0)
@@ -1368,9 +1368,9 @@ impl<'a> _USB_EXP_MODEW<'a> {
 }
 #[doc = "Values that can be written to the field `ENET1_TX_CLK_DIR`"]
 pub enum ENET1_TX_CLK_DIRW {
-    #[doc = "ENET1_TX_CLK output driver is disabled when configured for ALT1"]
+    #[doc = "ENET1_TX_CLK output driver is disabled and ENET_REF_CLK1 is a clock input."]
     ENET1_TX_CLK_DIR_0,
-    #[doc = "ENET1_TX_CLK output driver is enabled when configured for ALT1"]
+    #[doc = "ENET1_TX_CLK output driver is enabled and ENET_REF_CLK1 is an output driven by ref_enetpll0."]
     ENET1_TX_CLK_DIR_1,
 }
 impl ENET1_TX_CLK_DIRW {
@@ -1396,12 +1396,12 @@ impl<'a> _ENET1_TX_CLK_DIRW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "ENET1_TX_CLK output driver is disabled when configured for ALT1"]
+    #[doc = "ENET1_TX_CLK output driver is disabled and ENET_REF_CLK1 is a clock input."]
     #[inline]
     pub fn enet1_tx_clk_dir_0(self) -> &'a mut W {
         self.variant(ENET1_TX_CLK_DIRW::ENET1_TX_CLK_DIR_0)
     }
-    #[doc = "ENET1_TX_CLK output driver is enabled when configured for ALT1"]
+    #[doc = "ENET1_TX_CLK output driver is enabled and ENET_REF_CLK1 is an output driven by ref_enetpll0."]
     #[inline]
     pub fn enet1_tx_clk_dir_1(self) -> &'a mut W {
         self.variant(ENET1_TX_CLK_DIRW::ENET1_TX_CLK_DIR_1)
@@ -1426,9 +1426,9 @@ impl<'a> _ENET1_TX_CLK_DIRW<'a> {
 }
 #[doc = "Values that can be written to the field `SAI1_MCLK_DIR`"]
 pub enum SAI1_MCLK_DIRW {
-    #[doc = "LCD_DATA00 output driver is disabled when configured for ALT8"]
+    #[doc = "sai1.MCLK is input signal"]
     SAI1_MCLK_DIR_0,
-    #[doc = "LCD_DATA00 output driver is enabled when configured for ALT8"]
+    #[doc = "sai1.MCLK is output signal"]
     SAI1_MCLK_DIR_1,
 }
 impl SAI1_MCLK_DIRW {
@@ -1454,12 +1454,12 @@ impl<'a> _SAI1_MCLK_DIRW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "LCD_DATA00 output driver is disabled when configured for ALT8"]
+    #[doc = "sai1.MCLK is input signal"]
     #[inline]
     pub fn sai1_mclk_dir_0(self) -> &'a mut W {
         self.variant(SAI1_MCLK_DIRW::SAI1_MCLK_DIR_0)
     }
-    #[doc = "LCD_DATA00 output driver is enabled when configured for ALT8"]
+    #[doc = "sai1.MCLK is output signal"]
     #[inline]
     pub fn sai1_mclk_dir_1(self) -> &'a mut W {
         self.variant(SAI1_MCLK_DIRW::SAI1_MCLK_DIR_1)
@@ -1484,9 +1484,9 @@ impl<'a> _SAI1_MCLK_DIRW<'a> {
 }
 #[doc = "Values that can be written to the field `SAI2_MCLK_DIR`"]
 pub enum SAI2_MCLK_DIRW {
-    #[doc = "SD1_CLK output driver is disabled when configured for ALT2"]
+    #[doc = "sai2.MCLK is input signal"]
     SAI2_MCLK_DIR_0,
-    #[doc = "SD1_CLK output driver is enabled when configured for ALT2"]
+    #[doc = "sai2.MCLK is output signal"]
     SAI2_MCLK_DIR_1,
 }
 impl SAI2_MCLK_DIRW {
@@ -1512,12 +1512,12 @@ impl<'a> _SAI2_MCLK_DIRW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "SD1_CLK output driver is disabled when configured for ALT2"]
+    #[doc = "sai2.MCLK is input signal"]
     #[inline]
     pub fn sai2_mclk_dir_0(self) -> &'a mut W {
         self.variant(SAI2_MCLK_DIRW::SAI2_MCLK_DIR_0)
     }
-    #[doc = "SD1_CLK output driver is enabled when configured for ALT2"]
+    #[doc = "sai2.MCLK is output signal"]
     #[inline]
     pub fn sai2_mclk_dir_1(self) -> &'a mut W {
         self.variant(SAI2_MCLK_DIRW::SAI2_MCLK_DIR_1)
@@ -1542,9 +1542,9 @@ impl<'a> _SAI2_MCLK_DIRW<'a> {
 }
 #[doc = "Values that can be written to the field `SAI3_MCLK_DIR`"]
 pub enum SAI3_MCLK_DIRW {
-    #[doc = "LCD_CLK output driver is disabled when configured for ALT3"]
+    #[doc = "sai3.MCLK is input signal"]
     SAI3_MCLK_DIR_0,
-    #[doc = "LCD_CLK output driver is enabled when configured for ALT3"]
+    #[doc = "sai3.MCLK is output signal"]
     SAI3_MCLK_DIR_1,
 }
 impl SAI3_MCLK_DIRW {
@@ -1570,12 +1570,12 @@ impl<'a> _SAI3_MCLK_DIRW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "LCD_CLK output driver is disabled when configured for ALT3"]
+    #[doc = "sai3.MCLK is input signal"]
     #[inline]
     pub fn sai3_mclk_dir_0(self) -> &'a mut W {
         self.variant(SAI3_MCLK_DIRW::SAI3_MCLK_DIR_0)
     }
-    #[doc = "LCD_CLK output driver is enabled when configured for ALT3"]
+    #[doc = "sai3.MCLK is output signal"]
     #[inline]
     pub fn sai3_mclk_dir_1(self) -> &'a mut W {
         self.variant(SAI3_MCLK_DIRW::SAI3_MCLK_DIR_1)
@@ -1602,7 +1602,7 @@ impl<'a> _SAI3_MCLK_DIRW<'a> {
 pub enum EXC_MONW {
     #[doc = "OKAY response"]
     EXC_MON_0,
-    #[doc = "SLVError response (default)"]
+    #[doc = "SLVError response"]
     EXC_MON_1,
 }
 impl EXC_MONW {
@@ -1633,7 +1633,7 @@ impl<'a> _EXC_MONW<'a> {
     pub fn exc_mon_0(self) -> &'a mut W {
         self.variant(EXC_MONW::EXC_MON_0)
     }
-    #[doc = "SLVError response (default)"]
+    #[doc = "SLVError response"]
     #[inline]
     pub fn exc_mon_1(self) -> &'a mut W {
         self.variant(EXC_MONW::EXC_MON_1)
@@ -1823,7 +1823,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 12 - Global interrupt \"0\" bit (connected to ARM M7 IRQ#0 and GPC)"]
+    #[doc = "Bit 12 - Global interrupt bit (connected to ARM M7 IRQ#41 and GPC)"]
     #[inline]
     pub fn gint(&self) -> GINTR {
         GINTR::_from({
@@ -1850,7 +1850,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 17 - ENET1_TX_CLK data direction control when anatop. ENET_REF_CLK1 is selected (ALT1)"]
+    #[doc = "Bit 17 - ENET1_TX_CLK data direction control when ENET_REF_CLK1 ALT is selected."]
     #[inline]
     pub fn enet1_tx_clk_dir(&self) -> ENET1_TX_CLK_DIRR {
         ENET1_TX_CLK_DIRR::_from({
@@ -1859,7 +1859,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 19 - LCD_DATA00 data direction control when sai1.MCLK is selected (ALT8)"]
+    #[doc = "Bit 19 - sai1.MCLK signal direction control"]
     #[inline]
     pub fn sai1_mclk_dir(&self) -> SAI1_MCLK_DIRR {
         SAI1_MCLK_DIRR::_from({
@@ -1868,7 +1868,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 20 - SD1_CLK data direction control when sai2.MCLK is selected (ALT2)"]
+    #[doc = "Bit 20 - sai2.MCLK signal direction control"]
     #[inline]
     pub fn sai2_mclk_dir(&self) -> SAI2_MCLK_DIRR {
         SAI2_MCLK_DIRR::_from({
@@ -1877,7 +1877,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 21 - LCD_CLK data direction control when sai3.MCLK is selected (ALT3)"]
+    #[doc = "Bit 21 - sai3.MCLK signal direction control"]
     #[inline]
     pub fn sai3_mclk_dir(&self) -> SAI3_MCLK_DIRR {
         SAI3_MCLK_DIRR::_from({
@@ -1951,7 +1951,7 @@ impl W {
     pub fn sai3_mclk3_sel(&mut self) -> _SAI3_MCLK3_SELW {
         _SAI3_MCLK3_SELW { w: self }
     }
-    #[doc = "Bit 12 - Global interrupt \"0\" bit (connected to ARM M7 IRQ#0 and GPC)"]
+    #[doc = "Bit 12 - Global interrupt bit (connected to ARM M7 IRQ#41 and GPC)"]
     #[inline]
     pub fn gint(&mut self) -> _GINTW {
         _GINTW { w: self }
@@ -1966,22 +1966,22 @@ impl W {
     pub fn usb_exp_mode(&mut self) -> _USB_EXP_MODEW {
         _USB_EXP_MODEW { w: self }
     }
-    #[doc = "Bit 17 - ENET1_TX_CLK data direction control when anatop. ENET_REF_CLK1 is selected (ALT1)"]
+    #[doc = "Bit 17 - ENET1_TX_CLK data direction control when ENET_REF_CLK1 ALT is selected."]
     #[inline]
     pub fn enet1_tx_clk_dir(&mut self) -> _ENET1_TX_CLK_DIRW {
         _ENET1_TX_CLK_DIRW { w: self }
     }
-    #[doc = "Bit 19 - LCD_DATA00 data direction control when sai1.MCLK is selected (ALT8)"]
+    #[doc = "Bit 19 - sai1.MCLK signal direction control"]
     #[inline]
     pub fn sai1_mclk_dir(&mut self) -> _SAI1_MCLK_DIRW {
         _SAI1_MCLK_DIRW { w: self }
     }
-    #[doc = "Bit 20 - SD1_CLK data direction control when sai2.MCLK is selected (ALT2)"]
+    #[doc = "Bit 20 - sai2.MCLK signal direction control"]
     #[inline]
     pub fn sai2_mclk_dir(&mut self) -> _SAI2_MCLK_DIRW {
         _SAI2_MCLK_DIRW { w: self }
     }
-    #[doc = "Bit 21 - LCD_CLK data direction control when sai3.MCLK is selected (ALT3)"]
+    #[doc = "Bit 21 - sai3.MCLK signal direction control"]
     #[inline]
     pub fn sai3_mclk_dir(&mut self) -> _SAI3_MCLK_DIRW {
         _SAI3_MCLK_DIRW { w: self }

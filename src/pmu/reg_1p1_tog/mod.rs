@@ -246,7 +246,7 @@ impl ENABLE_WEAK_LINREGR {
 pub enum SELREF_WEAK_LINREGR {
     #[doc = "Weak-linreg output tracks low-power-bandgap voltage"]
     SELREF_WEAK_LINREG_0,
-    #[doc = "Weak-linreg output tracks VDD_SOC_CAP voltage"]
+    #[doc = "Weak-linreg output tracks VDD_SOC_IN voltage"]
     SELREF_WEAK_LINREG_1,
 }
 impl SELREF_WEAK_LINREGR {
@@ -470,7 +470,7 @@ impl<'a> _ENABLE_WEAK_LINREGW<'a> {
 pub enum SELREF_WEAK_LINREGW {
     #[doc = "Weak-linreg output tracks low-power-bandgap voltage"]
     SELREF_WEAK_LINREG_0,
-    #[doc = "Weak-linreg output tracks VDD_SOC_CAP voltage"]
+    #[doc = "Weak-linreg output tracks VDD_SOC_IN voltage"]
     SELREF_WEAK_LINREG_1,
 }
 impl SELREF_WEAK_LINREGW {
@@ -501,7 +501,7 @@ impl<'a> _SELREF_WEAK_LINREGW<'a> {
     pub fn selref_weak_linreg_0(self) -> &'a mut W {
         self.variant(SELREF_WEAK_LINREGW::SELREF_WEAK_LINREG_0)
     }
-    #[doc = "Weak-linreg output tracks VDD_SOC_CAP voltage"]
+    #[doc = "Weak-linreg output tracks VDD_SOC_IN voltage"]
     #[inline]
     pub fn selref_weak_linreg_1(self) -> &'a mut W {
         self.variant(SELREF_WEAK_LINREGW::SELREF_WEAK_LINREG_1)

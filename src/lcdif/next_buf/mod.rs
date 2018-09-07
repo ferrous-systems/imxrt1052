@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - Address of the next frame that will be transmitted by eLCDIF."]
+    #[doc = "Bits 0:31 - Address of the next frame that will be transmitted by LCDIF."]
     #[inline]
     pub fn addr(&self) -> ADDRR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:31 - Address of the next frame that will be transmitted by eLCDIF."]
+    #[doc = "Bits 0:31 - Address of the next frame that will be transmitted by LCDIF."]
     #[inline]
     pub fn addr(&mut self) -> _ADDRW {
         _ADDRW { w: self }
