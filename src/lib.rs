@@ -1203,6 +1203,90 @@ cfg_if! {
 }
 
 cfg_if! {
+    if #[cfg(any(feature = "wdog", feature = "everything"))] {
+        #[doc = "WDOG"]
+        pub struct WDOG1 {
+            _marker: PhantomData<*const ()>,
+        }
+        unsafe impl Send for WDOG1 {}
+        impl WDOG1 {
+            #[doc = r" Returns a pointer to the register block"]
+            pub fn ptr() -> *const wdog1::RegisterBlock {
+                1074495488 as *const _
+            }
+        }
+        impl Deref for WDOG1 {
+            type Target = wdog1::RegisterBlock;
+            fn deref(&self) -> &wdog1::RegisterBlock {
+                unsafe { &*WDOG1::ptr() }
+            }
+        }
+        #[doc = "WDOG"]
+        pub mod wdog1;
+        #[doc = "WDOG"]
+        pub struct WDOG2 {
+            _marker: PhantomData<*const ()>,
+        }
+        unsafe impl Send for WDOG2 {}
+        impl WDOG2 {
+            #[doc = r" Returns a pointer to the register block"]
+            pub fn ptr() -> *const wdog1::RegisterBlock {
+                1074593792 as *const _
+            }
+        }
+        impl Deref for WDOG2 {
+            type Target = wdog1::RegisterBlock;
+            fn deref(&self) -> &wdog1::RegisterBlock {
+                unsafe { &*WDOG2::ptr() }
+            }
+        }
+        #[doc = "WDOG"]
+        pub struct RTWDOG {
+            _marker: PhantomData<*const ()>,
+        }
+        unsafe impl Send for RTWDOG {}
+        impl RTWDOG {
+            #[doc = r" Returns a pointer to the register block"]
+            pub fn ptr() -> *const rtwdog::RegisterBlock {
+                1074511872 as *const _
+            }
+        }
+        impl Deref for RTWDOG {
+            type Target = rtwdog::RegisterBlock;
+            fn deref(&self) -> &rtwdog::RegisterBlock {
+                unsafe { &*RTWDOG::ptr() }
+            }
+        }
+        #[doc = "WDOG"]
+        pub mod rtwdog;
+    }
+}
+
+cfg_if! {
+    if #[cfg(any(feature = "xtalosc24m", feature = "everything"))] {
+        #[doc = "XTALOSC24M"]
+        pub struct XTALOSC24M {
+            _marker: PhantomData<*const ()>,
+        }
+        unsafe impl Send for XTALOSC24M {}
+        impl XTALOSC24M {
+            #[doc = r" Returns a pointer to the register block"]
+            pub fn ptr() -> *const xtalosc24m::RegisterBlock {
+                1074626560 as *const _
+            }
+        }
+        impl Deref for XTALOSC24M {
+            type Target = xtalosc24m::RegisterBlock;
+            fn deref(&self) -> &xtalosc24m::RegisterBlock {
+                unsafe { &*XTALOSC24M::ptr() }
+            }
+        }
+        #[doc = "XTALOSC24M"]
+        pub mod xtalosc24m;
+    }
+}
+
+cfg_if! {
     if #[cfg(any(feature = "notimplemented", feature = "everything"))] {
         #[doc = "AIPSTZ Control Registers"]
         pub struct AIPSTZ2 {
@@ -1439,61 +1523,6 @@ cfg_if! {
         }
         #[doc = "EWM"]
         pub mod ewm;
-        #[doc = "WDOG"]
-        pub struct WDOG1 {
-            _marker: PhantomData<*const ()>,
-        }
-        unsafe impl Send for WDOG1 {}
-        impl WDOG1 {
-            #[doc = r" Returns a pointer to the register block"]
-            pub fn ptr() -> *const wdog1::RegisterBlock {
-                1074495488 as *const _
-            }
-        }
-        impl Deref for WDOG1 {
-            type Target = wdog1::RegisterBlock;
-            fn deref(&self) -> &wdog1::RegisterBlock {
-                unsafe { &*WDOG1::ptr() }
-            }
-        }
-        #[doc = "WDOG"]
-        pub mod wdog1;
-        #[doc = "WDOG"]
-        pub struct WDOG2 {
-            _marker: PhantomData<*const ()>,
-        }
-        unsafe impl Send for WDOG2 {}
-        impl WDOG2 {
-            #[doc = r" Returns a pointer to the register block"]
-            pub fn ptr() -> *const wdog1::RegisterBlock {
-                1074593792 as *const _
-            }
-        }
-        impl Deref for WDOG2 {
-            type Target = wdog1::RegisterBlock;
-            fn deref(&self) -> &wdog1::RegisterBlock {
-                unsafe { &*WDOG2::ptr() }
-            }
-        }
-        #[doc = "WDOG"]
-        pub struct RTWDOG {
-            _marker: PhantomData<*const ()>,
-        }
-        unsafe impl Send for RTWDOG {}
-        impl RTWDOG {
-            #[doc = r" Returns a pointer to the register block"]
-            pub fn ptr() -> *const rtwdog::RegisterBlock {
-                1074511872 as *const _
-            }
-        }
-        impl Deref for RTWDOG {
-            type Target = rtwdog::RegisterBlock;
-            fn deref(&self) -> &rtwdog::RegisterBlock {
-                unsafe { &*RTWDOG::ptr() }
-            }
-        }
-        #[doc = "WDOG"]
-        pub mod rtwdog;
         #[doc = "Analog-to-Digital Converter"]
         pub struct ADC1 {
             _marker: PhantomData<*const ()>,
@@ -1625,25 +1654,6 @@ cfg_if! {
         }
         #[doc = "USB Analog"]
         pub mod usb_analog;
-        #[doc = "XTALOSC24M"]
-        pub struct XTALOSC24M {
-            _marker: PhantomData<*const ()>,
-        }
-        unsafe impl Send for XTALOSC24M {}
-        impl XTALOSC24M {
-            #[doc = r" Returns a pointer to the register block"]
-            pub fn ptr() -> *const xtalosc24m::RegisterBlock {
-                1074626560 as *const _
-            }
-        }
-        impl Deref for XTALOSC24M {
-            type Target = xtalosc24m::RegisterBlock;
-            fn deref(&self) -> &xtalosc24m::RegisterBlock {
-                unsafe { &*XTALOSC24M::ptr() }
-            }
-        }
-        #[doc = "XTALOSC24M"]
-        pub mod xtalosc24m;
         #[doc = "USBPHY Register Reference Index"]
         pub struct USBPHY1 {
             _marker: PhantomData<*const ()>,
@@ -3030,13 +3040,13 @@ pub struct Peripherals {
     #[cfg(any(feature = "notimplemented", feature = "everything"))]
     #[doc = "EWM"]
     pub EWM: EWM,
-    #[cfg(any(feature = "notimplemented", feature = "everything"))]
+    #[cfg(any(feature = "wdog", feature = "everything"))]
     #[doc = "WDOG1"]
     pub WDOG1: WDOG1,
-    #[cfg(any(feature = "notimplemented", feature = "everything"))]
+    #[cfg(any(feature = "wdog", feature = "everything"))]
     #[doc = "WDOG2"]
     pub WDOG2: WDOG2,
-    #[cfg(any(feature = "notimplemented", feature = "everything"))]
+    #[cfg(any(feature = "wdog", feature = "everything"))]
     #[doc = "RTWDOG"]
     pub RTWDOG: RTWDOG,
     #[cfg(any(feature = "notimplemented", feature = "everything"))]
@@ -3063,7 +3073,7 @@ pub struct Peripherals {
     #[cfg(any(feature = "notimplemented", feature = "everything"))]
     #[doc = "USB_ANALOG"]
     pub USB_ANALOG: USB_ANALOG,
-    #[cfg(any(feature = "notimplemented", feature = "everything"))]
+    #[cfg(any(feature = "xtalosc24m", feature = "everything"))]
     #[doc = "XTALOSC24M"]
     pub XTALOSC24M: XTALOSC24M,
     #[cfg(any(feature = "notimplemented", feature = "everything"))]
@@ -3378,15 +3388,15 @@ impl Peripherals {
             EWM: EWM {
                 _marker: PhantomData,
             },
-            #[cfg(any(feature = "notimplemented", feature = "everything"))]
+            #[cfg(any(feature = "wdog", feature = "everything"))]
             WDOG1: WDOG1 {
                 _marker: PhantomData,
             },
-            #[cfg(any(feature = "notimplemented", feature = "everything"))]
+            #[cfg(any(feature = "wdog", feature = "everything"))]
             WDOG2: WDOG2 {
                 _marker: PhantomData,
             },
-            #[cfg(any(feature = "notimplemented", feature = "everything"))]
+            #[cfg(any(feature = "wdog", feature = "everything"))]
             RTWDOG: RTWDOG {
                 _marker: PhantomData,
             },
@@ -3422,7 +3432,7 @@ impl Peripherals {
             USB_ANALOG: USB_ANALOG {
                 _marker: PhantomData,
             },
-            #[cfg(any(feature = "notimplemented", feature = "everything"))]
+            #[cfg(any(feature = "xtalosc24m", feature = "everything"))]
             XTALOSC24M: XTALOSC24M {
                 _marker: PhantomData,
             },

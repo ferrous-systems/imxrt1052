@@ -23,6 +23,8 @@ gpio1 = []
 iomuxc = []
 dcdc = []
 enet = []
+wdog = []
+xtalosc24m = []
 
 default = []
 everything = []
