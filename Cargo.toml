@@ -6,13 +6,13 @@ keywords = ["svd2rust"]
 repository = "https://github.com/yrashk/imxrt1052"
 
 [dependencies]
-bare-metal = "0.1"
+bare-metal = "0.2"
 vcell = "0.1"
-cortex-m = "0.5.4"
+cortex-m = "0.5.7"
 cfg-if = "0.1"
 
 [dependencies.cortex-m-rt]
-version = "0.5.3"
+version = "0.6.3"
 optional = true
 
 
