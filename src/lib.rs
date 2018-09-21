@@ -1287,6 +1287,30 @@ cfg_if! {
 }
 
 cfg_if! {
+    if #[cfg(any(feature = "iomuxc_gpr", feature = "everything"))] {
+        #[doc = "IOMUXC_GPR"]
+        pub struct IOMUXC_GPR {
+            _marker: PhantomData<*const ()>,
+        }
+        unsafe impl Send for IOMUXC_GPR {}
+        impl IOMUXC_GPR {
+            #[doc = r" Returns a pointer to the register block"]
+            pub fn ptr() -> *const iomuxc_gpr::RegisterBlock {
+                1074446336 as *const _
+            }
+        }
+        impl Deref for IOMUXC_GPR {
+            type Target = iomuxc_gpr::RegisterBlock;
+            fn deref(&self) -> &iomuxc_gpr::RegisterBlock {
+                unsafe { &*IOMUXC_GPR::ptr() }
+            }
+        }
+        #[doc = "IOMUXC_GPR"]
+        pub mod iomuxc_gpr;
+    }
+}
+
+cfg_if! {
     if #[cfg(any(feature = "notimplemented", feature = "everything"))] {
         #[doc = "AIPSTZ Control Registers"]
         pub struct AIPSTZ2 {
@@ -1466,25 +1490,6 @@ cfg_if! {
         }
         #[doc = "IOMUXC_SNVS"]
         pub mod iomuxc_snvs;
-        #[doc = "IOMUXC_GPR"]
-        pub struct IOMUXC_GPR {
-            _marker: PhantomData<*const ()>,
-        }
-        unsafe impl Send for IOMUXC_GPR {}
-        impl IOMUXC_GPR {
-            #[doc = r" Returns a pointer to the register block"]
-            pub fn ptr() -> *const iomuxc_gpr::RegisterBlock {
-                1074446336 as *const _
-            }
-        }
-        impl Deref for IOMUXC_GPR {
-            type Target = iomuxc_gpr::RegisterBlock;
-            fn deref(&self) -> &iomuxc_gpr::RegisterBlock {
-                unsafe { &*IOMUXC_GPR::ptr() }
-            }
-        }
-        #[doc = "IOMUXC_GPR"]
-        pub mod iomuxc_gpr;
         #[doc = "FLEXRAM"]
         pub struct FLEXRAM {
             _marker: PhantomData<*const ()>,
@@ -3031,7 +3036,7 @@ pub struct Peripherals {
     #[cfg(any(feature = "notimplemented", feature = "everything"))]
     #[doc = "IOMUXC_SNVS"]
     pub IOMUXC_SNVS: IOMUXC_SNVS,
-    #[cfg(any(feature = "notimplemented", feature = "everything"))]
+    #[cfg(any(feature = "iomuxc_gpr", feature = "everything"))]
     #[doc = "IOMUXC_GPR"]
     pub IOMUXC_GPR: IOMUXC_GPR,
     #[cfg(any(feature = "notimplemented", feature = "everything"))]
@@ -3376,7 +3381,7 @@ impl Peripherals {
             IOMUXC_SNVS: IOMUXC_SNVS {
                 _marker: PhantomData,
             },
-            #[cfg(any(feature = "notimplemented", feature = "everything"))]
+            #[cfg(any(feature = "iomuxc_gpr", feature = "everything"))]
             IOMUXC_GPR: IOMUXC_GPR {
                 _marker: PhantomData,
             },
